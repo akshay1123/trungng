@@ -68,12 +68,12 @@ public class EntityLdaGibbsSampler {
   // cptsum[h] = # words assigned to a topic of the person/entity h
   private int cptsum[];
 
-  // K X V : sum of sample parameters (to return the average sample
-  private double phisum[][];
-  // D x K : sum of sample parameters (to return the average sample)
-  private double thetadSum[][];
-  // H x K : sum of sample parameters (to return the average sample)
-  private double thetapSum[][];
+  // K X V : phi matrix of the current sample
+  private double phi[][];
+  // D x K : thetad matrix of the current sample
+  private double thetad[][];
+  // H x K : thetap matrix of the current sample
+  private double thetap[][];
   
   // output parameters
   private String outputDir;
@@ -180,11 +180,11 @@ public class EntityLdaGibbsSampler {
 
       // after burn-in & some sample lags we can collect a sample
       // note that we are not saving z[m][n] for now
-      if (iter > burnIn && iter % sampleLags == 0) {
+      if (iter > burnIn && (iter - burnIn) % sampleLags == 0) {
         System.out.printf("\nCollected a sample at iteration %d", iter);
         updateParams();
         samplesCollected++;
-        report(iter, samplesCollected);
+        report(iter);
         if (samplesCollected > numSamples) {
           return; // enough samples has been collected
         }
@@ -193,7 +193,7 @@ public class EntityLdaGibbsSampler {
   }
 
   /**
-   * Returns the estimated theta_d values of this sampler.
+   * Returns the estimated theta_d values of the last sample collected.
    * 
    * <p>
    * If the number of samples was set to be greater than 0, this is the average
@@ -201,54 +201,25 @@ public class EntityLdaGibbsSampler {
    * 
    * @return
    */
-  public double[][] getThetad(int samplesCollected) {
-    double[][] thetad = new double[numDocuments][numTopics];
-    for (int m = 0; m < numDocuments; m++) {
-      for (int k = 0; k < numTopics; k++) {
-        thetad[m][k] = thetadSum[m][k] / samplesCollected;
-      }
-    }
-
+  public double[][] getThetad() {
     return thetad;
   }
 
   /**
-   * Returns the estimated theta_p values of this sampler.
-   * 
-   * <p>
-   * If the number of samples was set to be greater than 0, this is the average
-   * of the estimated value of each sample collected.
+   * Returns the estimated theta_p values of the last sample collected.
    * 
    * @return
    */
-  public double[][] getThetap(int samplesCollected) {
-    double[][] thetap = new double[numEntities][numTopics];
-    for (int h = 0; h < numEntities; h++) {
-      for (int k = 0; k < numTopics; k++) {
-        thetap[h][k] = thetapSum[h][k] / samplesCollected;
-      }
-    }
-
+  public double[][] getThetap() {
     return thetap;
   }
 
   /**
-   * Returns the estimated phi values of this sampler.
-   * 
-   * <p>
-   * If the number of samples was set to be greater than 0, this is the average
-   * of the estimated value of each sample collected.
+   * Returns the estimated phi values of the last sample collected.
    * 
    * @return
    */
-  public double[][] getPhi(int samplesCollected) {
-    double[][] phi = new double[numTopics][vocabularySize];
-    for (int k = 0; k < numTopics; k++) {
-      for (int i = 0; i < vocabularySize; i++) {
-        phi[k][i] = phisum[k][i] / samplesCollected;
-      }
-    }
-
+  public double[][] getPhi() {
     return phi;
   }
   
@@ -387,13 +358,9 @@ public class EntityLdaGibbsSampler {
    * Reports samples collected so far.
    * 
    * @param iter
-   * @param samplesCollected
    * @throws IOException
    */
-  private void report(int iter, int samplesCollected) throws IOException {
-    double[][] thetad = getThetad(samplesCollected);
-    double[][] thetap = getThetap(samplesCollected);
-    double[][] phi = getPhi(samplesCollected);
+  private void report(int iter) throws IOException {
     (new File(outputDir + "/" + iter)).mkdir();
     printDocumentTopics(thetad, outputDir + "/" + iter + "/documentTopics.csv");
     printEntityTopics(thetap, outputDir + "/" + iter + "/entityTopics.csv");
@@ -451,20 +418,20 @@ public class EntityLdaGibbsSampler {
       }
     }
 
-    thetadSum = new double[numDocuments][numTopics];
-    thetapSum = new double[numEntities][numTopics];
-    phisum = new double[numTopics][vocabularySize];
+    thetad = new double[numDocuments][numTopics];
+    thetap = new double[numEntities][numTopics];
+    phi = new double[numTopics][vocabularySize];
   }
 
   /**
-   * Updates the parameters when a new sample is collected.
+   * Updates the parameters for the newly collected sample.
    */
   private void updateParams() {
     // thetadsum[][] (D x K) -- sum of samples (to return the average sample)
     double tAlpha = numTopics * alpha;
     for (int m = 0; m < numDocuments; m++) {
       for (int k = 0; k < numTopics; k++) {
-        thetadSum[m][k] += (cdt[m][k] + alpha) / (cdtsum[m] + tAlpha);
+        thetad[m][k] = (cdt[m][k] + alpha) / (cdtsum[m] + tAlpha);
       }
     }
 
@@ -473,7 +440,7 @@ public class EntityLdaGibbsSampler {
     double tGamma = numTopics * gamma;
     for (int h = 0; h < numEntities; h++) {
       for (int k = 0; k < numTopics; k++) {
-        thetapSum[h][k] += (cpt[h][k] + gamma) / (cptsum[h] + tGamma);
+        thetap[h][k] = (cpt[h][k] + gamma) / (cptsum[h] + tGamma);
       }
     }
 
@@ -481,7 +448,7 @@ public class EntityLdaGibbsSampler {
     double vBeta = vocabularySize * beta;
     for (int k = 0; k < numTopics; k++) {
       for (int i = 0; i < vocabularySize; i++) {
-        phisum[k][i] += (cwt[i][k] + beta) / (cwtsum[k] + vBeta);
+        phi[k][i] = (cwt[i][k] + beta) / (cwtsum[k] + vBeta);
       }
     }
   }

@@ -1,0 +1,119 @@
+<Middle East, LOCATION>
+<Gerald Ford, PERSON>
+<Europe, LOCATION>
+<Jimmy Carter, PERSON>
+<Massachusetts, LOCATION>
+<Kiev, LOCATION>
+<Supreme Court, ORGANIZATION>
+<Chicago, LOCATION>
+<Los Angeles, LOCATION>
+<USSR, ORGANIZATION>
+<Hitler, PERSON>
+<Britain, LOCATION>
+<New York City, LOCATION>
+<Shanghai, LOCATION>
+<Ford, ORGANIZATION>
+<Zhou Enlai, PERSON>
+<Nixon, PERSON>
+<U.S., LOCATION>
+<Israel, LOCATION>
+<Harry S. Truman, PERSON>
+<British, LOCATION>
+<United States, LOCATION>
+<Illinois, LOCATION>
+<Richard Nixon, PERSON>
+<Ukraine, LOCATION>
+<Chiang, ORGANIZATION>
+<Eastern Europe, LOCATION>
+<Stalin, LOCATION>
+<Iowa, LOCATION>
+<George H. W. Bush, PERSON>
+<Mao Zedong, PERSON>
+<Russian, LOCATION>
+<NKVD, ORGANIZATION>
+<Asian, LOCATION>
+<Bolsheviks, ORGANIZATION>
+<Germany, LOCATION>
+<Turkey, LOCATION>
+<White Army, ORGANIZATION>
+<Barack Obama, PERSON>
+<Poland, LOCATION>
+<France, LOCATION>
+<Dwight D. Eisenhower, PERSON>
+<Cambodia, LOCATION>
+<Washington, LOCATION>
+<Egypt, LOCATION>
+<Leningrad, LOCATION>
+<American, LOCATION>
+<Beijing, LOCATION>
+<Dallas, LOCATION>
+<Chinese, LOCATION>
+<European, LOCATION>
+<Ronald Reagan, PERSON>
+<Carter Center, ORGANIZATION>
+<NASA, ORGANIZATION>
+<Pravda, LOCATION>
+<Minnesota, LOCATION>
+<Florida, LOCATION>
+<Berlin Wall, LOCATION>
+<D.C., LOCATION>
+<Mensheviks, ORGANIZATION>
+<England, LOCATION>
+<United Kingdom, LOCATION>
+<Warsaw, LOCATION>
+<New York, LOCATION>
+<NATO, ORGANIZATION>
+<US, LOCATION>
+<Berlin, LOCATION>
+<U.S.S.R., LOCATION>
+<Mexico, LOCATION>
+<Estonia, LOCATION>
+<China, LOCATION>
+<Red Army, ORGANIZATION>
+<Adlai Stevenson, PERSON>
+<Humphrey, LOCATION>
+<Pearl Harbor, LOCATION>
+<Minneapolis City Hall, LOCATION>
+<NAFTA, LOCATION>
+<Japan, LOCATION>
+<John F. Kennedy, PERSON>
+<White House, ORGANIZATION>
+<KGB, ORGANIZATION>
+<House of Representatives, ORGANIZATION>
+<Vienna, LOCATION>
+<Georgian, LOCATION>
+<Taiwan, LOCATION>
+<Laos, LOCATION>
+<Deng Xiaoping, PERSON>
+<New Hampshire, LOCATION>
+<Chiang Kai-shek, PERSON>
+<Congress, ORGANIZATION>
+<Alabama, LOCATION>
+<Afghanistan, LOCATION>
+<Paris, LOCATION>
+<Mississippi, LOCATION>
+<Jiangxi, LOCATION>
+<FBI, ORGANIZATION>
+<Democratic Party, ORGANIZATION>
+<KMT, ORGANIZATION>
+<United States Navy, LOCATION>
+<California, LOCATION>
+<JFK, LOCATION>
+<Soviet Union, LOCATION>
+<Georgia, LOCATION>
+<CIA, ORGANIZATION>
+<Yugoslavia, LOCATION>
+<Canada, LOCATION>
+<Mikhail Gorbachev, PERSON>
+<Western Europe, LOCATION>
+<Iran, LOCATION>
+<Latvia, LOCATION>
+<Iraq, LOCATION>
+<Texas, LOCATION>
+<Moon, LOCATION>
+<Franklin D. Roosevelt, PERSON>
+<Kremlin, LOCATION>
+<Joseph Stalin, PERSON>
+<Moscow, LOCATION>
+<London, LOCATION>
+<Hungary, LOCATION>

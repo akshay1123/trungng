@@ -82,8 +82,10 @@ public class CorpusProcessor {
   public void process() throws IOException {
     File dir = new File(corpusDir);
     docNames = new ArrayList<String>();
-    for (String file : dir.list()) {
-      docNames.add(file);
+    for (File file : dir.listFiles()) {
+      if (file.isFile()) {
+        docNames.add(file.getName());
+      }  
     }
 
     System.out.println("\nParsing the corpus for entities...");

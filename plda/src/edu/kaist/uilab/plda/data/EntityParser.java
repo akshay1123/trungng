@@ -160,7 +160,6 @@ public class EntityParser {
       }
 
       // number of unique entities to take
-      //int size = counter.size() * maxEntitiesPerDoc / 100;
       int size = counter.size() > maxEntitiesPerDoc ? maxEntitiesPerDoc : counter.size();
       List<Entity> holder = counter.keysOrderedByCountList().subList(0, size);
       documentEntities[i] = new Entity[size];

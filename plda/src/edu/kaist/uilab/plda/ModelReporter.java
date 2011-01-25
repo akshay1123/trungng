@@ -25,11 +25,11 @@ public class ModelReporter {
   final double alpha = 0.1;
   final double beta = 0.01;
   final double gamma = 0.1;
-  final int numTopics = 30;
+  final int numTopics = 100;
   final int minTokenCount = 5;
-  final int minEntityCount = 7;
+  final int minEntityCount = 10;
   final int topStopWords = 40;
-  final int maxEntitiesPerDoc = 60;
+  final int maxEntitiesPerDoc = 10;
   private String outputDir;
   private CorpusProcessor corpus;
   private EntityLdaGibbsSampler sampler;
@@ -50,7 +50,7 @@ public class ModelReporter {
         alpha,
         beta,
         gamma);
-    sampler.setSamplerParameters(1000, 500, 1, 5);
+    sampler.setSamplerParameters(1000, 1000, 1, 5);
     sampler.setOutputParameters(corpus.getSymbolTable(), outputDir, 30, 10, 10);
     System.out.println("Latent Dirichlet Allocation using Gibbs Sampling.");
     sampler.doGibbsSampling();
@@ -59,7 +59,7 @@ public class ModelReporter {
   public static void main(String args[]) throws IOException {
 //    new ModelReporter(
 //        "C:/elda/smalltest10_tok5_ent7_stop40_maxent60p");
-    new ModelReporter("/home/trung/elda/smalltest30_ent7_iter500_maxent60p");
+    new ModelReporter("/home/trung/elda/smalltest100_ent7_iter1000_maxent10");
   }
   
   public void report() throws IOException {
