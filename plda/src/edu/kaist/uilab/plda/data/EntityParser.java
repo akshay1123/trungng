@@ -9,8 +9,8 @@ import java.util.List;
 
 import com.aliasi.util.ObjectToCounterMap;
 
-import edu.kaist.uilab.plda.file.DefaultDocumentReader;
 import edu.kaist.uilab.plda.file.DocumentReader;
+import edu.kaist.uilab.plda.file.ReutersDocumentReader;
 import edu.stanford.nlp.ie.AbstractSequenceClassifier;
 import edu.stanford.nlp.ie.crf.CRFClassifier;
 import edu.stanford.nlp.ling.CoreAnnotations.AnswerAnnotation;
@@ -255,24 +255,27 @@ public class EntityParser {
   }
   
   public static void main(String[] args) throws Exception {
-    File dir = new File("data/smalltest");
+    String corpusDir = "data/reuterstest";
+    File dir = new File(corpusDir);
     ArrayList<String> docNames = new ArrayList<String>();
     for (String file : dir.list()) {
       docNames.add(file);
     }
-    EntityParser parser = new EntityParser("data/smalltest",
-        new DefaultDocumentReader(), docNames, 10, 10);
+//    EntityParser parser = new EntityParser("data/smalltest",
+//        new DefaultDocumentReader(), docNames, 10, 10);
+    EntityParser parser = new EntityParser(corpusDir, new ReutersDocumentReader(),
+        docNames, 5, 5);
     parser.parseCorpus();
     System.out.println("Number of entities: " + parser.getNumEntities());
     // print out the entities
-    PrintWriter out = new PrintWriter("entities_top10.txt");
+    PrintWriter out = new PrintWriter("reuters.txt");
     ArrayList<Entity> entities = parser.getEntities();
     for (Entity entity : entities) {
       out.println(entity);
     }
     out.close();
     
-    out = new PrintWriter("docEntities_unique10.txt");
+    out = new PrintWriter("reuters_doc_ent.txt");
     Entity[][] docEntities = parser.getDocumentEntities();
     for (int docIdx = 0; docIdx < docEntities.length; docIdx++) {
       for (int entityIdx = 0; entityIdx < docEntities[docIdx].length; entityIdx++) {

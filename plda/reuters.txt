@@ -1,0 +1,310 @@
+<French, LOCATION, 8>
+<Western Digital Corp, ORGANIZATION, 6>
+<Ronald Reagan, PERSON, 14>
+<AMR Corp, ORGANIZATION, 6>
+<U.K., LOCATION, 7>
+<RMJ Holdings Corp, ORGANIZATION, 6>
+<Francisco Gros, PERSON, 8>
+<BankAmerica Corp, ORGANIZATION, 32>
+<Federal Industries Ltd, ORGANIZATION, 8>
+<Burt Sugarman, PERSON, 7>
+<Computerland Corp, ORGANIZATION, 5>
+<Sweden, LOCATION, 5>
+<Denys Henderson, PERSON, 11>
+<Continental Airlines, ORGANIZATION, 7>
+<Senate, ORGANIZATION, 6>
+<Beryl Sprinkel, PERSON, 8>
+<West Germany, LOCATION, 36>
+<Hutchison Whampoa Ltd, ORGANIZATION, 5>
+<&lt; Shearson Lehman Brothers Inc, ORGANIZATION, 5>
+<ICI Pharmaceuticals Group, ORGANIZATION, 7>
+<Leucadia National Corp, ORGANIZATION, 8>
+<Yasuhiro Nakasone, PERSON, 10>
+<Bank of America, ORGANIZATION, 14>
+<Mario Brodersohn, PERSON, 10>
+<Burdett Publications Inc., ORGANIZATION, 5>
+<Europe, LOCATION, 21>
+<Central Intelligence Agency, ORGANIZATION, 6>
+<Sony Corp, ORGANIZATION, 5>
+<Comissaria Smith, PERSON, 6>
+<NCR Corp, ORGANIZATION, 8>
+<IMF, ORGANIZATION, 10>
+<United Technologies Corp, ORGANIZATION, 6>
+<Elliott Schlang, PERSON, 6>
+<Rospatch Corp, ORGANIZATION, 7>
+<Treasury Department, ORGANIZATION, 21>
+<Standard and Poor 's Corp, ORGANIZATION, 10>
+<Donald Regan, PERSON, 27>
+<Kidder , Peabody and Co Inc, ORGANIZATION, 7>
+<Waste Management Inc, ORGANIZATION, 5>
+<E.F. Hutton Group Inc, ORGANIZATION, 6>
+<Hong Kong, LOCATION, 28>
+<TRE Corp, ORGANIZATION, 8>
+<European Community Commission, ORGANIZATION, 5>
+<San Francisco, LOCATION, 10>
+<TVX Mining Corp, ORGANIZATION, 7>
+<Reuters Holdings Plc, ORGANIZATION, 5>
+<Labour Party, ORGANIZATION, 7>
+<Frank Naylor, PERSON, 5>
+<First Boston Corp, ORGANIZATION, 12>
+<Penn Traffic Co, ORGANIZATION, 6>
+<Chicago, LOCATION, 11>
+<USX Corp, ORGANIZATION, 6>
+<Alan Cranston, PERSON, 8>
+<Occidental Life Insurance Co of Australia Ltd, ORGANIZATION, 5>
+<Spencer Russell, PERSON, 5>
+<Los Angeles, LOCATION, 19>
+<PACCAR Inc, ORGANIZATION, 5>
+<Salomon Brothers Inc., ORGANIZATION, 8>
+<Bank of Japan, ORGANIZATION, 8>
+<Texas Air Corp, ORGANIZATION, 6>
+<Union Bank of Switzerland, ORGANIZATION, 10>
+<Pittston Co, ORGANIZATION, 8>
+<Westpac Banking Corp, ORGANIZATION, 8>
+<&lt; National Discount Co Ltd, ORGANIZATION, 5>
+<Ontario, LOCATION, 6>
+<Lotus Development Corp, ORGANIZATION, 7>
+<New York, LOCATION, 71>
+<PACCAR Financial Corp., ORGANIZATION, 5>
+<Merrill Lynch Capital Markets, ORGANIZATION, 22>
+<Telecommunications Ministry, ORGANIZATION, 6>
+<Paul Keating, PERSON, 8>
+<Bank of England, ORGANIZATION, 35>
+<Britain, LOCATION, 13>
+<Continental Illinois Corp, ORGANIZATION, 6>
+<Sigi Ziering, PERSON, 7>
+<South Korea, LOCATION, 11>
+<U.S. Embassy, ORGANIZATION, 24>
+<Stuart Pharmaceuticals, ORGANIZATION, 5>
+<Hongkong Electric Holdings Ltd, ORGANIZATION, 13>
+<Credit Suisse First Boston Asia Ltd, ORGANIZATION, 5>
+<Kuwait, LOCATION, 8>
+<Moody 's Investors Service Inc, ORGANIZATION, 7>
+<Portland, LOCATION, 6>
+<Commodity Futures Trading Commission, ORGANIZATION, 8>
+<Standard and Poor 's, ORGANIZATION, 10>
+<Nigel Lawson, PERSON, 16>
+<Suffield Financial Corp, ORGANIZATION, 7>
+<Alcan Aluminium Ltd, ORGANIZATION, 5>
+<LeRoy Pesch, PERSON, 8>
+<Bank of New York Co, ORGANIZATION, 5>
+<Central Bank, ORGANIZATION, 7>
+<Telephone Corp, ORGANIZATION, 6>
+<Sheikh Abdul-Aziz bin Khalifa al-Thani, PERSON, 6>
+<Organisation for Economic Cooperation and Development, ORGANIZATION, 6>
+<Salina Cruz, LOCATION, 6>
+<Mexico, LOCATION, 6>
+<Commodity Credit Corporation, ORGANIZATION, 6>
+<Jim Leslie, PERSON, 8>
+<PepsiCo Inc, ORGANIZATION, 5>
+<International Monetary Fund, ORGANIZATION, 20>
+<Rolls-Royce Ltd, ORGANIZATION, 5>
+<Esselte Business Systems Inc, ORGANIZATION, 5>
+<American Express Co, ORGANIZATION, 35>
+<Koichi Tsukihara, PERSON, 5>
+<Sen. David Boren, PERSON, 7>
+<First Boston Corp., ORGANIZATION, 8>
+<China, LOCATION, 12>
+<Bank of America NT, ORGANIZATION, 6>
+<New White House, ORGANIZATION, 8>
+<Unilever Plc, ORGANIZATION, 5>
+<General Motors Corp, ORGANIZATION, 8>
+<E.F. Hutton LBO Inc, ORGANIZATION, 6>
+<Boeing Co, ORGANIZATION, 6>
+<Marvin Warner, ORGANIZATION, 5>
+<Hoechst AG, ORGANIZATION, 8>
+<U.S., LOCATION, 159>
+<Nippon Telegraph, ORGANIZATION, 6>
+<Australia, LOCATION, 10>
+<Commerce Department, ORGANIZATION, 9>
+<Apple Computer Inc, ORGANIZATION, 15>
+<Saudi Arabian, LOCATION, 7>
+<Howard Baker, PERSON, 32>
+<Intel Corp, ORGANIZATION, 7>
+<New York Stock Exchange, ORGANIZATION, 11>
+<British, LOCATION, 6>
+<Antonio Padua de Seixas, PERSON, 8>
+<U.S. Agriculture Department, ORGANIZATION, 21>
+<Shearson Lehman Brothers Inc, ORGANIZATION, 25>
+<Mobil Chemical Co, ORGANIZATION, 5>
+<Swiss National Bank, ORGANIZATION, 7>
+<Japan, LOCATION, 37>
+<United Arab Emirates, LOCATION, 10>
+<General Electric Co &lt; GE, ORGANIZATION, 11>
+<RMJ Securities Corp, ORGANIZATION, 6>
+<Calif., LOCATION, 7>
+<George Shultz, PERSON, 21>
+<OPEC, ORGANIZATION, 13>
+<Bank of America 's West German, ORGANIZATION, 6>
+<Ohio, LOCATION, 7>
+<MCV Holdings Inc, ORGANIZATION, 8>
+<Brazil, LOCATION, 26>
+<Qatar, LOCATION, 5>
+<Frans Andriessen, PERSON, 10>
+<WTC International N.V., ORGANIZATION, 8>
+<United States, LOCATION, 41>
+<White House, ORGANIZATION, 11>
+<Jaime Ongpin, PERSON, 14>
+<European Community, ORGANIZATION, 10>
+<Mr. Gates, PERSON, 6>
+<New York Times, ORGANIZATION, 6>
+<Diagnostic Retrieval Systems Inc, ORGANIZATION, 10>
+<National Amusements ' Arsenal Holdings Inc, ORGANIZATION, 8>
+<Delta Air Lines Inc, ORGANIZATION, 6>
+<Taiwan, LOCATION, 8>
+<Reserve Bank, ORGANIZATION, 13>
+<Daniel Evans, PERSON, 6>
+<Lloyd Bentsen, PERSON, 5>
+<Boeing Co &lt; BA, ORGANIZATION, 18>
+<U.S. Treasury, ORGANIZATION, 13>
+<ICI Pharma, ORGANIZATION, 10>
+<EC, ORGANIZATION, 12>
+<Tower Commission, ORGANIZATION, 12>
+<Virgin Islands, LOCATION, 5>
+<Rexnord Inc, ORGANIZATION, 14>
+<Equatorial Communications Co, ORGANIZATION, 9>
+<IC Gas, ORGANIZATION, 6>
+<N.Y., LOCATION, 6>
+<American Nursery Products Inc, ORGANIZATION, 6>
+<Dean Witter, PERSON, 6>
+<Canadian, LOCATION, 6>
+<U.S. Bank, LOCATION, 11>
+<Congress, ORGANIZATION, 11>
+<Italy, LOCATION, 8>
+<Federal Energy Regulatory Commission, ORGANIZATION, 5>
+<Consolidated TVX, ORGANIZATION, 7>
+<Merrell Dow Pharmaceuticals Inc, ORGANIZATION, 5>
+<Esselte Meto, ORGANIZATION, 5>
+<Santa Barbara Biltmore Hotel, ORGANIZATION, 6>
+<Solita Monsod, PERSON, 5>
+<Paris, LOCATION, 6>
+<Dow Chemical Co, ORGANIZATION, 11>
+<Henry Azzam, PERSON, 8>
+<North Island, LOCATION, 7>
+<Richard Lacy, PERSON, 6>
+<&lt; Union Faith Canada Holding Ltd, ORGANIZATION, 6>
+<Coastal Bancorp, ORGANIZATION, 5>
+<Nuclear Data Inc, ORGANIZATION, 6>
+<JWT Group Inc, ORGANIZATION, 5>
+<Computerland Stores Inc, ORGANIZATION, 5>
+<GMAC Financial Services, ORGANIZATION, 5>
+<Merrill Lynch, ORGANIZATION, 14>
+<Chrysler Corp, ORGANIZATION, 7>
+<Schult Homes Corp, ORGANIZATION, 5>
+<Michael Lewis, PERSON, 5>
+<Saudi Arabia, LOCATION, 20>
+<Saudi Press Agency SPA, ORGANIZATION, 6>
+<Richard Lyng, PERSON, 12>
+<Computer Terminal Systems Inc, ORGANIZATION, 5>
+<Federal Deposit Insurance Corp, ORGANIZATION, 8>
+<Microsoft Corp, ORGANIZATION, 6>
+<EC Agriculture, ORGANIZATION, 8>
+<South Africa, LOCATION, 9>
+<Cheung Kong, ORGANIZATION, 8>
+<London Interbank, ORGANIZATION, 10>
+<Sumner Redstone, PERSON, 26>
+<American Medical International Inc, ORGANIZATION, 5>
+<Standard Oil Co, ORGANIZATION, 6>
+<Soviet Union, LOCATION, 8>
+<Du Pont Co, ORGANIZATION, 6>
+<Li Ka-shing, PERSON, 9>
+<India, LOCATION, 5>
+<SEC, ORGANIZATION, 10>
+<Michel Camdessus, PERSON, 8>
+<Cenergy Corp, ORGANIZATION, 6>
+<Kiichi Miyazawa, PERSON, 6>
+<IEL Finance Ltd., ORGANIZATION, 6>
+<Paul Volcker, PERSON, 47>
+<Comalco Ltd, ORGANIZATION, 14>
+<Contel Corp, ORGANIZATION, 5>
+<Bankhaus Centrale Credit AG, ORGANIZATION, 6>
+<International Coffee Organization, ORGANIZATION, 20>
+<John Kerin, PERSON, 5>
+<Robert Gates, PERSON, 19>
+<Spain, LOCATION, 5>
+<Raul Baglini, PERSON, 5>
+<Mobil Corp, ORGANIZATION, 10>
+<Chang Chi-cheng, PERSON, 7>
+<Oversea-Chinese Banking Corp Ltd, ORGANIZATION, 7>
+<Dodge Daytona Shelby Z. Chrysler, ORGANIZATION, 7>
+<St. Louis, LOCATION, 6>
+<Brierley Investments Ltd, ORGANIZATION, 6>
+<American Motors Corp, ORGANIZATION, 9>
+<France, LOCATION, 12>
+<RMJ Holding Corp, ORGANIZATION, 5>
+<American Airlines, ORGANIZATION, 7>
+<Viacom International Inc, ORGANIZATION, 39>
+<Robert Dole, PERSON, 6>
+<Tokyo, LOCATION, 12>
+<United Overseas Bank Ltd, ORGANIZATION, 7>
+<Canada, LOCATION, 19>
+<ChemLawn Corp, ORGANIZATION, 10>
+<Exxon Corp, ORGANIZATION, 5>
+<Leo Melamed, PERSON, 5>
+<James Baker, PERSON, 24>
+<Treasury, ORGANIZATION, 19>
+<Washington, LOCATION, 26>
+<Federal Reserve, ORGANIZATION, 15>
+<ICO, ORGANIZATION, 7>
+<Iran, LOCATION, 12>
+<Finance Ministry, ORGANIZATION, 13>
+<Iraq, LOCATION, 5>
+<Philippines, LOCATION, 7>
+<Drexel Burnham Lambert Inc, ORGANIZATION, 9>
+<World Bank, ORGANIZATION, 18>
+<Texas, LOCATION, 7>
+<Union Carbide Corp, ORGANIZATION, 6>
+<American, LOCATION, 6>
+<China Daily, LOCATION, 8>
+<KLM Royal Dutch Airlines &lt; KLM, ORGANIZATION, 6>
+<New Jersey, LOCATION, 5>
+<Caspar Weinberger, PERSON, 6>
+<Dilson Funaro, PERSON, 62>
+<Lawrence Cohn, PERSON, 6>
+<Senate Republican, ORGANIZATION, 8>
+<New Zealand, LOCATION, 28>
+<David Wyss, PERSON, 5>
+<CRA Ltd, ORGANIZATION, 13>
+<New China News Agency, ORGANIZATION, 10>
+<Newsweek magazine, ORGANIZATION, 5>
+<Indonesia, LOCATION, 11>
+<Bahrain, LOCATION, 5>
+<Clayton Yeutter, PERSON, 8>
+<Circuit Systems Inc, ORGANIZATION, 5>
+<Kenneth Douglas, PERSON, 6>
+<American Bureau of Metal Statistics, ORGANIZATION, 6>
+<&lt; Overseas Union Bank Ltd, ORGANIZATION, 5>
+<American Express and Shearson, ORGANIZATION, 36>
+<Edouard Balladur, PERSON, 9>
+<Ford Motor Co, ORGANIZATION, 21>
+<Securities and Exchange Commission, ORGANIZATION, 59>
+<Airbus Industrie, ORGANIZATION, 12>
+<New York Mercantile Exchange, ORGANIZATION, 6>
+<Larry Eckenfelder, PERSON, 5>
+<First Interstate Bancorp, ORGANIZATION, 6>
+<PC Acquisition Inc, ORGANIZATION, 8>
+<AM International Inc, ORGANIZATION, 5>
+<Presidential Airways Inc, ORGANIZATION, 5>
+<Computerland National Accounts Program, ORGANIZATION, 5>
+<Luxembourg, LOCATION, 8>
+<Moody 's, ORGANIZATION, 8>
+<Reagan, PERSON, 13>
+<Allen Wallis, PERSON, 10>
+<Zapata Corp, ORGANIZATION, 5>
+<Hisham Nazer, PERSON, 10>
+<Warner Communications Inc, ORGANIZATION, 7>
+<Corazon Aquino, PERSON, 7>
+<Kleinwort Benson Australia Ltd, ORGANIZATION, 5>
+<Federal Reserve Board, ORGANIZATION, 18>
+<Eishiro Saito, PERSON, 6>
+<Samuel Montagu, PERSON, 5>
+<Brown-Forman Inc, ORGANIZATION, 6>
+<European, LOCATION, 14>
+<Switzerland, LOCATION, 11>
+<London, LOCATION, 16>
+<Qantas Airways Ltd, ORGANIZATION, 12>
+<Fed, ORGANIZATION, 9>
+<Argentina, LOCATION, 7>
+<General Manager of Sumitomo Bank Ltd, ORGANIZATION, 5>
+<Latest Federal Reserve, ORGANIZATION, 13>
+<Singapore, LOCATION, 5>

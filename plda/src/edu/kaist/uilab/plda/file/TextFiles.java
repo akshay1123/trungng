@@ -3,6 +3,7 @@ package edu.kaist.uilab.plda.file;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Utility class to deal with text files.
@@ -27,5 +28,19 @@ public class TextFiles {
     reader.close();
     builder.deleteCharAt(builder.length() - 1);
     return builder.toString();
+  }
+  
+  /**
+   * Writes the string {@code content} to the given file.
+   * 
+   * @param file
+   * @param content
+   * 
+   * @throws IOException
+   */
+  public static void writeFile(String file, String content) throws IOException {
+    PrintWriter writer = new PrintWriter(file);
+    writer.println(content);
+    writer.close();
   }
 }
