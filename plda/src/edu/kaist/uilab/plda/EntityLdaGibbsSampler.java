@@ -278,7 +278,7 @@ public class EntityLdaGibbsSampler {
         int wordId = topWords.get(rank);
         String word = symbolTable.idToSymbol(wordId);
         writer.printf("%6d  %15s  %7d   %4.3f\n", wordId, word, cwt[wordId][topic],
-            phi[wordId][topic]);
+            phi[topic][wordId]);
       }
     }
     writer.close();
@@ -302,7 +302,7 @@ public class EntityLdaGibbsSampler {
       writer.println("----------------------");
       for (int rank = 0; rank < topTopics.size() && rank < maxTopicsPerDoc; ++rank) {
         int topic = topTopics.get(rank);
-        writer.printf("%5d  %7d   %4.3f\n", topic, cdt[doc][topic], cdt[doc][topic]);
+        writer.printf("%5d  %7d   %4.3f\n", topic, cdt[doc][topic], thetad[doc][topic]);
       }
       writer.println();
     }

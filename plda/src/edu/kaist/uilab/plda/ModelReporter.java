@@ -22,12 +22,12 @@ public class ModelReporter {
     double alpha = 0.1;
     double beta = 0.01;
     double gamma = 0.1;
-    int numTopics = 30;
+    int numTopics = 10;
     int minTokenCount = 3;
     int minEntityCount = 10;
-    int topStopWords = 30;
+    int topStopWords = 100;
     int maxEntitiesPerDoc = 5;
-    String outputDir = "/home/trung/elda/nytest30_ent10_iter200_maxent5";
+    String outputDir = "/home/trung/elda/nytest10_ent10_iter200_maxent5";
     CorpusProcessor corpus;
     EntityLdaGibbsSampler sampler;
     
@@ -79,8 +79,16 @@ public class ModelReporter {
         "several",
         "does",
         "day",
+        "days",
         "our",
         "go",
+        "these",
+        "very",
+        "while",
+        "then",
+        "next",
+        "me",
+        "ago",
     };
     corpus = new CorpusProcessor("/home/trung/elda/data/nytimes/technology", new NYTimesDocumentReader(),
         minTokenCount, minEntityCount, topStopWords, maxEntitiesPerDoc, stopword);
