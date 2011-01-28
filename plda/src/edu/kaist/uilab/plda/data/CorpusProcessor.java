@@ -17,6 +17,7 @@ import com.aliasi.tokenizer.EnglishStopTokenizerFactory;
 import com.aliasi.tokenizer.LowerCaseTokenizerFactory;
 import com.aliasi.tokenizer.ModifyTokenTokenizerFactory;
 import com.aliasi.tokenizer.RegExTokenizerFactory;
+import com.aliasi.tokenizer.StopTokenizerFactory;
 import com.aliasi.tokenizer.Tokenizer;
 import com.aliasi.tokenizer.TokenizerFactory;
 import com.aliasi.util.Counter;
@@ -32,12 +33,6 @@ import edu.kaist.uilab.plda.file.DocumentReader;
  */
 public class CorpusProcessor {
 
-  // TODO(trung): add stop-word list
-  private static final String[] STOPWORD_LIST = new String[] {};
-  @SuppressWarnings("unused")
-  private static final Set<String> STOPWORD_SET = new HashSet<String>(
-      Arrays.asList(STOPWORD_LIST));
-
   private String corpusDir;
   private DocumentReader reader;
   private SymbolTable symbolTable;
@@ -52,6 +47,7 @@ public class CorpusProcessor {
   private int[][] documentTokens;
   private Entity[][] documentEntities;
   private CharSequence[] cSeqs;
+  private Set<String> stopWords;
 
   /**
    * Constructor
@@ -61,15 +57,17 @@ public class CorpusProcessor {
    * @param minTokenCount
    * @param minEntityCount
    * @param topStopWords
+   * @param maxEntitiesPerDoc
    */
   public CorpusProcessor(String corpusDir, DocumentReader reader, int minTokenCount,
-      int minEntityCount, int topStopWords, int maxEntitiesPerDoc) {
+      int minEntityCount, int topStopWords, int maxEntitiesPerDoc, String[] stopwordList) {
     this.corpusDir = corpusDir;
     this.reader = reader;
     this.minTokenCount = minTokenCount;
     this.minEntityCount = minEntityCount;
     this.topStopWords = topStopWords;
     this.maxEntitiesPerDoc = maxEntitiesPerDoc;
+    this.stopWords = new HashSet<String>(Arrays.asList(stopwordList));
   }
 
   /**
@@ -85,8 +83,9 @@ public class CorpusProcessor {
     for (File file : dir.listFiles()) {
       if (file.isFile()) {
         docNames.add(file.getName());
-      }  
+      }
     }
+    docNames = new ArrayList<String>(docNames.subList(0, 500));
 
     System.out.println("\nParsing the corpus for entities...");
     entityParser = new EntityParser(corpusDir, reader, docNames,
@@ -193,25 +192,25 @@ public class CorpusProcessor {
   private void writeCorpus(String file) throws IOException {
     PrintWriter out = new PrintWriter(file);
     out.printf("Corpus directory: %s\n", corpusDir);
-    // ObjectToCounterMap<String> tokenCounter = new
-    // ObjectToCounterMap<String>();
-    // int numTokens = 0;
-    // for (CharSequence cSeq : cSeqs) {
-    // char[] cs = cSeq.toString().toCharArray();
-    // for (String token : tokenizerFactory.tokenizer(cs, 0, cs.length)) {
-    // tokenCounter.increment(token);
-    // numTokens++;
-    // }
-    // }
-    // out.printf("# tokens: %d\n", numTokens);
+    ObjectToCounterMap<String> tokenCounter = new ObjectToCounterMap<String>();
+    int numTokens = 0;
+    for (CharSequence cSeq : cSeqs) {
+      char[] cs = cSeq.toString().toCharArray();
+      for (String token : tokenizerFactory.tokenizer(cs, 0, cs.length)) {
+        tokenCounter.increment(token);
+        numTokens++;
+      }
+    }
+    out.printf("# tokens: %d\n", numTokens);
     out.printf("# unique tokens: %d (minTokenCount = %d)\n",
         getVocabularySize(), minTokenCount);
     out.printf("# entities: %d (minEntityCount = %d)\n", getNumEntities(),
         minEntityCount);
-    // out.println("TOKEN COUNTS");
-    // for (String token : tokenCounter.keysOrderedByCountList())
-    // System.out.printf("%9d %s\n", tokenCounter.getCount(token), token);
-
+    out.println("TOKEN COUNTS");
+    for (String token : tokenCounter.keysOrderedByCountList()) {
+      out.printf("%9d %s\n", tokenCounter.getCount(token), token);
+    }
+    
     out.close();
   }
 
@@ -258,12 +257,15 @@ public class CorpusProcessor {
    * @return
    * @throws IOException
    */
-  private CharSequence[] readCorpus(ArrayList<String> docNames)
-      throws IOException {
+  private CharSequence[] readCorpus(ArrayList<String> docNames) {
     ArrayList<CharSequence> documents = new ArrayList<CharSequence>(
         docNames.size());
-    for (String doc : docNames) {
-      documents.add(reader.readDocument(corpusDir + "/" + doc));
+    try {
+      for (String doc : docNames) {
+        documents.add(reader.readDocument(corpusDir + "/" + doc));
+      }
+    } catch (IOException e) {
+      // do nothing to continue reading other docs
     }
 
     return documents.<CharSequence> toArray(new CharSequence[documents.size()]);
@@ -374,8 +376,7 @@ public class CorpusProcessor {
     factory = new NonAlphaStopTokenizerFactory(factory);
     factory = new LowerCaseTokenizerFactory(factory);
     factory = new EnglishStopTokenizerFactory(factory);
-    // TODO(trung): un-comment to specify a stop word set
-    // factory = new StopTokenizerFactory(factory, STOPWORD_SET);
+    factory = new StopTokenizerFactory(factory, stopWords);
 
     return factory;
   }

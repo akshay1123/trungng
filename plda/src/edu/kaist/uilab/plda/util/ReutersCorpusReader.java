@@ -11,6 +11,7 @@ import edu.kaist.uilab.plda.file.TextFiles;
  */
 public class ReutersCorpusReader {
   
+  private static final int MIN_LENGTH = 150;
   private String mCorpusFile;
   
   /**
@@ -51,15 +52,18 @@ public class ReutersCorpusReader {
       if (pos > 0) {
         body = body.substring(0, pos);
       }
-      TextFiles.writeFile(outdir + "/" + docId++ + ".txt",
-          title.toLowerCase() + "\n" + body);
+      if (body.length() > MIN_LENGTH) {
+        TextFiles.writeFile(outdir + "/" + docId++ + ".txt",
+            title.toLowerCase() + "\n" + body);
+      }  
       // ignore the part just read
       text = text.substring(end + "</BODY>".length());
     } while (text.length() > 0);
   }
   
   public static void main(String args[]) throws IOException {
-    ReutersCorpusReader reader = new ReutersCorpusReader("data/reuters/reut2-000.sgm");
-    reader.corpusToDocuments("data/reuterstest", 0);
+    // note: run this program as is (reut01-05 have been read)
+    ReutersCorpusReader reader = new ReutersCorpusReader("/home/trung/elda/data/reuters/reut2-007.sgm");
+    reader.corpusToDocuments("/home/trung/elda/data/reuterstest", 5968);
   }
 }

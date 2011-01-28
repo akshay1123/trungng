@@ -180,7 +180,7 @@ public class EntityLdaGibbsSampler {
 
       // after burn-in & some sample lags we can collect a sample
       // note that we are not saving z[m][n] for now
-      if (iter > burnIn && (iter - burnIn) % sampleLags == 0) {
+      if (iter >= burnIn && (iter - burnIn) % sampleLags == 0) {
         System.out.printf("\nCollected a sample at iteration %d", iter);
         updateParams();
         samplesCollected++;
@@ -277,13 +277,8 @@ public class EntityLdaGibbsSampler {
       for (int rank = 0; rank < maxWordsPerTopic && rank < topWords.size(); ++rank) {
         int wordId = topWords.get(rank);
         String word = symbolTable.idToSymbol(wordId);
-//        int wordCount = sample.wordCount(wordId);
-//        int topicWordCount = sample.topicWordCount(topic, wordId);
-//        double topicWordProb = sample.topicWordProb(topic, wordId);
-//        double z = binomialZ(topicWordCount, topicCount, wordCount, numTokens);
-//        writer.printf("%6d  %15s  %7d   %4.3f  %8.1f\n", wordId, word,
-//            topicWordCount, topicWordProb, z);
-        writer.println(word);
+        writer.printf("%6d  %15s  %7d   %4.3f\n", wordId, word, cwt[wordId][topic],
+            phi[wordId][topic]);
       }
     }
     writer.close();
@@ -307,10 +302,7 @@ public class EntityLdaGibbsSampler {
       writer.println("----------------------");
       for (int rank = 0; rank < topTopics.size() && rank < maxTopicsPerDoc; ++rank) {
         int topic = topTopics.get(rank);
-        int docTopicCount = cdt[doc][topic];
-        double docTopicProb = (cdt[doc][topic] + alpha) / (cdtsum[doc] + numTopics * alpha);
-        writer.printf("%5d  %7d   %4.3f\n", topic, docTopicCount,
-            docTopicProb);
+        writer.printf("%5d  %7d   %4.3f\n", topic, cdt[doc][topic], cdt[doc][topic]);
       }
       writer.println();
     }
@@ -336,8 +328,7 @@ public class EntityLdaGibbsSampler {
       writer.println("----------------------");
       for (int rank = 0; rank < topTopics.size() && rank < maxTopicsPerEntity; rank++) {
         int topic = topTopics.get(rank);
-        double entTopicProb = (cpt[ent][topic] + gamma) / (cptsum[ent] + numTopics * gamma);
-        writer.printf("%5d  %7d   %4.3f\n", topic, cpt[ent][topic], entTopicProb);
+        writer.printf("%5d  %7d   %4.3f\n", topic, cpt[ent][topic], thetap[ent][topic]);
       }
       writer.println();
     }
@@ -394,24 +385,28 @@ public class EntityLdaGibbsSampler {
       z[m] = new int[N];
       ro[m] = new int[N];
       s[m] = new int[N];
-      int randZ, randRo, randS; // the sample topic
+      int randZ, randRo; // the sample topic
       Entity entity;
       for (int n = 0; n < N; n++) {
         randZ = (int) (Math.random() * numTopics);
-        entity = documentEntities[m][(int) (Math.random() * documentEntities[m].length)];
-        randRo = corpusEntitySet.toId(entity);  
-        randS = (int) (Math.random() * 2); // one of DOCUMENT or ENTITY
         z[m][n] = randZ;
-        s[m][n] = randS;
-        // in fact, if (s[i] = DOCUMENT) then this is not important
-        ro[m][n] = randRo;
         cwt[documents[m][n]][randZ]++; // word i assigned to topic randZ
         cwtsum[randZ]++; // total number of words assigned to topic randZ
+        if (documentEntities[m].length == 0) {
+          s[m][n] = DOCUMENT;
+        } else {
+          // if document has entities, randS is one of DOCUMENT or ENTITY
+          s[m][n] = (int) (Math.random() * 2); 
+        }  
         if (s[m][n] == DOCUMENT) {
           // a word in document m assigned to topic k of document m
           cdt[m][randZ]++;
           cdtsum[m]++;
         } else {
+          // the word is assigned to topic k of an entity randRo
+          entity = documentEntities[m][(int) (Math.random() * documentEntities[m].length)];
+          randRo = corpusEntitySet.toId(entity);
+          ro[m][n] = randRo;
           cpt[randRo][randZ]++;
           cptsum[randRo]++;
         }
@@ -427,7 +422,7 @@ public class EntityLdaGibbsSampler {
    * Updates the parameters for the newly collected sample.
    */
   private void updateParams() {
-    // thetadsum[][] (D x K) -- sum of samples (to return the average sample)
+    // thetad[][] (D x K)
     double tAlpha = numTopics * alpha;
     for (int m = 0; m < numDocuments; m++) {
       for (int k = 0; k < numTopics; k++) {
@@ -435,8 +430,7 @@ public class EntityLdaGibbsSampler {
       }
     }
 
-    // thetapsum[][] (H x K) -- sum of sample parameters (to return the average
-    // sample)
+    // thetap[][] (H x K)
     double tGamma = numTopics * gamma;
     for (int h = 0; h < numEntities; h++) {
       for (int k = 0; k < numTopics; k++) {
@@ -444,7 +438,7 @@ public class EntityLdaGibbsSampler {
       }
     }
 
-    // phisum[][] (K X V) -- sum of samples (to return the average sample)
+    // phi[][]
     double vBeta = vocabularySize * beta;
     for (int k = 0; k < numTopics; k++) {
       for (int i = 0; i < vocabularySize; i++) {
@@ -471,8 +465,8 @@ public class EntityLdaGibbsSampler {
     // not counting the i_th word
     cwt[i][topic]--;
     cwtsum[topic]--;
-    if (s[m][n] == DOCUMENT) { // the i_th word was assigned a topic of document
-                               // m
+    // the i_th word was assigned a topic of document m
+    if (s[m][n] == DOCUMENT) {
       cdt[m][topic]--;
       cdtsum[m]--;
     } else {
@@ -486,22 +480,30 @@ public class EntityLdaGibbsSampler {
     double p, wordP;
     Entity ent = null;
     ArrayList<SamplingSet> list = new ArrayList<SamplingSet>();
-    for (int k = 0; k < numTopics; k++) {
-      for (int e = 0; e < documentEntities[m].length; e++) {
+    // if document m has no entities, perform lda
+    if (documentEntities[m].length == 0) {
+      for (int k = 0; k < numTopics; k++) {
+        p = (cwt[i][k] + beta) / (cwtsum[k] + vBeta) * (cdt[m][k] + alpha) / (cdtsum[m] + tAlpha);
+        list.add(new SamplingSet(k, -1, DOCUMENT, p));
+      }
+    } else {
+      for (int k = 0; k < numTopics; k++) {
         wordP = (cwt[i][k] + beta) / (cwtsum[k] + vBeta);
-        ent = documentEntities[m][e];
-        /**
-         * We use "uniform dist", i.e., equal probability for each entity that appears
-         * in a document. So, if an entity appears ent.getCount() times, its probability
-         * is multiplied by that amount. But in theory, this is still uniform for each
-         * entity that appears in the document.
-         */
-        // s[i] = DOCUMENT
-        p = wordP * ((cdt[m][k] + alpha) / (cdtsum[m] + tAlpha)) * ent.getCount();
-        list.add(new SamplingSet(k, corpusEntitySet.toId(ent), DOCUMENT, p));
-        // s[i] = ENTITY
-        p = wordP * ((cpt[e][k] + gamma) / (cptsum[e] + tGamma)) * ent.getCount();
-        list.add(new SamplingSet(k, corpusEntitySet.toId(ent), ENTITY, p));
+        for (int e = 0; e < documentEntities[m].length; e++) {
+          ent = documentEntities[m][e];
+          /**
+           * We use "uniform dist", i.e., equal probability for each entity that appears
+           * in a document. So, if an entity appears ent.getCount() times, its probability
+           * is multiplied by that amount. But in theory, this is still uniform for each
+           * entity that appears in the document.
+           */
+          // s[i] = DOCUMENT
+          p = wordP * ((cdt[m][k] + alpha) / (cdtsum[m] + tAlpha)) * ent.getCount();
+          list.add(new SamplingSet(k, corpusEntitySet.toId(ent), DOCUMENT, p));
+          // s[i] = ENTITY
+          p = wordP * ((cpt[e][k] + gamma) / (cptsum[e] + tGamma)) * ent.getCount();
+          list.add(new SamplingSet(k, corpusEntitySet.toId(ent), ENTITY, p));
+        }
       }
     }
     SamplingSet sample = sample(list);

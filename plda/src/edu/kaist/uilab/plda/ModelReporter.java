@@ -4,17 +4,15 @@ import java.io.File;
 import java.io.IOException;
 
 import edu.kaist.uilab.plda.data.CorpusProcessor;
+import edu.kaist.uilab.plda.file.NYTimesDocumentReader;
 import edu.kaist.uilab.plda.file.ReutersDocumentReader;
 
 /**
  * TODO(trung):
  * 1. Try beta instead of uniform
- * 3. Limit the number of entities for a document (top 10?, top 60%)
- * 4. Varies min token, min entity (of course)
  * 
  * 6. The UNIFORM assumption for entities might not be a good one (depends on
  * the corpus). Discrete (~approximate with the frequency of entities)
- * (This is similar to 2)
  * 
  * @author trung nguyen
  */
@@ -24,20 +22,68 @@ public class ModelReporter {
     double alpha = 0.1;
     double beta = 0.01;
     double gamma = 0.1;
-    int numTopics = 200;
-    int minTokenCount = 5;
+    int numTopics = 30;
+    int minTokenCount = 3;
     int minEntityCount = 10;
-    int topStopWords = 40;
+    int topStopWords = 30;
     int maxEntitiesPerDoc = 5;
-    String outputDir = "/home/trung/elda/reuterstest200_ent10_iter100_maxent5";
+    String outputDir = "/home/trung/elda/nytest30_ent10_iter200_maxent5";
     CorpusProcessor corpus;
     EntityLdaGibbsSampler sampler;
     
     (new File(outputDir)).mkdir();
 //    corpus = new CorpusProcessor("data/reuterstest", new DefaultDocumentReader(),
 //        minTokenCount, minEntityCount, topStopWords, maxEntitiesPerDoc);
-    corpus = new CorpusProcessor("data/reuterstest", new ReutersDocumentReader(),
-        minTokenCount, minEntityCount, topStopWords, maxEntitiesPerDoc);
+    String[] stopword = new String[] {
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "ten",
+        "now",
+        "today",
+        "week",
+        "month",
+        "year",
+        "years",
+        "weeks",
+        "months",
+        "did",
+        "made",
+        "make",
+        "billion",
+        "&lt;",
+        "mln",
+        "cts",
+        "dlrs",
+        "qtr",
+        "pct",
+        "vs",
+        "lt",
+        "reuter",
+        "shr",
+        "billion",
+        "said",
+        "what",
+        "you",
+        "since",
+        "off",
+        "still",
+        "do",
+        "much",
+        "several",
+        "does",
+        "day",
+        "our",
+        "go",
+    };
+    corpus = new CorpusProcessor("/home/trung/elda/data/nytimes/technology", new NYTimesDocumentReader(),
+        minTokenCount, minEntityCount, topStopWords, maxEntitiesPerDoc, stopword);
     corpus.process();
     corpus.reportCorpus(outputDir + "/corpus.txt",
         outputDir + "/docNames.txt",
@@ -54,7 +100,7 @@ public class ModelReporter {
         alpha,
         beta,
         gamma);
-    sampler.setSamplerParameters(2000, 100, 20, 10);
+    sampler.setSamplerParameters(3000, 200, 20, 2);
     sampler.setOutputParameters(corpus.getSymbolTable(), outputDir, 30, 10, 10);
     System.out.println("Latent Dirichlet Allocation using Gibbs Sampling.");
     sampler.doGibbsSampling();

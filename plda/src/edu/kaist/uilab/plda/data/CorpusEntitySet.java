@@ -49,21 +49,21 @@ public class CorpusEntitySet {
      */
     for (Entity entity : entities) {
       if (!map.containsKey(entity)) {
-        map.put(entity, new Pair(entity.count, -1));
+        map.put(entity, new Pair(1, -1));
       } else {
         // increases count for the entity
         Pair pair = map.get(entity);
-        pair.count += entity.count;
+        pair.count += 1; // only count each entity (of a document) once
       }
     }
   }
   
   void add(Entity entity) {
     if (!map.containsKey(entity)) {
-      map.put(entity, new Pair(entity.count, -1));
+      map.put(entity, new Pair(1, -1));
     } else {
       Pair pair = map.get(entity);
-      pair.count += entity.count;
+      pair.count += 1;
     }
   }
 
