@@ -67,6 +67,8 @@ public class EntityLdaGibbsSampler {
   private int cdtsum[];
   // cptsum[h] = # words assigned to a topic of the person/entity h
   private int cptsum[];
+  // document entity sum (count number of (non-unique)) entity
+  private int docEntityCount[];
 
   // K X V : phi matrix of the current sample
   private double phi[][];
@@ -113,8 +115,19 @@ public class EntityLdaGibbsSampler {
     this.beta = beta;
     this.gamma = gamma;
     this.numDocuments = documents.length;
+    initDocEntityCount();
   }
 
+  private void initDocEntityCount() {
+    docEntityCount = new int[documentEntities.length];
+    for (int doc = 0; doc < docEntityCount.length; doc++) {
+      docEntityCount[doc] = 0;
+      for (Entity e : documentEntities[doc]) {
+        docEntityCount[doc] += e.getCount();
+      }
+    }
+  }
+  
   /**
    * Sets the parameters of the sampler.
    * 
@@ -501,7 +514,7 @@ public class EntityLdaGibbsSampler {
           p = wordP * ((cdt[m][k] + alpha) / (cdtsum[m] + tAlpha)) * ent.getCount();
           list.add(new SamplingSet(k, corpusEntitySet.toId(ent), DOCUMENT, p));
           // s[i] = ENTITY
-          p = wordP * ((cpt[e][k] + gamma) / (cptsum[e] + tGamma)) * ent.getCount();
+          p = wordP * ((cpt[e][k] + gamma) / (cptsum[e] + tGamma)) / docEntityCount[m] * ent.getCount();
           list.add(new SamplingSet(k, corpusEntitySet.toId(ent), ENTITY, p));
         }
       }
@@ -523,7 +536,7 @@ public class EntityLdaGibbsSampler {
 
     return sample;
   }
-
+  
   /**
    * Samples a {@link SamplingSet} from the given discrete distribution.
    * 

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import edu.kaist.uilab.plda.data.CorpusProcessor;
+import edu.kaist.uilab.plda.file.DefaultDocumentReader;
 import edu.kaist.uilab.plda.file.NYTimesDocumentReader;
 import edu.kaist.uilab.plda.file.ReutersDocumentReader;
 
@@ -22,12 +23,12 @@ public class ModelReporter {
     double alpha = 0.1;
     double beta = 0.01;
     double gamma = 0.1;
-    int numTopics = 10;
+    int numTopics = 20;
     int minTokenCount = 3;
-    int minEntityCount = 10;
-    int topStopWords = 100;
+    int minEntityCount = 15;
+    int topStopWords = 40;
     int maxEntitiesPerDoc = 5;
-    String outputDir = "/home/trung/elda/nytest10_ent10_iter200_maxent5";
+    String outputDir = "/home/trung/elda/nytimesgeneral20_ent15_iter100_maxent5";
     CorpusProcessor corpus;
     EntityLdaGibbsSampler sampler;
     
@@ -53,10 +54,6 @@ public class ModelReporter {
         "years",
         "weeks",
         "months",
-        "did",
-        "made",
-        "make",
-        "billion",
         "&lt;",
         "mln",
         "cts",
@@ -67,7 +64,6 @@ public class ModelReporter {
         "lt",
         "reuter",
         "shr",
-        "billion",
         "said",
         "what",
         "you",
@@ -75,7 +71,6 @@ public class ModelReporter {
         "off",
         "still",
         "do",
-        "much",
         "several",
         "does",
         "day",
@@ -83,14 +78,34 @@ public class ModelReporter {
         "our",
         "go",
         "these",
-        "very",
         "while",
         "then",
         "next",
         "me",
         "ago",
+        "little",
+        "too",
+        "early",
+        "already",
+        "every",
+        "where",
+        "few",
+        "each",
+        "yesterday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+        "my",
+        "here",
+        "how",
     };
-    corpus = new CorpusProcessor("/home/trung/elda/data/nytimes/technology", new NYTimesDocumentReader(),
+//    corpus = new CorpusProcessor("/home/trung/elda/data/nytimes/general", new DefaultDocumentReader(),
+//        minTokenCount, minEntityCount, topStopWords, maxEntitiesPerDoc, stopword);
+    corpus = new CorpusProcessor("/home/trung/elda/data/nytimes/general", new NYTimesDocumentReader(),
         minTokenCount, minEntityCount, topStopWords, maxEntitiesPerDoc, stopword);
     corpus.process();
     corpus.reportCorpus(outputDir + "/corpus.txt",
@@ -108,7 +123,7 @@ public class ModelReporter {
         alpha,
         beta,
         gamma);
-    sampler.setSamplerParameters(3000, 200, 20, 2);
+    sampler.setSamplerParameters(3000, 100, 20, 2);
     sampler.setOutputParameters(corpus.getSymbolTable(), outputDir, 30, 10, 10);
     System.out.println("Latent Dirichlet Allocation using Gibbs Sampling.");
     sampler.doGibbsSampling();
