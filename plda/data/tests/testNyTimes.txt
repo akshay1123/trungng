@@ -1,0 +1,5 @@
+http://example.com
+Headline
+Published date
+Trung Nguyen lives in Daejeon.
+He studied his bachelor degree at the Korea Advanced University of Science and Technology.
