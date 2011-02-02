@@ -1,7 +1,5 @@
 package edu.kaist.uilab.plda.data;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -48,7 +46,6 @@ public class CorpusEntitySet {
   };
 
   HashMap<Entity, Pair> map;
-  PrintWriter out;
   
   static final class Pair {
     int count;
@@ -62,11 +59,6 @@ public class CorpusEntitySet {
   
   CorpusEntitySet() {
     map = new HashMap<Entity, Pair>();
-    try {
-      out = new PrintWriter("test.txt");
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
   }
   
   /**
@@ -116,7 +108,6 @@ public class CorpusEntitySet {
    *       the id of {@code entity}, -1 if the entity does not belong to the set
    */
   public int toId(Entity entity) {
-//    out.println(entity);
     return map.containsKey(entity) ? map.get(entity).id : NOT_AN_ENTITY;
   }
   
@@ -196,12 +187,5 @@ public class CorpusEntitySet {
       entry.getKey().count = pair.count;
       pair.id = idx++;
     }
-  }
-  
-  /**
-   * Closes the temporary file used.
-   */
-  public void closeOutput() {
-    out.close();
   }
 }

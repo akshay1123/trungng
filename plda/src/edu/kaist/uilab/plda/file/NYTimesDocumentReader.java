@@ -19,6 +19,7 @@ public class NYTimesDocumentReader implements DocumentReader {
       reader.readLine();
     }
     String content = reader.readLine();
+    reader.close();
     int pos = content.indexOf('-');
     // remove the reporting LOCATION at the beginning of an article (if exists)
     if (pos > 0 && pos < 30) {
@@ -26,5 +27,6 @@ public class NYTimesDocumentReader implements DocumentReader {
     } else {
       return content;
     }
+    
   }
 }

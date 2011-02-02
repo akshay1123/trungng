@@ -22,9 +22,12 @@ import edu.kaist.uilab.plda.data.Entity;
 /**
  * Implementation of the entity lda Gibbs sampler.
  * 
+ * <p> This sampler uses the beta distribution for the switch (choosing
+ * between document and entity topic).
+ * 
  * @author Trung Nguyen (trung.ngvan@gmail.com)
  */
-public class EntityLdaGibbsSampler {
+public class EntityLdaGibbsSampler2 {
   private static final int DOCUMENT = 0;
   private static final int ENTITY = 1;
 
@@ -45,6 +48,8 @@ public class EntityLdaGibbsSampler {
   private double alpha = 0.1;
   private double beta = 0.01;
   private double gamma = 0.1;
+  // TODO(trung): vary eta
+  private double eta_d, eta_e = 0.1;
 
   // sampling parameters and variables
   private int numIterations = 1000;
@@ -66,7 +71,7 @@ public class EntityLdaGibbsSampler {
     private static final long serialVersionUID = 7107787670680110327L;
 
     int[][] z; // topic assignment for each word z[m][n] (z[i])
-    int[][] ro; // author assignment for each word i (ro[i])
+    int[][] rho; // author assignment for each word i (rho[i])
     // switch for each word i :s[i]
     // s[i] = DOCUMENT: topic of assignment for this word is that of a document
     // s[i] = ENTITY: topic of assignment for this word is that of an entity
@@ -80,31 +85,35 @@ public class EntityLdaGibbsSampler {
     // cdt[m][k] = # times that a word in document m is assigned topic k (OF
     // DOCUMENT m)
     int cdt[][];
-    // H X T: author-topic count
-    // cpt[h][k] = # times that a word "of" person/entity h is assigned topic k
+    // H X T: entity-topic count
+    // cet[h][k] = # times that a word "of" entity h is assigned topic k
     // (OF ENTITY h)
-    int cpt[][];
+    int cet[][];
 
+    // cdm[m] = # times the switch of a word in document m equals DOCUMENT
+    // cem[m] = documents[m].length - cdm[m]
+    int cdm[];
+    int cem[];
     // cwtsum[k] = # words assigned to topic k
     int cwdtsum[];
     int cwetsum[];
     // cdtsum[m] = # words assigned to a topic of the document m
     int cdtsum[];
-    // cptsum[h] = # words assigned to a topic of the person/entity h
-    int cptsum[];
+    // cetsum[h] = # words assigned to a topic of the entity h
+    int cetsum[];
 
     // K X V : phi matrix of the current sample
     double phi[][];
     // D x K : thetad matrix of the current sample
     double thetad[][];
     // H x K : thetap matrix of the current sample
-    double thetap[][];
+    double thetae[][];
   }
 
   /**
    * Default constructor -- for testing purpose only.
    */
-  public EntityLdaGibbsSampler() {
+  public EntityLdaGibbsSampler2() {
   }
 
   /**
@@ -116,26 +125,38 @@ public class EntityLdaGibbsSampler {
    * @param documents
    * @param documentEntities
    * @param corpusEntitySet
-   * @param alpha
-   * @param beta
-   * @param gamma
    */
-  public EntityLdaGibbsSampler(int numTopics, int vocabularySize,
+  public EntityLdaGibbsSampler2(int numTopics, int vocabularySize,
       int numEntities, int[][] documents, Entity[][] documentEntities,
-      CorpusEntitySet corpusEntitySet, double alpha, double beta, double gamma) {
+      CorpusEntitySet corpusEntitySet) {
     this.numTopics = numTopics;
     this.vocabularySize = vocabularySize;
     this.numEntities = numEntities;
     this.documents = documents;
     this.documentEntities = documentEntities;
     this.corpusEntitySet = corpusEntitySet;
-    this.alpha = alpha;
-    this.beta = beta;
-    this.gamma = gamma;
     this.numDocuments = documents.length;
     initDocEntityCount();
   }
 
+  /**
+   * Sets the priors for this sampler.
+   * 
+   * @param alpha
+   * @param beta
+   * @param gamma
+   * @param eta_d
+   * @param eta_e
+   */
+  public void setPriors(double alpha, double beta, double gamma, double eta_d,
+      double eta_e) {
+    this.alpha = alpha;
+    this.beta = beta;
+    this.gamma = gamma;
+    this.eta_d = eta_d;
+    this.eta_e = eta_e;
+  }
+  
   /**
    * Inits entity count for each document.
    */
@@ -235,7 +256,7 @@ public class EntityLdaGibbsSampler {
         for (int n = 0; n < documents[m].length; n++) {
           SamplingSet sample = sampleFullConditional(m, n);
           model.z[m][n] = sample.z;
-          model.ro[m][n] = sample.rho;
+          model.rho[m][n] = sample.rho;
           model.s[m][n] = sample.s;
         }
       }
@@ -272,7 +293,7 @@ public class EntityLdaGibbsSampler {
    * @return
    */
   public double[][] getThetap() {
-    return model.thetap;
+    return model.thetae;
   }
 
   /**
@@ -394,7 +415,7 @@ public class EntityLdaGibbsSampler {
     for (int ent = 0; ent < numEntities; ent++) {
       ObjectToCounterMap<Integer> counter = new ObjectToCounterMap<Integer>();
       for (int topic = 0; topic < numTopics; topic++) {
-        counter.set(topic, model.cpt[ent][topic]);
+        counter.set(topic, model.cet[ent][topic]);
       }
       List<Integer> topTopics = counter.keysOrderedByCountList();
       if (topTopics.size() > 0) {
@@ -403,8 +424,8 @@ public class EntityLdaGibbsSampler {
         writer.println("----------------------");
         for (int rank = 0; rank < topTopics.size() && rank < maxTopicsPerEntity; rank++) {
           int topic = topTopics.get(rank);
-          writer.printf("%5d  %7d   %4.3f\n", topic, model.cpt[ent][topic],
-              model.thetap[ent][topic]);
+          writer.printf("%5d  %7d   %4.3f\n", topic, model.cet[ent][topic],
+              model.thetae[ent][topic]);
         }
         writer.println();
       }
@@ -432,13 +453,12 @@ public class EntityLdaGibbsSampler {
     (new File(outputDir + "/" + iter)).mkdir();
     printDocumentTopics(model.thetad, outputDir + "/" + iter
         + "/documentTopics.csv");
-    printEntityTopics(model.thetap, outputDir + "/" + iter
+    printEntityTopics(model.thetae, outputDir + "/" + iter
         + "/entityTopics.csv");
     printTopicTerms(model.phi, outputDir + "/" + iter + "/topicsTerms.csv");
     printTopWords(outputDir + "/" + iter + "/topTopicWords.txt");
     printTopDocTopics(outputDir + "/" + iter + "/topDocTopics.txt");
     printTopEntityTopics(outputDir + "/" + iter + "/topEntityTopics.txt");
-    // TODO(trung): refactor code
     ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(
         outputDir + "/" + iter + "/model.gz"));
     out.writeObject(model);
@@ -458,23 +478,26 @@ public class EntityLdaGibbsSampler {
     model.cwetsum = new int[numTopics];
     model.cdt = new int[numDocuments][numTopics];
     model.cdtsum = new int[numDocuments];
-    model.cpt = new int[numEntities][numTopics];
-    model.cptsum = new int[numEntities];
+    model.cet = new int[numEntities][numTopics];
+    model.cetsum = new int[numEntities];
+    model.cdm = new int[numDocuments];
+    model.cem = new int[numDocuments];
 
-    // sample values of z[i], ro[i], s[i] randomly ([1..numTopics] as the
+    // sample values of z[i], rho[i], s[i] randomly ([1..numTopics] as the
     // initial state of the Markov chain
     model.z = new int[numDocuments][];
-    model.ro = new int[numDocuments][];
+    model.rho = new int[numDocuments][];
     model.s = new int[numDocuments][];
     for (int m = 0; m < numDocuments; m++) {
       int N = documents[m].length;
       model.z[m] = new int[N];
-      model.ro[m] = new int[N];
+      model.rho[m] = new int[N];
       model.s[m] = new int[N];
-      int randZ, randRo; // the sample topic
+      int randZ, randRho; // the sample topic
       for (int n = 0; n < N; n++) {
         randZ = (int) (Math.random() * numTopics);
         model.z[m][n] = randZ;
+        // it seems that first sample can be initialized randomly
         if (documentEntities[m].length == 0) {
           model.s[m][n] = DOCUMENT;
         } else {
@@ -489,20 +512,22 @@ public class EntityLdaGibbsSampler {
           // a word in document m assigned to topic k of document m
           model.cdt[m][randZ]++;
           model.cdtsum[m]++;
+          model.cdm[m]++;
         } else {
           model.cwet[documents[m][n]][randZ]++;
           model.cwetsum[randZ]++;
           // the word is assigned to topic k of an entity randRo
-          randRo = getRandEntity(m);
-          model.ro[m][n] = randRo;
-          model.cpt[randRo][randZ]++;
-          model.cptsum[randRo]++;
+          randRho = getRandEntity(m);
+          model.rho[m][n] = randRho;
+          model.cet[randRho][randZ]++;
+          model.cetsum[randRho]++;
+          model.cem[m]++;
         }
       }
     }
-
+    
     model.thetad = new double[numDocuments][numTopics];
-    model.thetap = new double[numEntities][numTopics];
+    model.thetae = new double[numEntities][numTopics];
     model.phi = new double[numTopics][vocabularySize];
   }
 
@@ -538,7 +563,7 @@ public class EntityLdaGibbsSampler {
     double tGamma = numTopics * gamma;
     for (int h = 0; h < numEntities; h++) {
       for (int k = 0; k < numTopics; k++) {
-        model.thetap[h][k] = (model.cpt[h][k] + gamma) / (model.cptsum[h] + tGamma);
+        model.thetae[h][k] = (model.cet[h][k] + gamma) / (model.cetsum[h] + tGamma);
       }
     }
 
@@ -553,7 +578,7 @@ public class EntityLdaGibbsSampler {
   }
 
   /**
-   * Samples a set of hidden variables (z, ro, s) for the n_th word in document
+   * Samples a set of hidden variables (z, rho, s) for the n_th word in document
    * m.
    * 
    * @param m
@@ -566,7 +591,7 @@ public class EntityLdaGibbsSampler {
   private SamplingSet sampleFullConditional(int m, int n) {
     int i = documents[m][n];
     int topic = model.z[m][n];
-    int entity = model.ro[m][n];
+    int entity = model.rho[m][n];
     // the i_th word was assigned a topic of document m
     if (model.s[m][n] == DOCUMENT) {
       // not counting the i_th word
@@ -574,11 +599,13 @@ public class EntityLdaGibbsSampler {
       model.cwdtsum[topic]--;
       model.cdt[m][topic]--;
       model.cdtsum[m]--;
+      model.cdm[m]--;
     } else {
       model.cwet[i][topic]--;
       model.cwetsum[topic]--;
-      model.cpt[entity][topic]--;
-      model.cptsum[entity]--;
+      model.cet[entity][topic]--;
+      model.cetsum[entity]--;
+      model.cem[m]--;
     }
 
     double vBeta = vocabularySize * beta;
@@ -586,33 +613,27 @@ public class EntityLdaGibbsSampler {
     double tGamma = numTopics * gamma;
     Entity ent = null;
     ArrayList<SamplingSet> list = new ArrayList<SamplingSet>();
-    // if document m has no entities, perform lda
-    if (documentEntities[m].length == 0) {
-      for (int k = 0; k < numTopics; k++) {
-        list.add(new SamplingSet(k, -1, DOCUMENT, (model.cwdt[i][k] + beta)
-            / (model.cwdtsum[k] + vBeta) * (model.cdt[m][k] + alpha)
-            / (model.cdtsum[m] + tAlpha)));
-      }
-    } else {
-      for (int k = 0; k < numTopics; k++) {
-        // s[i] = DOCUMENT
-        list.add(new SamplingSet(k, -1, DOCUMENT, (model.cwdt[i][k] + beta)
-            / (model.cwdtsum[k] + vBeta) * (model.cdt[m][k] + alpha)
-            / (model.cdtsum[m] + tAlpha)));
-        for (int e = 0; e < documentEntities[m].length; e++) {
-          ent = documentEntities[m][e];
-          /**
-           * We use "uniform dist", i.e., equal probability for each entity that
-           * appears in a document. So, if an entity appears ent.getCount()
-           * times, its probability is multiplied by that amount. But in theory,
-           * this is still uniform for each entity that appears in the document.
-           */
-          // s[i] = ENTITY
-          list.add(new SamplingSet(k, corpusEntitySet.toId(ent), ENTITY,
-              (model.cwet[i][k] + beta) / (model.cwetsum[k] + vBeta)
-                  * ((model.cpt[e][k] + gamma) / (model.cptsum[e] + tGamma))
-                  / docEntityCount[m] * ent.getCount()));
-        }
+    for (int k = 0; k < numTopics; k++) {
+      double p = ((model.cwdt[i][k] + beta) / (model.cwdtsum[k] + vBeta))
+                * ((model.cdt[m][k] + alpha) / (model.cdtsum[m] + tAlpha))
+                * (model.cdm[m] + eta_d);
+      // sampling set for all s[i] = DOCUMENT
+      list.add(new SamplingSet(k, -1, DOCUMENT, p));
+      for (int e = 0; e < documentEntities[m].length; e++) {
+        ent = documentEntities[m][e];
+        /**
+         * We use "uniform dist", i.e., equal probability for each entity that
+         * appears in a document. So, if an entity appears ent.getCount()
+         * times, its probability is multiplied by that amount. But in theory,
+         * this is still uniform for each entity that appears in the document.
+         */
+        // s[i] = ENTITY
+        p = (model.cwet[i][k] + beta) / (model.cwetsum[k] + vBeta)
+            * ((model.cet[e][k] + gamma) / (model.cetsum[e] + tGamma))
+            * (model.cem[m] + eta_e)
+            / docEntityCount[m]
+            * ent.getCount();
+        list.add(new SamplingSet(k, corpusEntitySet.toId(ent), ENTITY, p));
       }
     }
     SamplingSet sample = sample(list);
@@ -624,11 +645,13 @@ public class EntityLdaGibbsSampler {
       model.cwdtsum[topic]++;
       model.cdt[m][topic]++;
       model.cdtsum[m]++;
+      model.cdm[m]++;
     } else {
       model.cwet[i][topic]++;
       model.cwetsum[topic]++;
-      model.cpt[sample.rho][topic]++;
-      model.cptsum[sample.rho]++;
+      model.cet[sample.rho][topic]++;
+      model.cetsum[sample.rho]++;
+      model.cem[m]++;
     }
 
     return sample;

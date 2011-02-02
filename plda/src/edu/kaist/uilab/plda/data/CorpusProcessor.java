@@ -85,7 +85,14 @@ public class CorpusProcessor {
         docNames.add(file.getName());
       }
     }
-//    docNames = new ArrayList<String>(docNames.subList(0, 1000));
+    // TODO(trung): remove after testing
+//    ArrayList<String> holder = new ArrayList<String>(3000);
+//    for (int i = 0; i < 3000; i++) {
+//      holder.add(docNames.get((int) (Math.random() * docNames.size())));
+//    }
+//    docNames = holder;
+    
+    //docNames = new ArrayList<String>(docNames.subList(0, 1000));
 
     System.out.println("\nParsing the corpus for entities...");
     entityParser = new EntityParser(corpusDir, reader, docNames,
