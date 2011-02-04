@@ -90,10 +90,10 @@ public class EntityLdaGibbsSampler2 {
     // (OF ENTITY h)
     int cet[][];
 
-    // cdm[m] = # times the switch of a word in document m equals DOCUMENT
-    // cem[m] = documents[m].length - cdm[m]
-    int cdm[];
-    int cem[];
+    // cd[m] = # times the switch of a word in document m equals DOCUMENT
+    // ce[m] = documents[m].length - cd[m]
+    int cd[];
+    int ce[];
     // cwtsum[k] = # words assigned to topic k
     int cwdtsum[];
     int cwetsum[];
@@ -365,7 +365,8 @@ public class EntityLdaGibbsSampler2 {
           model.cwdtsum[topic] + model.cwetsum[topic], model.cwdtsum[topic],
           model.cwetsum[topic]);
       int id1, id2, id3;
-      for (int rank = 0; rank < maxWordsPerTopic && rank < top1.size(); ++rank) {
+      for (int rank = 0; rank < maxWordsPerTopic && rank < min(
+          top1.size(), top2.size(), top3.size()); ++rank) {
         id1 = top1.get(rank);
         id2 = top2.get(rank);
         id3 = top3.get(rank);
@@ -378,6 +379,16 @@ public class EntityLdaGibbsSampler2 {
     writer.close();
   }
 
+  private int min(int x, int y, int z) {
+    if (x > y) {
+      x = y;
+    }
+    if (x > z) {
+      x = z;
+    }
+    return x;
+  }
+  
   /**
    * Prints top topics assigned to each document to the file.
    * 
@@ -480,8 +491,8 @@ public class EntityLdaGibbsSampler2 {
     model.cdtsum = new int[numDocuments];
     model.cet = new int[numEntities][numTopics];
     model.cetsum = new int[numEntities];
-    model.cdm = new int[numDocuments];
-    model.cem = new int[numDocuments];
+    model.cd = new int[numDocuments];
+    model.ce = new int[numDocuments];
 
     // sample values of z[i], rho[i], s[i] randomly ([1..numTopics] as the
     // initial state of the Markov chain
@@ -512,7 +523,7 @@ public class EntityLdaGibbsSampler2 {
           // a word in document m assigned to topic k of document m
           model.cdt[m][randZ]++;
           model.cdtsum[m]++;
-          model.cdm[m]++;
+          model.cd[m]++;
         } else {
           model.cwet[documents[m][n]][randZ]++;
           model.cwetsum[randZ]++;
@@ -521,7 +532,7 @@ public class EntityLdaGibbsSampler2 {
           model.rho[m][n] = randRho;
           model.cet[randRho][randZ]++;
           model.cetsum[randRho]++;
-          model.cem[m]++;
+          model.ce[m]++;
         }
       }
     }
@@ -568,6 +579,7 @@ public class EntityLdaGibbsSampler2 {
     }
 
     // phi[][]
+    // TODO(trung): verify this estimation
     double vBeta = vocabularySize * beta;
     for (int k = 0; k < numTopics; k++) {
       for (int i = 0; i < vocabularySize; i++) {
@@ -599,13 +611,13 @@ public class EntityLdaGibbsSampler2 {
       model.cwdtsum[topic]--;
       model.cdt[m][topic]--;
       model.cdtsum[m]--;
-      model.cdm[m]--;
+      model.cd[m]--;
     } else {
       model.cwet[i][topic]--;
       model.cwetsum[topic]--;
       model.cet[entity][topic]--;
       model.cetsum[entity]--;
-      model.cem[m]--;
+      model.ce[m]--;
     }
 
     double vBeta = vocabularySize * beta;
@@ -616,7 +628,7 @@ public class EntityLdaGibbsSampler2 {
     for (int k = 0; k < numTopics; k++) {
       double p = ((model.cwdt[i][k] + beta) / (model.cwdtsum[k] + vBeta))
                 * ((model.cdt[m][k] + alpha) / (model.cdtsum[m] + tAlpha))
-                * (model.cdm[m] + eta_d);
+                * (model.cd[m] + eta_d);
       // sampling set for all s[i] = DOCUMENT
       list.add(new SamplingSet(k, -1, DOCUMENT, p));
       for (int e = 0; e < documentEntities[m].length; e++) {
@@ -630,7 +642,7 @@ public class EntityLdaGibbsSampler2 {
         // s[i] = ENTITY
         p = (model.cwet[i][k] + beta) / (model.cwetsum[k] + vBeta)
             * ((model.cet[e][k] + gamma) / (model.cetsum[e] + tGamma))
-            * (model.cem[m] + eta_e)
+            * (model.ce[m] + eta_e)
             / docEntityCount[m]
             * ent.getCount();
         list.add(new SamplingSet(k, corpusEntitySet.toId(ent), ENTITY, p));
@@ -645,13 +657,13 @@ public class EntityLdaGibbsSampler2 {
       model.cwdtsum[topic]++;
       model.cdt[m][topic]++;
       model.cdtsum[m]++;
-      model.cdm[m]++;
+      model.cd[m]++;
     } else {
       model.cwet[i][topic]++;
       model.cwetsum[topic]++;
       model.cet[sample.rho][topic]++;
       model.cetsum[sample.rho]++;
-      model.cem[m]++;
+      model.ce[m]++;
     }
 
     return sample;

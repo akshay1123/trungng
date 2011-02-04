@@ -344,7 +344,8 @@ public class EntityLdaGibbsSampler {
           model.cwdtsum[topic] + model.cwetsum[topic], model.cwdtsum[topic],
           model.cwetsum[topic]);
       int id1, id2, id3;
-      for (int rank = 0; rank < maxWordsPerTopic && rank < top1.size(); ++rank) {
+      for (int rank = 0; rank < maxWordsPerTopic && rank < min(
+          top1.size(), top2.size(), top3.size()); ++rank) {
         id1 = top1.get(rank);
         id2 = top2.get(rank);
         id3 = top3.get(rank);
@@ -357,6 +358,16 @@ public class EntityLdaGibbsSampler {
     writer.close();
   }
 
+  private int min(int x, int y, int z) {
+    if (x > y) {
+      x = y;
+    }
+    if (x > z) {
+      x = z;
+    }
+    return x;
+  }
+  
   /**
    * Prints top topics assigned to each document to the file.
    * 
