@@ -2,16 +2,16 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Trung/workspace/util/lib/apache-mime4j-0.6.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Trung/workspace/util/lib/commons-codec-1.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Trung/workspace/util/lib/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Trung/workspace/util/lib/filterbuilder.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Trung/workspace/util/lib/htmllexer.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Trung/workspace/util/lib/htmlparser.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Trung/workspace/util/lib/httpclient-4.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Trung/workspace/util/lib/httpcore-4.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Trung/workspace/util/lib/httpmime-4.0.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Trung/workspace/util/lib/sitecapturer.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Trung/workspace/util/lib/thumbelina.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/util/lib/apache-mime4j-0.6.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/util/lib/commons-codec-1.3.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/util/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/util/lib/filterbuilder.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/util/lib/htmllexer.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/util/lib/htmlparser.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/util/lib/httpclient-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/util/lib/httpcore-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/util/lib/httpmime-4.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/util/lib/sitecapturer.jar"/>
+	<classpathentry kind="lib" path="C:/workspace/util/lib/thumbelina.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
