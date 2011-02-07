@@ -9,8 +9,8 @@ import java.util.List;
 
 import com.aliasi.util.ObjectToCounterMap;
 
+import edu.kaist.uilab.plda.file.DefaultDocumentReader;
 import edu.kaist.uilab.plda.file.DocumentReader;
-import edu.kaist.uilab.plda.file.NYTimesDocumentReader;
 import edu.stanford.nlp.ie.AbstractSequenceClassifier;
 import edu.stanford.nlp.ie.crf.CRFClassifier;
 import edu.stanford.nlp.ling.CoreAnnotations.AnswerAnnotation;
@@ -272,7 +272,7 @@ public class EntityParser {
   }
   
   public static void main(String[] args) throws Exception {
-    String corpusDir = "/home/trung/workspace/util/nytimes/general";
+    String corpusDir = "C:/datasets/bbchistory";
     File dir = new File(corpusDir);
     ArrayList<String> docNames = new ArrayList<String>();
     for (File file : dir.listFiles()) {
@@ -280,16 +280,10 @@ public class EntityParser {
         docNames.add(file.getName());
       }
     }
-    // TODO(trung): remove after testing
-    ArrayList<String> holder = new ArrayList<String>(1000);
-    for (int i = 0; i < 1000; i++) {
-      holder.add(docNames.get((int) (Math.random() * docNames.size())));
-    }
-    docNames = holder;
 //    EntityParser parser = new EntityParser("data/smalltest",
 //        new DefaultDocumentReader(), docNames, 10, 10);
-    EntityParser parser = new EntityParser(corpusDir, new NYTimesDocumentReader(),
-        docNames, 4, 3);
+    EntityParser parser = new EntityParser(corpusDir, new DefaultDocumentReader(),
+        docNames, 5, 3);
     parser.setAcceptedEntityType(true, false, true);
     parser.parseCorpus();
     System.out.println("Number of entities: " + parser.getNumEntities());

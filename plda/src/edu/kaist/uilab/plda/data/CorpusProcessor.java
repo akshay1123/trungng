@@ -92,7 +92,7 @@ public class CorpusProcessor {
 //    }
 //    docNames = holder;
     
-    //docNames = new ArrayList<String>(docNames.subList(0, 1000));
+//    docNames = new ArrayList<String>(docNames.subList(0, 1000));
 
     System.out.println("\nParsing the corpus for entities...");
     entityParser = new EntityParser(corpusDir, reader, docNames,

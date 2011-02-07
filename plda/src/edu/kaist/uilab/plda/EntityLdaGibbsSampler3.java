@@ -492,7 +492,11 @@ public class EntityLdaGibbsSampler3 {
         double wordProb2 = 0.0;
         if (docEntityCount[m] > 0) {
           for (int z = 0; z < numEntityTopics; z++) {
-            wordProb2 += model.phi_e[z][documents[m][n]] * model.thetae[m][z];
+            double entProb = 0.0;
+            for (int h = 0; h < documentEntities[m].length; h++) {
+              entProb += model.thetae[h][z];
+            }
+            wordProb2 += entProb * model.phi_e[z][documents[m][n]];
           }
           wordProb2 /= docEntityCount[m]; // entity prob
         }  
