@@ -63,7 +63,7 @@ public class ReutersCorpusReader {
   
   public static void main(String args[]) throws IOException {
     // note: run this program as is (reut01-05 have been read)
-    ReutersCorpusReader reader = new ReutersCorpusReader("data/reut2-000.sgm");
-    reader.corpusToDocuments("data/reuters", 0);
+    ReutersCorpusReader reader = new ReutersCorpusReader("data/reuters21578/reut2-021.sgm");
+    reader.corpusToDocuments("C:/datasets/reuters", 18148);
   }
 }

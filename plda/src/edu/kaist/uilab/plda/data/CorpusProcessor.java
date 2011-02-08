@@ -43,6 +43,7 @@ public class CorpusProcessor {
   private int minTokenCount;
   private int minEntityCount;
   private int topStopWords;
+  private int topDocumentTokens;
   private int maxEntitiesPerDoc;
   private int[][] documentTokens;
   private Entity[][] documentEntities;
@@ -53,19 +54,32 @@ public class CorpusProcessor {
    * Constructor
    * 
    * @param corpusDir
+   *       the directory that contains documents
    * @param reader
+   *       a reader that can read content of the document
    * @param minTokenCount
+   *       the minimum count of a token to be retained as one word in the vocabulary 
    * @param minEntityCount
+   *       the minimum count of an entity to be retained as one entity
    * @param topStopWords
+   *       the number of words which has highest frequency to be removed
+   * @param topDocumentTokens
+   *       the maximum percent of documents in which a word can appear      
    * @param maxEntitiesPerDoc
+   *       the maximum number of entities for each document
+   * @param stopwordList
+   *       the list of stop words (in addition to the standard stop words used
+   *       in lingpipe)      
    */
   public CorpusProcessor(String corpusDir, DocumentReader reader, int minTokenCount,
-      int minEntityCount, int topStopWords, int maxEntitiesPerDoc, String[] stopwordList) {
+      int minEntityCount, int topStopWords, int topDocumentTokens,
+      int maxEntitiesPerDoc, String[] stopwordList) {
     this.corpusDir = corpusDir;
     this.reader = reader;
     this.minTokenCount = minTokenCount;
     this.minEntityCount = minEntityCount;
     this.topStopWords = topStopWords;
+    this.topDocumentTokens = topDocumentTokens;
     this.maxEntitiesPerDoc = maxEntitiesPerDoc;
     this.stopWords = new HashSet<String>(Arrays.asList(stopwordList));
   }
@@ -86,11 +100,12 @@ public class CorpusProcessor {
       }
     }
     // TODO(trung): remove after testing
-//    ArrayList<String> holder = new ArrayList<String>(3000);
-//    for (int i = 0; i < 3000; i++) {
-//      holder.add(docNames.get((int) (Math.random() * docNames.size())));
-//    }
-//    docNames = holder;
+    int test = 5000;
+    ArrayList<String> holder = new ArrayList<String>(test);
+    for (int i = 0; i < test; i++) {
+      holder.add(docNames.get((int) (Math.random() * docNames.size())));
+    }
+    docNames = holder;
     
 //    docNames = new ArrayList<String>(docNames.subList(0, 1000));
 
@@ -307,14 +322,22 @@ public class CorpusProcessor {
   private int[][] tokenizeDocuments(CharSequence[] texts,
       TokenizerFactory tokenizerFactory, SymbolTable symbolTable, int minCount) {
     ObjectToCounterMap<String> tokenCounter = new ObjectToCounterMap<String>();
+    // count #(a token appears in a document)
+    ObjectToCounterMap<String> tokDocumentCounter = new ObjectToCounterMap<String>();
     for (CharSequence text : texts) {
+      HashSet<String> uniqueDocTokens = new HashSet<String>();
       char[] cs = Strings.toCharArray(text);
       Tokenizer tokenizer = tokenizerFactory.tokenizer(cs, 0, cs.length);
-      for (String token : tokenizer)
+      for (String token : tokenizer) {
         tokenCounter.increment(token);
+        if (uniqueDocTokens.add(token)) {
+          tokDocumentCounter.increment(token);
+        }
+      }  
     }
     tokenCounter.prune(minCount);
     pruneTopWords(tokenCounter, topStopWords);
+    pruneTopDocumentTokens(tokDocumentCounter, topDocumentTokens);
     Set<String> tokenSet = tokenCounter.keySet();
     for (String token : tokenSet)
       symbolTable.getOrAddSymbol(token);
@@ -327,6 +350,26 @@ public class CorpusProcessor {
   }
 
   /**
+   * Prunes the tokens that appear in more than a specified number of documents.
+   * 
+   * @param counter
+   * @param percent
+   */
+  private void pruneTopDocumentTokens(ObjectToCounterMap<String> counter,
+      int percent) {
+    int threshold = percent * docNames.size() / 100;
+    int count = 0;
+    Iterator<Map.Entry<String, Counter>> iter = counter.entrySet().iterator();
+    while (iter.hasNext()) {
+      if (iter.next().getValue().intValue() > threshold) {
+        iter.remove();
+        count++;
+      }
+    }
+    System.err.printf("%d words pruned.\n", count);
+  }
+  
+  /**
    * Prunes the top {@code num} tokens from the vocabulary set.
    * 
    * @param tokenCounter
@@ -335,12 +378,15 @@ public class CorpusProcessor {
   private void pruneTopWords(ObjectToCounterMap<String> tokenCounter, int num) {
     HashSet<String> topKeys = new HashSet<String>(
         tokenCounter.keysOrderedByCountList().subList(0, num));
-    Iterator<Map.Entry<String, Counter>> it = tokenCounter.entrySet().iterator();
-    while (it.hasNext()) {
-      if (topKeys.contains(it.next().getKey())) {
-        it.remove(); // remove this entry
-      }   
+    Iterator<Map.Entry<String, Counter>> iter = tokenCounter.entrySet().iterator();
+    int count = 0;
+    while (iter.hasNext()) {
+      if (topKeys.contains(iter.next().getKey())) {
+        iter.remove();
+        count++;
+      }
     }
+    System.err.printf("%d stop words pruned.\n", count);
   }
 
   /**

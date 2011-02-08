@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.StringTokenizer;
 
 import edu.kaist.uilab.plda.data.CorpusProcessor;
-import edu.kaist.uilab.plda.file.DefaultDocumentReader;
+import edu.kaist.uilab.plda.file.NYTimesDocumentReader;
 
 /**
  * TODO(trung):
@@ -34,18 +34,18 @@ public class ModelReporter {
     "do",
     "said",
     "does",
-//    "billion",
-//    "&lt;",
-//    "mln",
-//    "cts",
-//    "dlrs",
-//    "qtr",
-//    "pct",
-//    "vs",
-//    "lt",
-//    "reuter",
-//    "shr",
-//    "billion",
+    "billion",
+    "&lt;",
+    "mln",
+    "cts",
+    "dlrs",
+    "qtr",
+    "pct",
+    "vs",
+    "lt",
+    "reuter",
+    "shr",
+    "billion",
     "what",
     "although",
     "though",
@@ -129,14 +129,18 @@ public class ModelReporter {
     "herself",
     "himself",
     "told",
+    "new", // for new york times
+    "york",
+    "times",
   };
   
   public static void main(String args[]) throws IOException {
     BufferedReader in = new BufferedReader(new FileReader("runs.txt"));
     String line;
-    int minTokenCount = 4;
-    int minEntityCount = 7;
-    int topStopWords = 80;
+    int minTokenCount = 5;
+    int minEntityCount = 8;
+    int topStopWords = 50;
+    int maxDocumentCount = 50; // maybe 50?
     int maxEntitiesPerDoc = 3;
 
     double alpha_d = 0.1;
@@ -151,9 +155,9 @@ public class ModelReporter {
     double eta_e = 5;
     int numDocTopics = 15;
     int numEntityTopics = 15;
-    CorpusProcessor corpus = new CorpusProcessor("C:/datasets/bbchistory",
-        new DefaultDocumentReader(), minTokenCount, minEntityCount,
-        topStopWords, maxEntitiesPerDoc, stopword);
+    CorpusProcessor corpus = new CorpusProcessor("D:/workspace/util/nytimes/general",
+        new NYTimesDocumentReader(), minTokenCount, minEntityCount,
+        topStopWords, maxDocumentCount, maxEntitiesPerDoc, stopword);
     //  corpus = new CorpusProcessor("/home/trung/elda/data/bbchistory",
     //  new DefaultDocumentReader(), minTokenCount, minEntityCount,
     //  topStopWords, maxEntitiesPerDoc, stopword);
@@ -175,7 +179,7 @@ public class ModelReporter {
         beta_d = Double.parseDouble(tokenizer.nextToken());
         beta_e = Double.parseDouble(tokenizer.nextToken());
 //      String outputDir = "/home/trung/elda/bbc20_tok3_stop30_ent2_iter500_maxent3";
-        String outputDir = String.format("C:/elda/3history%d-%d_a%.2f-%.2f_b%.2f-%.2f_eta%.2f-%.2f",
+        String outputDir = String.format("C:/elda/3nytimes%d-%d_a%.2f-%.2f_b%.2f-%.2f_eta%.2f-%.2f",
             numDocTopics, numEntityTopics, alpha_d, alpha_e, beta_d, beta_e, eta_d, eta_e);
         System.out.println(outputDir);
 //        EntityLdaGibbsSampler sampler;
@@ -202,7 +206,7 @@ public class ModelReporter {
             corpus.getDocumentEntities(),
             corpus.getCorpusEntitySet());
         sampler.setPriors(alpha_d, alpha_e, beta_d, beta_e, eta_d, eta_e);
-        sampler.setSamplerParameters(5000, 200, 20, 10);
+        sampler.setSamplerParameters(5000, 300, 30, 10);
         sampler.setOutputParameters(corpus.getSymbolTable(), outputDir, 30, 10, 10);
         System.out.println("Latent Dirichlet Allocation using Gibbs Sampling.");
         sampler.doGibbsSampling(false);

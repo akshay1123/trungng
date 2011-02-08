@@ -1,0 +1,233 @@
+<People 's Daily, ORGANIZATION, 8>
+<LDP, ORGANIZATION, 16>
+<Digital Equipment Corp, ORGANIZATION, 8>
+<Senate, ORGANIZATION, 21>
+<Yasuhiro Nakasone, PERSON, 31>
+<Bank of America, ORGANIZATION, 6>
+<Wilf Gobert, PERSON, 8>
+<Tanjug, ORGANIZATION, 6>
+<IMF, ORGANIZATION, 50>
+<Pennzoil Co, ORGANIZATION, 16>
+<Chase Manhattan Securities, ORGANIZATION, 7>
+<Toronto Stock Exchange, ORGANIZATION, 9>
+<U.S. Congress, ORGANIZATION, 14>
+<GenCorp Inc, ORGANIZATION, 7>
+<Deutsche Bank AG, ORGANIZATION, 7>
+<American Telephone and Telegraph Co, ORGANIZATION, 6>
+<IADB, ORGANIZATION, 12>
+<VW, ORGANIZATION, 9>
+<European Monetary System, ORGANIZATION, 8>
+<Tokyo Stock Exchange, ORGANIZATION, 7>
+<Supreme Court, ORGANIZATION, 7>
+<Morgan Guaranty Trust Co, ORGANIZATION, 7>
+<Frank Naylor, PERSON, 7>
+<First Boston Corp, ORGANIZATION, 10>
+<USSR, ORGANIZATION, 14>
+<Bank of Japan, ORGANIZATION, 34>
+<del Este, PERSON, 6>
+<Council of Economic Advisers, ORGANIZATION, 6>
+<Bank of England, ORGANIZATION, 35>
+<INRA, ORGANIZATION, 6>
+<U.S. Embassy, ORGANIZATION, 6>
+<Chicago Mercantile Exchange, ORGANIZATION, 19>
+<Agriculture Department, ORGANIZATION, 17>
+<Commodity Futures Trading Commission, ORGANIZATION, 8>
+<Nikko Securities Co Ltd, ORGANIZATION, 7>
+<Organisation for Economic Cooperation and Development, ORGANIZATION, 15>
+<Congressional Budget Office, ORGANIZATION, 8>
+<International Monetary Fund, ORGANIZATION, 63>
+<G-7, ORGANIZATION, 22>
+<Hu Yaobang, PERSON, 7>
+<Bear Stearns, PERSON, 6>
+<Prudential Bache, ORGANIZATION, 6>
+<Helmut Schlesinger, PERSON, 6>
+<House Ways and Means Committee, ORGANIZATION, 9>
+<Howard Baker, PERSON, 9>
+<Defense, ORGANIZATION, 6>
+<Barber Conable, PERSON, 9>
+<Shearson Lehman Brothers Inc, ORGANIZATION, 13>
+<Ivan Boesky, PERSON, 9>
+<George Shultz, PERSON, 13>
+<Reserve Bank, ORGANIZATION, 6>
+<Richard Gephardt, PERSON, 9>
+<Inter-American Development Bank, ORGANIZATION, 21>
+<Drew, PERSON, 6>
+<Shearson Lehman, ORGANIZATION, 6>
+<James Capel, PERSON, 12>
+<OECD, ORGANIZATION, 22>
+<NEC Corp, ORGANIZATION, 7>
+<Robert Brusca, PERSON, 8>
+<Smith Barney, ORGANIZATION, 14>
+<Farm Credit Administration, ORGANIZATION, 7>
+<House, ORGANIZATION, 19>
+<Labour, ORGANIZATION, 6>
+<Reagan Administration, ORGANIZATION, 21>
+<Co Inc, ORGANIZATION, 7>
+<Citibank, ORGANIZATION, 13>
+<Senate Banking Committee, ORGANIZATION, 7>
+<American Petroleum Institute, ORGANIZATION, 6>
+<Richard Lyng, PERSON, 6>
+<Keidanren, ORGANIZATION, 7>
+<AFG Industries Inc, ORGANIZATION, 7>
+<London Interbank, ORGANIZATION, 14>
+<International Business Machines Corp, ORGANIZATION, 9>
+<Paris Club, ORGANIZATION, 13>
+<Paul Volcker, PERSON, 41>
+<E.F. Hutton Group, ORGANIZATION, 6>
+<Shearson Lehman Brothers, ORGANIZATION, 17>
+<State Department, ORGANIZATION, 9>
+<Harris Upham, ORGANIZATION, 9>
+<S.G. Warburg, ORGANIZATION, 6>
+<Malcolm Baldrige, PERSON, 12>
+<MITI, ORGANIZATION, 11>
+<Chicago Board of Trade, ORGANIZATION, 15>
+<Treasury, ORGANIZATION, 102>
+<Co., ORGANIZATION, 19>
+<Finance Ministry, ORGANIZATION, 30>
+<Robert Byrd, PERSON, 6>
+<Drexel Burnham Lambert Inc, ORGANIZATION, 15>
+<Bundesbank, ORGANIZATION, 58>
+<Dilson Funaro, PERSON, 16>
+<Dome Petroleum Ltd, ORGANIZATION, 14>
+<Salomon Brothers Inc, ORGANIZATION, 10>
+<Senate Republican, ORGANIZATION, 6>
+<Suharto, PERSON, 6>
+<Salomon Brothers, ORGANIZATION, 6>
+<Chase Manhattan Corp, ORGANIZATION, 7>
+<Bank of France, ORGANIZATION, 6>
+<Group of Seven, ORGANIZATION, 23>
+<Edouard Balladur, PERSON, 9>
+<Ford Motor Co, ORGANIZATION, 10>
+<Karl Otto Poehl, PERSON, 16>
+<Securities and Exchange Commission, ORGANIZATION, 56>
+<Jacques Delors, PERSON, 7>
+<New York Mercantile Exchange, ORGANIZATION, 7>
+<Wells Fargo, PERSON, 6>
+<Amoco Corp, ORGANIZATION, 8>
+<Commission, ORGANIZATION, 9>
+<Reagan, PERSON, 129>
+<Federal Reserve Bank of New York, ORGANIZATION, 7>
+<Federal Reserve Board, ORGANIZATION, 37>
+<Ignaz Kiechle, PERSON, 7>
+<Miyazawa, ORGANIZATION, 7>
+<Fed, ORGANIZATION, 63>
+<Jose Sarney, PERSON, 8>
+<Ronald Reagan, PERSON, 6>
+<Francisco Gros, PERSON, 10>
+<BankAmerica Corp, ORGANIZATION, 7>
+<Chemical Bank, ORGANIZATION, 7>
+<E.F. Hutton, PERSON, 9>
+<Commodity Exchange, ORGANIZATION, 7>
+<Beryl Sprinkel, PERSON, 8>
+<REUTER, PERSON, 145>
+<EC Commission, ORGANIZATION, 17>
+<Conservative party, ORGANIZATION, 6>
+<Donald Regan, PERSON, 6>
+<ATT, ORGANIZATION, 7>
+<Texaco Inc, ORGANIZATION, 20>
+<Margaret Thatcher, PERSON, 17>
+<EMS, ORGANIZATION, 10>
+<Labour Party, ORGANIZATION, 9>
+<USX Corp, ORGANIZATION, 7>
+<U.S. Bank, ORGANIZATION, 8>
+<Salomon Brothers Inc., ORGANIZATION, 7>
+<Shearson Lehman Brothers Inc., ORGANIZATION, 7>
+<Union Bank of Switzerland, ORGANIZATION, 9>
+<Helmut Kohl, PERSON, 12>
+<Merrill Lynch Capital Markets, ORGANIZATION, 11>
+<GATT, ORGANIZATION, 23>
+<Yamaichi Securities Co Ltd, ORGANIZATION, 6>
+<PSBR, ORGANIZATION, 11>
+<Volkswagen AG, ORGANIZATION, 11>
+<Nigel Lawson, PERSON, 38>
+<NYSE, ORGANIZATION, 8>
+<Daniel Amstutz, PERSON, 9>
+<Central Bank, ORGANIZATION, 15>
+<Poehl, ORGANIZATION, 6>
+<General Accounting Office, ORGANIZATION, 6>
+<Goldman , Sachs and Co, ORGANIZATION, 11>
+<American Express Co, ORGANIZATION, 7>
+<Standard and Poor, ORGANIZATION, 6>
+<LIFFE, ORGANIZATION, 7>
+<Manufacturers Hanover Corp, ORGANIZATION, 7>
+<Security Pacific Corp, ORGANIZATION, 6>
+<Alan Greenspan, PERSON, 10>
+<Commerce Department, ORGANIZATION, 19>
+<Intel Corp, ORGANIZATION, 6>
+<New York Stock Exchange, ORGANIZATION, 19>
+<U.S. Agriculture Department, ORGANIZATION, 30>
+<General Electric Co &lt; GE, ORGANIZATION, 6>
+<OPEC, ORGANIZATION, 48>
+<EEP, ORGANIZATION, 8>
+<Frans Andriessen, PERSON, 9>
+<Wagner, PERSON, 10>
+<White House, ORGANIZATION, 29>
+<Jaime Ongpin, PERSON, 14>
+<European Community, ORGANIZATION, 41>
+<Commerce, ORGANIZATION, 11>
+<Liberal Democratic Party, ORGANIZATION, 28>
+<House of Representatives, ORGANIZATION, 10>
+<European Commission, ORGANIZATION, 7>
+<USDA, ORGANIZATION, 51>
+<U.S. Treasury, ORGANIZATION, 39>
+<Food and Drug Administration, ORGANIZATION, 6>
+<EC, ORGANIZATION, 45>
+<Dan Glickman, PERSON, 10>
+<Citicorp, ORGANIZATION, 17>
+<Drexel Burnham Lambert Inc., ORGANIZATION, 8>
+<Dean Witter, PERSON, 8>
+<Gerhard Stoltenberg, PERSON, 21>
+<Congress, ORGANIZATION, 100>
+<Ward McCarthy, PERSON, 8>
+<Jim Wright, PERSON, 8>
+<FDA, ORGANIZATION, 7>
+<CME, ORGANIZATION, 8>
+<Brown, PERSON, 11>
+<FCA, ORGANIZATION, 7>
+<Merrill Lynch, ORGANIZATION, 13>
+<Chrysler Corp, ORGANIZATION, 9>
+<Federal Deposit Insurance Corp, ORGANIZATION, 6>
+<Microsoft Corp, ORGANIZATION, 6>
+<Standard Oil Co, ORGANIZATION, 8>
+<Louvre, ORGANIZATION, 12>
+<Commerzbank AG, ORGANIZATION, 9>
+<Federal Communications Commission, ORGANIZATION, 8>
+<SEC, ORGANIZATION, 32>
+<Michel Camdessus, PERSON, 6>
+<GM, ORGANIZATION, 8>
+<Kiichi Miyazawa, PERSON, 24>
+<Parliament, ORGANIZATION, 10>
+<International Coffee Organization, ORGANIZATION, 20>
+<U.S. Securities and Exchange Commission, ORGANIZATION, 6>
+<Shell Oil Co, ORGANIZATION, 7>
+<Philippines, ORGANIZATION, 6>
+<Conservative Party, ORGANIZATION, 8>
+<Robert Dole, PERSON, 6>
+<Exxon Corp, ORGANIZATION, 15>
+<James Baker, PERSON, 77>
+<IBM, ORGANIZATION, 8>
+<Federal Reserve, ORGANIZATION, 45>
+<FOMC, ORGANIZATION, 7>
+<U.S. Administration, ORGANIZATION, 7>
+<David Mulford, PERSON, 7>
+<ICO, ORGANIZATION, 15>
+<Hughes, PERSON, 6>
+<L.F. Rothschild, ORGANIZATION, 7>
+<U.S. Economy, ORGANIZATION, 7>
+<World Bank, ORGANIZATION, 49>
+<Phillips, PERSON, 10>
+<CBT, ORGANIZATION, 8>
+<Conoco Inc, ORGANIZATION, 6>
+<Clayton Yeutter, PERSON, 24>
+<Satoshi Sumita, PERSON, 6>
+<Marlin Fitzwater, PERSON, 10>
+<Jacques Chirac, PERSON, 7>
+<Congressional, ORGANIZATION, 19>
+<Ministry of International Trade and Industry, ORGANIZATION, 14>
+<Sandra Kaul, PERSON, 6>
+<U.S. Supreme Court, ORGANIZATION, 7>
+<International Cocoa Organization, ORGANIZATION, 7>
+<Entre Rios, PERSON, 6>
+<Corazon Aquino, PERSON, 10>
+<Ferdinand Marcos, PERSON, 8>
+<Communist Party, ORGANIZATION, 10>

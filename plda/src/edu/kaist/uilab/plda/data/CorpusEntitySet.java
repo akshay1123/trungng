@@ -26,7 +26,8 @@ public class CorpusEntitySet {
       "American",
       "China",
       "U.S.",
-      "America",      
+      "America",
+      "REUTER",
   };
   int[] types = {
     Entity.LOCATION, 
@@ -43,6 +44,7 @@ public class CorpusEntitySet {
     Entity.LOCATION,
     Entity.LOCATION,
     Entity.LOCATION,
+    Entity.PERSON,
   };
 
   HashMap<Entity, Pair> map;
@@ -164,7 +166,7 @@ public class CorpusEntitySet {
    * @param minCount
    */
   void setMinEntityCount(int minCount) {
-    // remove entity with count < minCount
+    // remove entity with count <= minCount
     Iterator<Entry<Entity, Pair>> iter = map.entrySet().iterator();
     Entry<Entity, Pair> entry;
     while (iter.hasNext()) {
