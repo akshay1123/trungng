@@ -100,7 +100,7 @@ public class CorpusProcessor {
       }
     }
     // TODO(trung): remove after testing
-    int test = 5000;
+    int test = 10000;
     ArrayList<String> holder = new ArrayList<String>(test);
     for (int i = 0; i < test; i++) {
       holder.add(docNames.get((int) (Math.random() * docNames.size())));
