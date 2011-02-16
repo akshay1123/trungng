@@ -36,8 +36,8 @@ public class CorpusProcessor {
   private String corpusDir;
   private DocumentReader reader;
   private SymbolTable symbolTable;
+  private ArrayList<Entity> entityTable;
   private TokenizerFactory tokenizerFactory;
-  private EntityParser entityParser;
   // to maintain the same order of documents in the corpus
   private ArrayList<String> docNames;
   private int minTokenCount;
@@ -62,17 +62,15 @@ public class CorpusProcessor {
    *       the minimum count of an entity to be retained as one entity
    * @param topStopWords
    *       the number of words which has highest frequency to be removed
-   * @param topDocumentTokens
-   *       the maximum percent of documents in which a word can appear      
-   * @param maxEntitiesPerDoc
-   *       the maximum number of entities for each document
    * @param stopwordList
    *       the list of stop words (in addition to the standard stop words used
    *       in lingpipe)      
+   * @param topDocumentTokens
+   *       the maximum percent of documents in which a word can appear      
    */
   public CorpusProcessor(String corpusDir, DocumentReader reader, int minTokenCount,
-      int minEntityCount, int topStopWords, int topDocumentTokens,
-      int maxEntitiesPerDoc, String[] stopwordList) {
+      int minEntityCount, int topStopWords, String[] stopwordList,
+      int topDocumentTokens) {
     this.corpusDir = corpusDir;
     this.reader = reader;
     this.minTokenCount = minTokenCount;
@@ -98,20 +96,22 @@ public class CorpusProcessor {
       }
     }
     // TODO(trung): remove after testing
-    int test = 10000;
-    ArrayList<String> holder = new ArrayList<String>(test);
-    for (int i = 0; i < test; i++) {
-      holder.add(docNames.get((int) (Math.random() * docNames.size())));
-    }
-    docNames = holder;
+//    int test = 10000;
+//    ArrayList<String> holder = new ArrayList<String>(test);
+//    for (int i = 0; i < test; i++) {
+//      holder.add(docNames.get((int) (Math.random() * docNames.size())));
+//    }
+//    docNames = holder;
     
 //    docNames = new ArrayList<String>(docNames.subList(0, 1000));
 
     System.out.println("\nParsing the corpus for entities...");
-    entityParser = new EntityParser(corpusDir, reader, docNames, minEntityCount);
-    entityParser.setAcceptedEntityType(true, false, true);
-    entityParser.parseCorpus();
-    documentEntities = entityParser.getDocumentEntities();
+    EntityParser parser = new EntityParser(corpusDir, reader, docNames,
+        minEntityCount);
+    parser.setAcceptedEntityType(true, false, true);
+    parser.parseCorpus();
+    documentEntities = parser.getDocumentEntities();
+    entityTable = parser.getEntityList();
     System.out.println("\nParsing entities done!");
     tokenizerFactory = customTokenizerFactory();
     symbolTable = new MapSymbolTable();
@@ -148,7 +148,7 @@ public class CorpusProcessor {
    */
 
   public int getNumEntities() {
-    return entityParser.getNumEntities();
+    return entityTable.size();
   }
 
   /**
@@ -176,6 +176,15 @@ public class CorpusProcessor {
     return symbolTable;
   }
 
+  /**
+   * Gets the entity table of this corpus.
+   * 
+   * @return
+   */
+  public ArrayList<Entity> getEntityTable() {
+    return entityTable;
+  }
+  
   /**
    * Reports statistics about the corpus.
    * 
@@ -243,8 +252,7 @@ public class CorpusProcessor {
 
   private void writeEntities(String file) throws IOException {
     PrintWriter out = new PrintWriter(file);
-    ArrayList<Entity> entities = entityParser.getEntityList();
-    for (Entity entity : entities) {
+    for (Entity entity : entityTable) {
       out.println(entity);
     }
     out.close();

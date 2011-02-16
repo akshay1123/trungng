@@ -1,4 +1,4 @@
-package edu.kaist.uilab.plda;
+package edu.kaist.uilab.event;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -6,23 +6,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-import edu.kaist.uilab.plda.data.CorpusProcessor;
-import edu.kaist.uilab.plda.file.NYTimesDocumentReader;
+import edu.kaist.uilab.plda.file.DefaultDocumentReader;
 
-/**
- * TODO(trung):
- * What explains the entity topics (of nytimes corpus) are mostly about
- * politics: the entities are all political figures (dominantly!!).
- * So, one thing to try is to lower the number of minEntityCount and
- * to increase the maxEntityPerDocs. Consequently, eta_e should be increased
- * to give more words to entities (as the number of entities might rise
- * drastically). 
- * 
- * 2. Test several corpus
- * 
- * @author trung nguyen
- */
-public class ModelReporter {
+public class EventModelRunner {
   static String[] stopword = new String[] {
     "one",
     "two",
@@ -152,29 +138,20 @@ public class ModelReporter {
   };
   
   public static void main(String args[]) throws IOException {
-    BufferedReader in = new BufferedReader(new FileReader("runs.txt"));
+    BufferedReader in = new BufferedReader(new FileReader("eventruns.txt"));
     String line;
     int minTokenCount = 5;
-    int minEntityCount = 5;
+    int minEntityCount = 3;
     int topStopWords = 70;
     int maxDocumentCount = 70; // maybe 50 (50 gives 0)?
-    int maxEntitiesPerDoc = 4;
 
-    double alpha_d = 0.1;
-    // increase gamma in the hope of assigning more topics to an entity
-    // instead of a bad dominant topic
-    double alpha_e = 0.2;
-    // note: beta_d = 1: very specific (detailed) topic, wonder why?
-    // beta_e = 1: so few words assigned to a topic
-    double beta_d = 0.01;
-    double beta_e = 0.1;
-    double eta_d = 0.5;
-    double eta_e = 5;
-    int numDocTopics = 15;
-    int numEntityTopics = 15;
-    CorpusProcessor corpus = new CorpusProcessor("D:/workspace/util/nytimes/general",
-        new NYTimesDocumentReader(), minTokenCount, minEntityCount,
-        topStopWords, maxDocumentCount, maxEntitiesPerDoc, stopword);
+    int numEvents = 100;
+    double alpha = 0.1;
+    double beta = 0.01;
+    double gamma = 0.01;
+    CorpusProcessor corpus = new CorpusProcessor("C:/datasets/bbchistory",
+        new DefaultDocumentReader(), minTokenCount, minEntityCount,
+        topStopWords, stopword, maxDocumentCount);
     //  corpus = new CorpusProcessor("/home/trung/elda/data/bbchistory",
     //  new DefaultDocumentReader(), minTokenCount, minEntityCount,
     //  topStopWords, maxEntitiesPerDoc, stopword);
@@ -187,22 +164,16 @@ public class ModelReporter {
       if (line.charAt(0) != '#' ) {
         // parse the parameters
         StringTokenizer tokenizer = new StringTokenizer(line, ",");
-        alpha_d = Double.parseDouble(tokenizer.nextToken());
-        alpha_e = Double.parseDouble(tokenizer.nextToken());
-        numDocTopics = Integer.parseInt(tokenizer.nextToken());
-        numEntityTopics = Integer.parseInt(tokenizer.nextToken());
+        numEvents = Integer.parseInt(tokenizer.nextToken());
+        alpha = Double.parseDouble(tokenizer.nextToken());
+        beta = Double.parseDouble(tokenizer.nextToken());
+        gamma = Double.parseDouble(tokenizer.nextToken());
         // use 50/T instead which seems to give better result
-        alpha_e = 50.0 / numEntityTopics;
-        eta_d = Double.parseDouble(tokenizer.nextToken());
-        eta_e = Double.parseDouble(tokenizer.nextToken());
-        beta_d = Double.parseDouble(tokenizer.nextToken());
-        beta_e = Double.parseDouble(tokenizer.nextToken());
-//      String outputDir = "/home/trung/elda/bbc20_tok3_stop30_ent2_iter500_maxent3";
-        String outputDir = String.format("C:/elda/3nytimes%d-%d_a%.2f-%.2f_b%.2f-%.2f_eta%.2f-%.2f",
-            numDocTopics, numEntityTopics, alpha_d, alpha_e, beta_d, beta_e, eta_d, eta_e);
+        // alpha = 50 / numEvents;
+        String outputDir = String.format("C:/events/bbchistory%d_a%.2f_b%.2f_g%.2f",
+            numEvents, alpha, beta, gamma);
         System.out.println(outputDir);
-//        EntityLdaGibbsSampler sampler;
-        EntityLdaGibbsSampler3 sampler;
+        EventGibbsSampler sampler;
         (new File(outputDir)).mkdir();
         corpus.reportCorpus(outputDir + "/corpus.txt",
             outputDir + "/docNames.txt",
@@ -210,23 +181,15 @@ public class ModelReporter {
             outputDir + "/docEntity.txt",
             outputDir + "/token.txt");
         
-//        sampler = new EntityLdaGibbsSampler(numTopics,
-//            corpus.getVocabularySize(),
-//            corpus.getNumEntities(),
-//            corpus.getDocumentTokens(),
-//            corpus.getDocumentEntities(),
-//            corpus.getCorpusEntitySet(),
-//            alpha, beta, gamma);
-        sampler = new EntityLdaGibbsSampler3(numDocTopics,
-            numEntityTopics,
+        sampler = new EventGibbsSampler(numEvents,
             corpus.getVocabularySize(),
             corpus.getNumEntities(),
             corpus.getDocumentTokens(),
-            corpus.getDocumentEntities(),
-            corpus.getCorpusEntitySet());
-        sampler.setPriors(alpha_d, alpha_e, beta_d, beta_e, eta_d, eta_e);
+            corpus.getDocumentEntities());
+        sampler.setPriors(alpha, beta, gamma);
         sampler.setSamplerParameters(5000, 300, 20, 10);
-        sampler.setOutputParameters(corpus.getSymbolTable(), outputDir, 30, 10, 10);
+        sampler.setOutputParameters(corpus.getSymbolTable(),
+            corpus.getEntityTable(), outputDir, 30, 10, 10);
         System.out.println("Latent Dirichlet Allocation using Gibbs Sampling.");
         sampler.doGibbsSampling(false);
       }

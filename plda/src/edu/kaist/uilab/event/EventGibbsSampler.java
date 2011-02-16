@@ -434,7 +434,6 @@ public class EventGibbsSampler {
 
   /**
    * Updates the parameters for the newly collected sample.
-   * TODO(trung): verify inference
    */
   private void updateParams() {
     // theta[][] (D x K)
