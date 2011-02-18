@@ -79,7 +79,7 @@ public class Entity {
 
   @Override
   public String toString() {
-    return String.format("<%s, %s>", value, getType());
+    return String.format("<%d, %s, %s>", id, value, getType());
   }
 
   private String getType() {

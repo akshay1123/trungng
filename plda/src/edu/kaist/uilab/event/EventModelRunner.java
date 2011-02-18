@@ -1,39 +1,62 @@
 package edu.kaist.uilab.event;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 import java.util.StringTokenizer;
 
-import edu.kaist.uilab.plda.file.DefaultDocumentReader;
+import edu.kaist.uilab.plda.file.NYTimesDocumentReader;
+import edu.kaist.uilab.plda.util.TextFiles;
 
 public class EventModelRunner {
   static String[] stopword = new String[] {
-    "one",
-    "two",
-    "three",
-    "four",
-    "five",
-    "six",
-    "seven",
-    "eight",
-    "nine",
-    "ten",
-    "monday",
-    "tuesday",
-    "wednesday",
-    "thursday",
-    "friday",
-    "saturday",
-    "sunday",
-    "mon",
-    "tue",
-    "wed",
-    "thu",
-    "fri",
-    "sat",
-    "sun",
+//    "one",
+//    "two",
+//    "three",
+//    "four",
+//    "five",
+//    "six",
+//    "seven",
+//    "eight",
+//    "nine",
+//    "ten",
+//    "monday",
+//    "tuesday",
+//    "wednesday",
+//    "thursday",
+//    "friday",
+//    "saturday",
+//    "sunday",
+//    "mon",
+//    "tue",
+//    "wed",
+//    "thu",
+//    "fri",
+//    "sat",
+//    "sun",
+    "day",
+    "days",
+    "today",
+    "yesterday",
+    "tomorrow",
+    "week",
+    "month",
+    "year",
+    "years",
+    "weeks",
+    "months",
+    "january",
+    "february",
+    "march",
+    "april",
+    "may",
+    "june",
+    "july",
+    "august",
+    "september",
+    "october",
+    "november",
+    "december",
     "&lt;",
     "mln",
     "cts",
@@ -58,8 +81,6 @@ public class EventModelRunner {
     "throughout",
     "still",
     "several",
-    "day",
-    "days",
     "our",
     "go",
     "these",
@@ -70,27 +91,6 @@ public class EventModelRunner {
     "until",
     "ago",
     "now",
-    "today",
-    "yesterday",
-    "tomorrow",
-    "week",
-    "month",
-    "year",
-    "years",
-    "weeks",
-    "months",
-    "january",
-    "february",
-    "march",
-    "april",
-    "may",
-    "june",
-    "july",
-    "august",
-    "september",
-    "october",
-    "november",
-    "december",
     "continued",
 //    "born",
 //    "died",
@@ -98,10 +98,6 @@ public class EventModelRunner {
     "send",
     "sent",
     "got",
-    "move",
-    "moved",
-    "become",
-    "became",
     "took",
     "spent",
     "went",
@@ -135,32 +131,59 @@ public class EventModelRunner {
     "new", // for new york times
     "york",
     "times",
+    "know",
+    "want",
+    "see",
+    "something",
+    "your",
+    "us",
+    "think",
+    "come",
+    "once",
+    "really",
+    "same",
+    "hard",
+    "look",
+    "thing",
+    "things",
+    "yet",
+    "enough",
+    "ve",
+    "always",
+    "ever",
+    "big",
+    "different",
+    "almost",
+    "thought",
+    "put",
+    "best",
+    "again",
+    "away",
+    "often",
+    "far",
   };
   
   public static void main(String args[]) throws IOException {
-    BufferedReader in = new BufferedReader(new FileReader("eventruns.txt"));
-    String line;
     int minTokenCount = 5;
-    int minEntityCount = 3;
-    int topStopWords = 70;
-    int maxDocumentCount = 70; // maybe 50 (50 gives 0)?
+    int minEntityCount = 10;
+    int topStopWords = 40;
+    int maxDocumentCount = 30; // maybe 50 (50 gives 0)?
 
     int numEvents = 100;
     double alpha = 0.1;
     double beta = 0.01;
     double gamma = 0.01;
-    CorpusProcessor corpus = new CorpusProcessor("C:/datasets/bbchistory",
-        new DefaultDocumentReader(), minTokenCount, minEntityCount,
+    CorpusProcessor corpus = new CorpusProcessor("D:/workspace/util/nytimes/general",
+        new NYTimesDocumentReader(), minTokenCount, minEntityCount,
         topStopWords, stopword, maxDocumentCount);
-    //  corpus = new CorpusProcessor("/home/trung/elda/data/bbchistory",
-    //  new DefaultDocumentReader(), minTokenCount, minEntityCount,
-    //  topStopWords, maxEntitiesPerDoc, stopword);
-    //corpus = new CorpusProcessor("/home/trung/workspace/util/nytimes/general",
-    //  new NYTimesDocumentReader(), minTokenCount, minEntityCount,
-    //  topStopWords, maxEntitiesPerDoc, stopword);
+//    CorpusProcessor corpus = new CorpusProcessor("C:/datasets/bbchistory",
+//        new DefaultDocumentReader(), minTokenCount, minEntityCount,
+//        topStopWords, stopword, maxDocumentCount);
     corpus.process();
 
-    while ((line = in.readLine()) != null) {
+    List<String> lines = TextFiles.readLines("nytimesruns.txt");
+//    List<String> lines = TextFiles.readLines("bbcruns.txt");
+    for (String line : lines) {
       if (line.charAt(0) != '#' ) {
         // parse the parameters
         StringTokenizer tokenizer = new StringTokenizer(line, ",");
@@ -170,7 +193,9 @@ public class EventModelRunner {
         gamma = Double.parseDouble(tokenizer.nextToken());
         // use 50/T instead which seems to give better result
         // alpha = 50 / numEvents;
-        String outputDir = String.format("C:/events/bbchistory%d_a%.2f_b%.2f_g%.2f",
+//        String outputDir = String.format("C:/events/bbc%d_a%.2f_b%.2f_g%.2f_e10",
+//            numEvents, alpha, beta, gamma);
+        String outputDir = String.format("C:/events/nytimes%d_a%.2f_b%.2f_g%.2f_e10",
             numEvents, alpha, beta, gamma);
         System.out.println(outputDir);
         EventGibbsSampler sampler;
@@ -187,13 +212,12 @@ public class EventModelRunner {
             corpus.getDocumentTokens(),
             corpus.getDocumentEntities());
         sampler.setPriors(alpha, beta, gamma);
-        sampler.setSamplerParameters(5000, 300, 20, 10);
+        sampler.setSamplerParameters(5000, 400, 50, 10);
         sampler.setOutputParameters(corpus.getSymbolTable(),
             corpus.getEntityTable(), outputDir, 30, 10, 10);
         System.out.println("Latent Dirichlet Allocation using Gibbs Sampling.");
         sampler.doGibbsSampling(false);
       }
     }
-    in.close();
   }
 }

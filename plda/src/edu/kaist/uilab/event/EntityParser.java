@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 
 import com.aliasi.util.ObjectToCounterMap;
@@ -128,11 +127,11 @@ public class EntityParser {
         String content = reader.readDocument(corpusDir + "/" + doc);
         list = classifyDocument(content);
         docEntity.add(list);
-        HashSet<Entity> countedSet = new HashSet<Entity>();
+//        HashSet<Entity> countedSet = new HashSet<Entity>();
         for (Entity entity : list) {
-          if (countedSet.add(entity)) {
+//          if (countedSet.add(entity)) {
             counter.increment(entity);
-          }  
+//          }  
         }
       }
     } catch (IOException e) {
@@ -270,6 +269,7 @@ public class EntityParser {
   
   public static void main(String[] args) throws Exception {
     String corpusDir = "C:/datasets/bbchistory";
+//    String corpusDir = "D:/workspace/util/nytimes/general";
     File dir = new File(corpusDir);
     ArrayList<String> docNames = new ArrayList<String>();
     for (File file : dir.listFiles()) {
@@ -277,10 +277,21 @@ public class EntityParser {
         docNames.add(file.getName());
       }
     }
+//    File[] files = dir.listFiles();
+//    int numDoc = 5000, rand;
+//    for (int doc = 0; doc < numDoc; doc++) {
+//      rand = (int) (Math.random() * numDoc);
+//      if (files[rand].isFile()) {
+//        docNames.add(files[rand].getName());
+//      }
+//    }
+    
 //    EntityParser parser = new EntityParser("data/smalltest",
 //        new DefaultDocumentReader(), docNames, 10, 10);
+//    EntityParser parser = new EntityParser(corpusDir, new NYTimesDocumentReader(),
+//        docNames, 30);
     EntityParser parser = new EntityParser(corpusDir, new DefaultDocumentReader(),
-        docNames, 3);
+        docNames, 10);
     parser.setAcceptedEntityType(true, false, true);
     parser.parseCorpus();
     List<Entity> list = parser.getEntityList();

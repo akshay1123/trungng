@@ -193,7 +193,7 @@ public class EventGibbsSampler {
       for (int m = 0; m < numDocuments; m++) {
         // sample event for word
         for (int n = 0; n < term[m].length; n++) {
-          model.wordEvent[m][n] = sampleEventForWord(m, n);
+          model.wordEvent[m][n] = sampleEventForWord(m, n); 
         }
         // sample event for entity
         for (int e = 0; e < entity[m].length; e++) {
@@ -203,7 +203,7 @@ public class EventGibbsSampler {
 
       // after burn-in & some sample lags we can collect a sample
       if (iter >= burnIn && (iter - burnIn) % sampleLags == 0) {
-        System.out.printf("\nCollected a sample at iteration %d", iter);
+        System.out.printf("Collected a sample at iteration %d\n", iter);
         updateParams();
         samplesCollected++;
         report(iter);
@@ -355,7 +355,7 @@ public class EventGibbsSampler {
       for (int rank = 0; rank < topEvents.size() && rank < maxEventsPerDoc; ++rank) {
         int event = topEvents.get(rank);
         writer.printf("%5d  %7d   %4.3f\n", event, model.docEventByEntityCount[doc][event] +
-            model.docEventByWordCount[doc][event]);
+            model.docEventByWordCount[doc][event], model.theta[doc][event]);
       }
       writer.println();
     }
@@ -401,10 +401,10 @@ public class EventGibbsSampler {
     model = new Model();
     model.wordEventCount = new int[vocabularySize][numEvents];
     model.wordEventSum = new int[numEvents];
-    model.docEventByWordCount = new int[numDocuments][];
+    model.docEventByWordCount = new int[numDocuments][numEvents];
     model.entityEventCount = new int[numEntities][numEvents];
     model.entityEventSum = new int[numEvents];
-    model.docEventByEntityCount = new int[numDocuments][];
+    model.docEventByEntityCount = new int[numDocuments][numEvents];
 
     model.wordEvent = new int[numDocuments][];
     model.entityEvent = new int[numDocuments][];
@@ -510,8 +510,8 @@ public class EventGibbsSampler {
    * @return the sampling set
    */
   private int sampleEventForEntity(int m, int e) {
+    int event = model.entityEvent[m][e];
     int ent = entity[m][e].getId();
-    int event = model.entityEvent[m][ent];
     model.entityEventCount[ent][event]--;
     model.entityEventSum[event]--;
     model.docEventByEntityCount[m][event]--;
