@@ -1,4 +1,4 @@
-package edu.kaist.uilab.plda;
+package edu.kaist.uilab.lda;
 
 /**
  * A naive implementation of Gibbs sampler for LDA.
