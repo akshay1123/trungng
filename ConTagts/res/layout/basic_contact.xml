@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for a contact item displayed in the all contacts view -->
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="wrap_content">
+  <TextView
+  	android:id="@+id/txt_basic_name"
+  	android:layout_width="wrap_content"
+  	android:layout_height="wrap_content"
+  	android:layout_alignParentLeft="true"
+  	android:textAppearance="?android:attr/textAppearanceLarge"
+  	android:singleLine="true"
+	/>
+		
+	<!-- This layout contains all tags of a contact (one list item) -->
+	<LinearLayout
+		android:id="@+id/layout_labels_region"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:minHeight="25dp"
+		android:layout_below="@id/txt_basic_name"
+		android:layout_alignParentLeft="true"
+	/>
+</RelativeLayout>

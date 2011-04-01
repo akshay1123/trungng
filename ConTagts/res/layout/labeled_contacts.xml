@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for a group of contacts with a same label -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical">
+  
+  <include layout="@layout/top_bar" />
+  
+  <ListView
+  	android:id="@+id/list_contacts"
+  	android:dividerHeight="1dp"
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:layout_weight="1"
+  	android:layout_margin="5dp"
+  />
+  
+  <RelativeLayout
+  	android:layout_width="fill_parent"
+  	android:layout_height="wrap_content"
+  	android:layout_marginTop="10dp"
+  	android:layout_marginBottom="10dp">
+  	<LinearLayout
+  		android:layout_centerHorizontal="true"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content">
+		  <Button
+		  	android:id="@+id/btn_sms_all"
+		  	android:text="@string/sms_group"
+		  	android:layout_width="wrap_content"
+		  	android:layout_height="wrap_content"
+		  	android:layout_margin="5dp" />
+		  <Button
+		  	android:id="@+id/btn_email_all"
+		  	android:text="@string/email_group"
+		  	android:layout_width="wrap_content"
+		  	android:layout_height="wrap_content"
+		  	android:layout_margin="5dp" />
+	  </LinearLayout>
+  </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for displaying an entity (which can be deleted or edited) -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_marginBottom="0dp"
+	android:layout_marginTop="0dp"
+>
+	<Button
+		android:id="@+id/btn_delete"
+		android:text="  -  "
+		android:textColor="#ff0000"
+		android:textStyle="bold"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_width="30dp"
+		android:layout_height="30dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="10dp"
+		android:layout_marginTop="5dp"
+		android:layout_marginBottom="5dp"
+    android:background="@drawable/entity_background"
+	/>
+
+	<RelativeLayout
+		android:id="@+id/layout_data"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_weight="1"
+		android:layout_marginLeft="5dp"
+		android:gravity="left"
+		android:background="@drawable/entity_background"
+	>
+  	<TextView
+  		android:id="@+id/txt_entity_type"
+  	  android:textColor="@color/text_color"
+  	  android:layout_width="65dp"
+  	  android:layout_height="wrap_content"
+  	  android:paddingTop="15dp"
+  	  android:paddingBottom="8dp"
+  	  android:layout_alignParentLeft="true"
+  	  android:gravity="right"
+  	/>
+  	<TextView
+  		android:id="@+id/txt_entity_content"
+  		android:textStyle="bold"
+  		android:textColor="@color/black"
+  		android:layout_width="wrap_content"
+  		android:layout_height="wrap_content"
+  	  android:paddingTop="15dp"
+  	  android:paddingBottom="8dp"
+  		android:layout_marginLeft="75dp"
+  	/>
+	</RelativeLayout>
+</LinearLayout>

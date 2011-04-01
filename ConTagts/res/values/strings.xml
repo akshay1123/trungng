@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ConTAGts</string>
+    <string name="app_label">ConTAGts</string>
+    
+    <!-- top bar titles -->
+    <string name="title_new_contact">New contact</string>
+		<string name="title_new_group">New group</string>
+    <string name="title_add_name">Add name</string>
+    <string name="title_add_phone">Add phone</string>
+    <string name="title_add_group">Add group</string>
+    <string name="title_add_job">Add job</string>
+    <string name="title_add_email">Add email</string>
+    <string name="title_add_tags">Add tags</string>
+    <string name="title_add_other">Add other</string>
+    <string name="title_add_address">Add address</string>
+    <string name="title_add_im">Add IM</string>
+    <string name="title_add_nickname">Add nickname</string>
+    <string name="title_add_notes">Add notes</string>
+    <string name="title_add_website">Add website</string>
+    <string name="title_info">Info</string>
+    <string name="title_help">Help</string>
+		<string name="title_sharing">Sharing with ConTAGts</string>
+
+    <string name="title_edit_contact">Edit contact</string>
+    <string name="title_edit_name">Edit name</string>
+    <string name="title_edit_phone">Edit phone</string>
+    <string name="title_edit_job">Edit job</string>
+    <string name="title_edit_tags">Edit tags</string>
+    <string name="title_edit_email">Edit email</string>
+    <string name="title_edit_other">Edit other</string>
+    <string name="title_edit_nickname">Edit nickname</string>
+    <string name="title_edit_website">Edit website</string>
+    <string name="title_edit_address">Edit address</string>
+    <string name="title_edit_notes">Edit notes</string>
+    <string name="title_edit_groups">Edit groups</string>
+    
+    <string name="title_delete_contact">Delete contact</string>
+		<string name="title_share_contact">Share contact</string>
+		<string name="title_call_contact">Call contact</string>
+		<string name="title_sms_contact">SMS contact</string>
+		<string name="title_add_to_favorites">Add to favorites</string>
+		<string name="title_remove_from_favorites">Remove from favorites</string>
+		<string name="title_email_contact">Email contact</string>
+		<string name="title_bookmark_contact">Saves as a contact</string>
+		
+		<string name="title_sms_group">Send SMS to group</string>
+		<string name="title_email_group">Send mail to group</string>
+    <string name="title_edit_group">Edit group</string>
+		<string name="title_delete_group">Delete group</string>
+		
+		<string name="btn_group_all">all</string>
+		<string name="btn_group_none">none</string>
+		<string name="group_friend">friend</string>    
+    <string name="group_family">family</string>
+    
+    <string name="add_photo">add\nphoto</string>
+    <string name="add_phone">add phone</string>
+    <string name="add_group">add group</string>
+    <string name="add_tags">add tags</string>
+    <string name="add_email">add email</string>
+    <string name="add_other">add other</string>
+    <string name="add_job">add job</string>
+    <string name="add_nickname">add nickname</string>
+    <string name="add_website">add website</string>
+    <string name="add_address">add address</string>
+    <string name="add_notes">add notes</string>
+
+    <string name="hint_given">Given</string>
+    <string name="hint_middle">Middle</string>
+    <string name="hint_family">Family</string>
+    <string name="hint_company">Company</string>
+    <string name="hint_title">Title</string>
+    <string name="hint_department">Department</string>
+    <string name="hint_street">Street</string>
+    <string name="hint_city">City</string>
+    <string name="hint_region">Region</string>
+    <string name="hint_postcode">Postcode</string>
+    <string name="hint_phone">Phone</string>
+    <string name="hint_tags">Tags</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_nickname">Nickname</string>
+    <string name="hint_website">Website</string>
+    <string name="hint_notes">Notes</string>
+		<string name="hint_search">Search contacts</string>
+		<string name="hint_public_search">Search public contacts</string>
+		
+		<string name="create_new_group">Create new group</string>
+		<string name="new_group_name">new group name</string>
+    <string name="first_last">First Last</string>
+    <string name="favorites">Favorites</string>
+    <string name="frequent_contacts">Frequent Contacts</string>
+    <string name="no_contacts">No contacts.</string>
+
+		<string name="done">Done</string>    
+		<string name="cancel">Cancel</string>
+		<string name="back">Back</string>
+		<string name="save">Save</string>
+		<string name="edit">Edit</string>
+		<string name="yes">OK</string>
+		<string name="no">Cancel</string>
+		<string name="delete">Delete</string>
+		<string name="share">Share</string>
+		
+    <string name="phone">phone</string>
+    <string name="job">job</string>
+    <string name="tags">tags</string>
+    <string name="email">email</string>
+    <string name="other">other</string>
+    <string name="nickname">nickname</string>
+    <string name="website">website</string>
+    <string name="address">address</string>
+    <string name="notes">notes</string>
+    <string name="groups">groups</string>
+
+    <string name="c_job">Job</string>
+    <string name="c_tags">Tags</string>
+    <string name="c_nickname">Nickname</string>
+    <string name="c_website">Website</string>
+    <string name="c_address">Address</string>
+    <string name="c_note">Note</string>
+		
+		<string name="dialog_delete_contact">This contact will be deleted.</string>
+		
+		<string name="call_phone">Call phone</string>
+		<string name="send_email">Send email</string>
+		<string name="sms_group">Send SMS to group</string>
+		<string name="email_group">Send mail to group</string>
+		
+		<string name="family">family</string>
+		<string name="friend">friend</string>
+		
+		<string name="contact_empty">No additional information for this contact</string>
+		<string name="no_result">No result found.</string>
+		<string name="waiting">Retrieving result. Please wait...</string>
+		<string name="people_who">Friends who know this contact:</string>
+		<string name="contact_saved">contact saved</string>
+		<string name="error">an error occurred</string>
+
+		<string name="see_menu">See menu for more information about sharing with ConTAGts</string>
+		<string name="help_sharing">ConTAGts provides you the option of sharing contacts with the
+		 public or friends in your contacts list. Shared contacts can be searched for by the tags
+		 that you created for them. (Note that you can ONLY share a contact with tags as tags are used
+  	for searching).
+  	\n\nTo share a contact with your friends: in your list of contacts, tap and hold a
+  	contact to see the context menu. Then choose Share contact and select the groups that
+  	you want to share with. 
+  
+  	\n\nRemember, more friends mean more contacts available to you. So invite your friends
+  	to use ConTAGts now!
+  	</string>
+		
+		<string name="user_agreement1">ConTAGts is developed by the Users and Information Lab at the Computer Science Department, KAIST. </string>
+		<string name="user_agreement2">For academic research purpose, we need to log the tags and groups that you create using the application to our server. This is the sole information that we log; your phone number or any other identifying information is never logged.
+		We would sincerely appreciate if you could help it; but if you do not want to, you can disable this logging by checking the button below. </string>
+		<string name="user_agreement3">If you have any questions or comments, feel free to email us at uilabkaist@gmail.com.</string>
+		<string name="disable_logging">Disable logging</string>
+		
+		<string name="help">1. To add, remove, change name or color of a group, choose "Edit groups".
+		\n\n2. To add a contact to a group, drag the group name to that contact.
+		\n\n3. To remove a contact from a group, touch and hold the group name inside the contact.</string>
+</resources>

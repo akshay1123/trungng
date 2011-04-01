@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/menu_call_contact"
+		android:title="@string/title_call_contact" />
+  <item android:id="@+id/menu_email_contact"
+  	android:title="@string/title_email_contact"
+	/>
+	<item android:id="@+id/menu_bookmark_contact"
+		android:title="@string/title_bookmark_contact" />
+</menu>

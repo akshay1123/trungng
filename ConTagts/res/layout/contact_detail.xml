@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical"
+>
+	<include layout="@layout/top_bar" />
+	
+  <!-- This layout contains the icon for add photo and first last name -->
+	<LinearLayout
+	  android:layout_width="fill_parent"
+	  android:layout_height="70dp"
+	>
+		<ImageView
+			android:id="@+id/img_profile"
+			android:src="@drawable/people_large"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="5dp"
+			android:layout_marginTop="15dp"
+		/>
+		<TextView
+			android:id="@+id/txt_first_last"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:padding="10dp"
+			android:layout_marginLeft="5dp"
+			android:layout_marginTop="20dp"			
+	    android:textAppearance="?android:attr/textAppearanceLarge"
+		/>	
+	</LinearLayout>
+
+	<ScrollView
+		android:layout_width="fill_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		>
+		<LinearLayout
+			android:id="@+id/list_entity"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_margin="5dp"
+			android:orientation="vertical">
+		</LinearLayout>
+	</ScrollView>
+	<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="5dp"
+		android:layout_marginBottom="5dp"
+		>
+		<Button
+			android:id="@+id/btn_share"
+			android:text="Share contact"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerInParent="true"
+			/>
+	</RelativeLayout>
+</LinearLayout>

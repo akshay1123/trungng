@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="group_selected_bg">#4b4b4b</color>
+	<color name="black">#000000</color>
+	<color name="white">#ffffff</color>
+	<color name="text_color">#556b2f</color>
+	
+  <color name="color1">#ff4800</color>
+  <color name="color2">#baaa57</color>
+  <color name="color3">#e58631</color>
+  <color name="color4">#778ab0</color>
+  <color name="color5">#f2e7e8</color>
+  <color name="color6">#276ba3</color>
+  <color name="color7">#82e2f0</color>
+  <color name="color8">#e8c92a</color>
+  <color name="color9">#018142</color>
+  <color name="color10">#64afa7</color>
+  <color name="color11">#51e1e7</color>
+  <color name="color12">#65be67</color>
+  <color name="color13">#f1d677</color>
+  <color name="color14">#fff068</color>
+  <color name="color15">#7fe8ff</color>
+  <color name="color16">#97aa4f</color>
+
+  <drawable name="color1">#faff2800</drawable>
+  <drawable name="color2">#fafe660a</drawable>
+  <drawable name="color3">#faa7ee00</drawable>
+  <drawable name="color4">#ff00fe00</drawable>
+  <drawable name="color5">#ff00aff7</drawable>
+  <drawable name="color6">#ff82e2f0</drawable>
+  <drawable name="color7">#ffffff00</drawable>
+  <drawable name="color8">#ff97aa4f</drawable>
+  <drawable name="color9">#ff64afa7</drawable>
+  <drawable name="color10">#ff33cccc</drawable>
+  <drawable name="color11">#ff65be67</drawable>
+  <drawable name="color12">#ffc3c4bc</drawable>
+  <drawable name="color13">#fff1d677</drawable>
+  <drawable name="color14">#ff9dca38</drawable>
+  <drawable name="color15">#ffcd5cc6</drawable>
+  <drawable name="color16">#ffdf4ca0</drawable>
+  <drawable name="color17">#ff1366f9</drawable>
+  <drawable name="color18">#ffc1c509</drawable>
+  
+  <drawable name="tab_bg_non_focused">#333333</drawable>
+  <drawable name="tab_bg_focused">#ff9955</drawable>
+  <drawable name="default_bg_selected">#cccccc</drawable>
+  <drawable name="default_bg_pressed">#e58631</drawable>
+</resources>

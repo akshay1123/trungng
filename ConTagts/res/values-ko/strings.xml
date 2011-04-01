@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">ConTAGts</string>
+  <string name="app_label">ConTAGts</string>
+  
+  <string name="title_new_contact">새 연락처</string>
+  <string name="title_new_group">그룹 추가</string>
+  <string name="title_add_name">이름 입력</string>
+  <string name="title_add_phone">전화번호 입력</string>
+  <string name="title_add_group">그룹 입력</string>
+  <string name="title_add_job">직업 입력</string>
+  <string name="title_add_email">이메일 입력</string> 
+  <string name="title_add_tags">태그 입력</string>
+  <string name="title_add_other">기타 입력</string>
+  <string name="title_add_address">주소 입력</string> 
+  <string name="title_add_im">IM 입력</string>
+  <string name="title_add_nickname">별명 입력</string>
+  <string name="title_add_notes">메모 입력</string>
+  <string name="title_add_website">홈페이지 입력</string>
+  <string name="title_info">정보</string>
+  
+  <string name="title_edit_contact">연락처 수정</string> 
+  <string name="title_edit_name">이름 수정</string> 
+  <string name="title_edit_phone">전화번호 수정</string> 
+  <string name="title_edit_job">직업 수정</string> 
+  <string name="title_edit_tags">태그 수정</string> 
+  <string name="title_edit_email">이메일 수정</string> 
+  <string name="title_edit_other">기타 수정</string>  
+  <string name="title_edit_nickname">별명 수정</string> 
+  <string name="title_edit_website">웹사이트 수정</string> 
+  <string name="title_edit_address">주소 수정</string> 
+  <string name="title_edit_notes">메모 수정</string> 
+  <string name="title_edit_groups">그룹들 수정</string>
+  
+  <string name="title_share_contact">연락처 공유</string> 
+  <string name="title_delete_contact">연락처 삭제</string> 
+  <string name="title_call_contact">연락처 전송</string> 
+  <string name="title_sms_contact">메시지 보내기</string> 
+  <string name="title_add_to_favorites">즐겨찾기에 추가</string> 
+  <string name="title_remove_from_favorites">즐겨찾기 삭제</string>
+  <string name="title_email_contact">이메일 보내기</string>
+	<string name="title_bookmark_contact">연락처에 저장하기</string>
+  
+	<string name="title_sms_group">그룹 메세지 보내기</string>
+	<string name="title_email_group">그룹 메일 보내기</string>
+  <string name="title_edit_group">그룹 수정</string>
+	<string name="title_delete_group">그룹 삭제</string>
+  
+  <string name="title_help">도움</string> 
+  
+  <string name="btn_group_all">모두</string>  
+  <string name="btn_group_none">없음</string>
+   
+  <string name="group_friend">친구</string>  
+  <string name="group_family">가족</string> 
+  <string name="add_phone">전화번호 입력</string> 
+  <string name="add_group">그룹 입력</string> 
+  <string name="add_tags">태그 입력</string> 
+  <string name="add_email">이메일 입력</string> 
+  <string name="add_other">기타 입력</string> 
+  <string name="add_job">직업 입력</string> 
+  <string name="add_nickname">별명 입력</string> 
+  <string name="add_website">홈페이지 입력</string>  
+  <string name="add_address">주소 입력</string> 
+  <string name="add_notes">메모 입력</string>
+   
+  <string name="hint_given">이름</string>
+  <string name="hint_middle">Middle</string> 
+  <string name="hint_family">성</string>
+  <string name="hint_company">회사</string>
+  <string name="hint_title">Title</string> 
+  <string name="hint_department">부서</string>
+  <string name="hint_street">번지</string>
+  <string name="hint_city">시/군/구</string>
+  <string name="hint_region">시/도</string> 
+  <string name="hint_postcode">우편번호</string> 
+  <string name="hint_phone">전화번호</string>
+  <string name="hint_tags">태그</string>
+  <string name="hint_email">이메일</string>
+  <string name="hint_nickname">별명</string>
+  <string name="hint_website">홈페이지</string>
+  <string name="hint_notes">메모</string>
+  
+  <string name="create_new_group">그룹 추가</string>
+  <string name="new_group_name">그룹 이름</string>  
+  <string name="first_last">이름</string> 
+  <string name="favorites">즐겨찾기</string> 
+  <string name="frequent_contacts">자주 통화하는 목록</string> 
+  <string name="no_contacts">연락처 없음</string>
+   
+  <string name="done">저장</string> 
+  <string name="cancel">취소</string>  
+  <string name="back">뒤로</string> 
+  <string name="save">저장</string>  
+  <string name="edit">수정</string> 
+  <string name="yes">확인</string> 
+  <string name="no">취소</string> 
+  <string name="delete">삭제</string>
+  <string name="share">공유</string>
+  
+  
+  <string name="phone">전화번호</string> 
+  <string name="job">직업</string> 
+  <string name="tags">태그</string> 
+  <string name="email">이메일</string> 
+  <string name="other">기타</string> 
+  <string name="nickname">별명</string> 
+  <string name="website">홈페이지</string> 
+  <string name="address">주소</string> 
+  <string name="notes">메모</string>  
+  <string name="groups">그룹</string> 
+
+  <string name="c_job">직업</string>
+   <string name="c_tags">태그</string>
+   <string name="c_nickname">별명</string>
+   <string name="c_website">홈페이지</string>
+   <string name="c_address">주소</string>
+   <string name="c_note">메모</string>
+  
+  <string name="dialog_delete_contact">이 연락처를 삭제합니다.</string>  
+  <string name="hint_search">연락처 찾기</string>
+  
+  <string name="diable_logging">전송 차단</string>
+	
+	<string name="call_phone">전화 걸기</string>
+	<string name="send_email">이메일 보내기</string>
+  
+  <string name="family">가족</string>
+	<string name="friend">친구</string>
+
+  <string name="sms_group">그룹 메세지 보내기</string>
+  <string name="email_group">그룹 메일 보내기</string>
+	
+	<string name="contact_empty">연락처에 대한 추가 정보가 없습니다.</string>
+	<string name="no_result">결과를 찾지 못했습니다.</string>
+	<string name="waiting">결과를 검색하는 중입니다. 잠시만 기다려주세요...</string>
+	<string name="people_who"> 이 연락처를 알고있는 친구들:</string>
+	<string name="contact_saved">저장되었습니다.</string>
+	<string name="error">에러가 발생했습니다!</string>
+	
+	<string name="title_sharing">ConTAGts를 사용하여 연락처를 공유</string>
+	<string name="hint_public_search">공적인 연락처 찾기</string>
+	<string name="see_menu">ConTAGts를 사용하여 연락처를 공유</string>
+	<string name="help_sharing">ConTAGts는 당신의 연락처를 친구들과 공유할 수 있는 기능을 제공합니다.
+	공유된 연락처들은 태그 검색을 통해서 공유될 수 있습니다.(\'오직\' 태그를 통해서만 공유와 검색이 가능합니다).
+  	\n\n연락처를 친구들과 공유하기 위해: 연락처 리스트에서 연락처를 누르고 있으면 메뉴가 활성화 되는데 그때 연락처 공유를 선택해 연락처를 공유 할 수 있습니다. 
+  
+  	\n\n좀더 많은 사람들이 ConTAGts 앱을 쓸수록 공유할 수 있는 연락처는 더욱 늘어납니다. 많은 사람들이 ConTAGts를 쓸 수 있게 초대하세요!
+ 	</string>
+	
+	<string name="user_agreement1">ConTAGts는 한국과학기술원 Users and Information 연구실에서 개발되었습니다.</string>
+	<string name="user_agreement2">본 프로그램에서 사용된 그룹명과 태그에 관한 정보는 학술적 연구를 위해 서버로 전송됩니다.
+	전송된 내용은 지정된 학술적 목적이외의 용도로는 사용되지 않으며, 그룹명과 태그에 관한 정보를 제외한 어떤 정보도 서버로 전송되지 않습니다.
+	본 연구에 참여를 원하시지 않으시면 아래 버튼을 눌러 서버로 정보 전송을 차단할 수 있습니다.</string>
+	<string name="user_agreement3">이와 관련해 질문이 있으신분은 이메일 uilabkaist@gmail.com 으로 연락주세요.\n\n감사합니다.</string>
+	<string name="disable_logging">전송 차단</string>
+	<string name="help">1. "그룹 수정"을 통해서 쉽게 그룹 이름과 색상을 변경하세요.
+	\n\n2. 그룹 이름을 연락처로 드래그하시면 연락처를 그룹에 추가 할 수 있습니다.
+	\n\n3. 연락처에서 그룹을 지우기 위해서는 연락처내에 있는 그룹명을  (2~3초간)누르고 계시면 됩니다.
+	</string>
+</resources>

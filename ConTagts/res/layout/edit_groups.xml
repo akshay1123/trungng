@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for the Edit group activities -->
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical">
+  
+  <include
+  	android:layout_weight="0"
+  	layout="@layout/top_bar" />
+  
+  <!-- The table layout which contains groups -->
+	<ScrollView
+	  android:layout_width="fill_parent"
+	  android:layout_height="wrap_content"
+	  android:layout_weight="1"  
+	>
+	  <TableLayout
+	  	android:id="@+id/table_groups"
+	  	android:layout_width="fill_parent"
+	  	android:layout_height="wrap_content"
+	  	android:padding="5dp"
+	  	android:layout_marginTop="25dp"
+	  />
+	</ScrollView>
+  
+  <!-- The standard color palette view -->
+  <GridView 
+    android:id="@+id/color_palette"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:columnWidth="45dp"
+    android:numColumns="auto_fit"
+    android:verticalSpacing="15dp"
+    android:gravity="bottom"
+	/>
+</LinearLayout>

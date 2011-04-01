@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string-array name="group_item_context">
+		<item>그룹 메세지 보내기</item>
+		<item>그룹 메일 보내기</item>
+		<item>그룹 수정</item>
+	</string-array>
+	<string-array name="english_alphabet">
+		<item>A</item>
+		<item>B</item>
+		<item>C</item>
+		<item>D</item>
+		<item>E</item>
+		<item>F</item>
+		<item>G</item>
+		<item>H</item>
+		<item>I</item>
+		<item>J</item>
+		<item>K</item>
+		<item>L</item>
+		<item>M</item>
+		<item>N</item>
+		<item>O</item>
+		<item>P</item>
+		<item>Q</item>
+		<item>R</item>
+		<item>S</item>
+		<item>T</item>
+		<item>U</item>
+		<item>V</item>
+		<item>W</item>
+		<item>X</item>
+		<item>Y</item>
+		<item>Z</item>
+	</string-array>
+	<string-array name="korean_alphabet">
+		<item>ㄱ</item>
+		<item>ㄲ</item>
+		<item>ㄴ</item>
+		<item>ㄷ</item>
+		<item>ㄸ</item>
+		<item>ㄹ</item>
+		<item>ㅁ</item>
+		<item>ㅂ</item>
+		<item>ㅃ</item>
+		<item>ㅅ</item>
+		<item>ㅆ</item>
+		<item>ㅇ</item>
+		<item>ㅈ</item>
+		<item>ㅉ</item>
+		<item>ㅊ</item>
+		<item>ㅋ</item>
+		<item>ㅌ</item>
+		<item>ㅍ</item>
+		<item>ㅎ</item>
+	</string-array>
+	<string-array name="korean">
+		<item>가</item>
+		<item>까</item>
+		<item>나</item>
+		<item>다</item>
+		<item>따</item>
+		<item>라</item>
+		<item>마</item>
+		<item>바</item>
+		<item>빠</item>
+		<item>사</item>
+		<item>싸</item>
+		<item>아</item>
+		<item>자</item>
+		<item>짜</item>
+		<item>차</item>
+		<item>카</item>
+		<item>타</item>
+		<item>파</item>
+		<item>하</item>
+	</string-array>
+</resources>

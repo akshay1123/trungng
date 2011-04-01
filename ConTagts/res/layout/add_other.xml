@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation="vertical">
+  
+  <include layout="@layout/top_bar" />
+  
+		<!--  This layout contains the buttons for adding new data -->
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_weight="1"
+		android:orientation="vertical">
+		
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+ 	   	android:layout_marginTop="20dp"
+		>
+			<LinearLayout
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginRight="10dp"
+ 	   		android:layout_marginBottom="20dp"
+			>
+				<include
+					android:id="@+id/left_btn_add_job"
+				  layout="@layout/left_add_button" />
+				<Button
+					android:text="@string/add_job"
+					android:textColor="@color/text_color"
+					android:textStyle="bold"
+					android:id="@+id/btn_add_job"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:layout_marginLeft="5dp"
+					android:padding="10dp"
+					android:gravity="left"
+					android:background="@drawable/entity_background"
+				/>
+			</LinearLayout>		
+		</LinearLayout>		
+			
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="10dp"
+   		android:layout_marginBottom="20dp"
+		>
+			<include
+				android:id="@+id/left_btn_add_address"
+				layout="@layout/left_add_button" />
+			<Button
+				android:text="@string/add_address"
+				android:textColor="@color/text_color"
+				android:textStyle="bold"
+				android:id="@+id/btn_add_address"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_marginLeft="5dp"
+				android:padding="10dp"
+				android:gravity="left"
+				android:background="@drawable/entity_background"
+			/>
+		</LinearLayout>
+			
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="10dp"
+   		android:layout_marginBottom="20dp"
+		>
+			<include
+				android:id="@+id/left_btn_add_notes"
+				layout="@layout/left_add_button" />
+			<Button
+				android:text="@string/add_notes"
+				android:textColor="@color/text_color"
+				android:textStyle="bold"
+				android:id="@+id/btn_add_notes"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_marginLeft="5dp"
+				android:padding="10dp"
+				android:gravity="left"
+				android:background="@drawable/entity_background"
+			/>	
+		</LinearLayout>
+		
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="10dp"
+   		android:layout_marginBottom="20dp"
+		>
+			<include
+				android:id="@+id/left_btn_add_nickname"
+			  layout="@layout/left_add_button" />
+			<Button
+				android:text="@string/add_nickname"
+				android:textColor="@color/text_color"
+				android:textStyle="bold"
+				android:id="@+id/btn_add_nickname"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_marginLeft="5dp"
+				android:padding="10dp"
+				android:gravity="left"
+				android:background="@drawable/entity_background"
+			/>	
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="10dp"
+   		android:layout_marginBottom="20dp"
+		>
+			<include
+				android:id="@+id/left_btn_add_website"
+			  layout="@layout/left_add_button" />	
+			<Button
+				android:text="@string/add_website"
+				android:textColor="@color/text_color"
+				android:textStyle="bold"
+				android:id="@+id/btn_add_website"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:layout_marginLeft="5dp"
+				android:padding="10dp"
+				android:gravity="left"
+				android:background="@drawable/entity_background"
+			/>	
+		</LinearLayout>
+	</LinearLayout>	
+</LinearLayout>

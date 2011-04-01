@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+	<item android:id="@+id/menu_share_contact"
+		android:title="@string/title_share_contact" />
+  <item android:id="@+id/menu_sms_contact"
+  	android:title="@string/title_sms_contact"
+	/>
+	<item android:id="@+id/menu_call_contact"
+		android:title="@string/title_call_contact"
+	/>
+	<item android:id="@+id/menu_add_remove_fav"
+		android:title="@string/title_add_to_favorites" />
+	<item android:id="@+id/menu_edit_contact"
+		android:title="@string/title_edit_contact" />
+	<item android:id="@+id/menu_delete_contact"
+		android:title="@string/title_delete_contact" />
+</menu>
