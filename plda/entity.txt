@@ -1,233 +1,639 @@
-<People 's Daily, ORGANIZATION, 8>
-<LDP, ORGANIZATION, 16>
-<Digital Equipment Corp, ORGANIZATION, 8>
-<Senate, ORGANIZATION, 21>
-<Yasuhiro Nakasone, PERSON, 31>
-<Bank of America, ORGANIZATION, 6>
-<Wilf Gobert, PERSON, 8>
-<Tanjug, ORGANIZATION, 6>
-<IMF, ORGANIZATION, 50>
-<Pennzoil Co, ORGANIZATION, 16>
-<Chase Manhattan Securities, ORGANIZATION, 7>
-<Toronto Stock Exchange, ORGANIZATION, 9>
-<U.S. Congress, ORGANIZATION, 14>
-<GenCorp Inc, ORGANIZATION, 7>
-<Deutsche Bank AG, ORGANIZATION, 7>
-<American Telephone and Telegraph Co, ORGANIZATION, 6>
-<IADB, ORGANIZATION, 12>
-<VW, ORGANIZATION, 9>
-<European Monetary System, ORGANIZATION, 8>
-<Tokyo Stock Exchange, ORGANIZATION, 7>
-<Supreme Court, ORGANIZATION, 7>
-<Morgan Guaranty Trust Co, ORGANIZATION, 7>
-<Frank Naylor, PERSON, 7>
-<First Boston Corp, ORGANIZATION, 10>
-<USSR, ORGANIZATION, 14>
-<Bank of Japan, ORGANIZATION, 34>
-<del Este, PERSON, 6>
-<Council of Economic Advisers, ORGANIZATION, 6>
-<Bank of England, ORGANIZATION, 35>
-<INRA, ORGANIZATION, 6>
-<U.S. Embassy, ORGANIZATION, 6>
-<Chicago Mercantile Exchange, ORGANIZATION, 19>
-<Agriculture Department, ORGANIZATION, 17>
-<Commodity Futures Trading Commission, ORGANIZATION, 8>
-<Nikko Securities Co Ltd, ORGANIZATION, 7>
-<Organisation for Economic Cooperation and Development, ORGANIZATION, 15>
-<Congressional Budget Office, ORGANIZATION, 8>
-<International Monetary Fund, ORGANIZATION, 63>
-<G-7, ORGANIZATION, 22>
-<Hu Yaobang, PERSON, 7>
-<Bear Stearns, PERSON, 6>
-<Prudential Bache, ORGANIZATION, 6>
-<Helmut Schlesinger, PERSON, 6>
-<House Ways and Means Committee, ORGANIZATION, 9>
-<Howard Baker, PERSON, 9>
-<Defense, ORGANIZATION, 6>
-<Barber Conable, PERSON, 9>
-<Shearson Lehman Brothers Inc, ORGANIZATION, 13>
-<Ivan Boesky, PERSON, 9>
-<George Shultz, PERSON, 13>
-<Reserve Bank, ORGANIZATION, 6>
-<Richard Gephardt, PERSON, 9>
-<Inter-American Development Bank, ORGANIZATION, 21>
-<Drew, PERSON, 6>
-<Shearson Lehman, ORGANIZATION, 6>
-<James Capel, PERSON, 12>
-<OECD, ORGANIZATION, 22>
-<NEC Corp, ORGANIZATION, 7>
-<Robert Brusca, PERSON, 8>
-<Smith Barney, ORGANIZATION, 14>
-<Farm Credit Administration, ORGANIZATION, 7>
-<House, ORGANIZATION, 19>
-<Labour, ORGANIZATION, 6>
-<Reagan Administration, ORGANIZATION, 21>
-<Co Inc, ORGANIZATION, 7>
-<Citibank, ORGANIZATION, 13>
-<Senate Banking Committee, ORGANIZATION, 7>
-<American Petroleum Institute, ORGANIZATION, 6>
-<Richard Lyng, PERSON, 6>
-<Keidanren, ORGANIZATION, 7>
-<AFG Industries Inc, ORGANIZATION, 7>
-<London Interbank, ORGANIZATION, 14>
-<International Business Machines Corp, ORGANIZATION, 9>
-<Paris Club, ORGANIZATION, 13>
-<Paul Volcker, PERSON, 41>
-<E.F. Hutton Group, ORGANIZATION, 6>
-<Shearson Lehman Brothers, ORGANIZATION, 17>
-<State Department, ORGANIZATION, 9>
-<Harris Upham, ORGANIZATION, 9>
-<S.G. Warburg, ORGANIZATION, 6>
-<Malcolm Baldrige, PERSON, 12>
-<MITI, ORGANIZATION, 11>
-<Chicago Board of Trade, ORGANIZATION, 15>
-<Treasury, ORGANIZATION, 102>
-<Co., ORGANIZATION, 19>
-<Finance Ministry, ORGANIZATION, 30>
-<Robert Byrd, PERSON, 6>
-<Drexel Burnham Lambert Inc, ORGANIZATION, 15>
-<Bundesbank, ORGANIZATION, 58>
-<Dilson Funaro, PERSON, 16>
-<Dome Petroleum Ltd, ORGANIZATION, 14>
-<Salomon Brothers Inc, ORGANIZATION, 10>
-<Senate Republican, ORGANIZATION, 6>
-<Suharto, PERSON, 6>
-<Salomon Brothers, ORGANIZATION, 6>
-<Chase Manhattan Corp, ORGANIZATION, 7>
-<Bank of France, ORGANIZATION, 6>
-<Group of Seven, ORGANIZATION, 23>
-<Edouard Balladur, PERSON, 9>
-<Ford Motor Co, ORGANIZATION, 10>
-<Karl Otto Poehl, PERSON, 16>
-<Securities and Exchange Commission, ORGANIZATION, 56>
-<Jacques Delors, PERSON, 7>
-<New York Mercantile Exchange, ORGANIZATION, 7>
-<Wells Fargo, PERSON, 6>
-<Amoco Corp, ORGANIZATION, 8>
-<Commission, ORGANIZATION, 9>
-<Reagan, PERSON, 129>
-<Federal Reserve Bank of New York, ORGANIZATION, 7>
-<Federal Reserve Board, ORGANIZATION, 37>
-<Ignaz Kiechle, PERSON, 7>
-<Miyazawa, ORGANIZATION, 7>
-<Fed, ORGANIZATION, 63>
-<Jose Sarney, PERSON, 8>
-<Ronald Reagan, PERSON, 6>
-<Francisco Gros, PERSON, 10>
-<BankAmerica Corp, ORGANIZATION, 7>
-<Chemical Bank, ORGANIZATION, 7>
-<E.F. Hutton, PERSON, 9>
-<Commodity Exchange, ORGANIZATION, 7>
-<Beryl Sprinkel, PERSON, 8>
-<REUTER, PERSON, 145>
-<EC Commission, ORGANIZATION, 17>
-<Conservative party, ORGANIZATION, 6>
-<Donald Regan, PERSON, 6>
-<ATT, ORGANIZATION, 7>
-<Texaco Inc, ORGANIZATION, 20>
-<Margaret Thatcher, PERSON, 17>
-<EMS, ORGANIZATION, 10>
-<Labour Party, ORGANIZATION, 9>
-<USX Corp, ORGANIZATION, 7>
-<U.S. Bank, ORGANIZATION, 8>
-<Salomon Brothers Inc., ORGANIZATION, 7>
-<Shearson Lehman Brothers Inc., ORGANIZATION, 7>
-<Union Bank of Switzerland, ORGANIZATION, 9>
-<Helmut Kohl, PERSON, 12>
-<Merrill Lynch Capital Markets, ORGANIZATION, 11>
-<GATT, ORGANIZATION, 23>
-<Yamaichi Securities Co Ltd, ORGANIZATION, 6>
-<PSBR, ORGANIZATION, 11>
-<Volkswagen AG, ORGANIZATION, 11>
-<Nigel Lawson, PERSON, 38>
-<NYSE, ORGANIZATION, 8>
-<Daniel Amstutz, PERSON, 9>
-<Central Bank, ORGANIZATION, 15>
-<Poehl, ORGANIZATION, 6>
-<General Accounting Office, ORGANIZATION, 6>
-<Goldman , Sachs and Co, ORGANIZATION, 11>
-<American Express Co, ORGANIZATION, 7>
-<Standard and Poor, ORGANIZATION, 6>
-<LIFFE, ORGANIZATION, 7>
-<Manufacturers Hanover Corp, ORGANIZATION, 7>
-<Security Pacific Corp, ORGANIZATION, 6>
-<Alan Greenspan, PERSON, 10>
-<Commerce Department, ORGANIZATION, 19>
-<Intel Corp, ORGANIZATION, 6>
-<New York Stock Exchange, ORGANIZATION, 19>
-<U.S. Agriculture Department, ORGANIZATION, 30>
-<General Electric Co &lt; GE, ORGANIZATION, 6>
-<OPEC, ORGANIZATION, 48>
-<EEP, ORGANIZATION, 8>
-<Frans Andriessen, PERSON, 9>
-<Wagner, PERSON, 10>
-<White House, ORGANIZATION, 29>
-<Jaime Ongpin, PERSON, 14>
-<European Community, ORGANIZATION, 41>
-<Commerce, ORGANIZATION, 11>
-<Liberal Democratic Party, ORGANIZATION, 28>
-<House of Representatives, ORGANIZATION, 10>
-<European Commission, ORGANIZATION, 7>
-<USDA, ORGANIZATION, 51>
-<U.S. Treasury, ORGANIZATION, 39>
-<Food and Drug Administration, ORGANIZATION, 6>
-<EC, ORGANIZATION, 45>
-<Dan Glickman, PERSON, 10>
-<Citicorp, ORGANIZATION, 17>
-<Drexel Burnham Lambert Inc., ORGANIZATION, 8>
-<Dean Witter, PERSON, 8>
-<Gerhard Stoltenberg, PERSON, 21>
-<Congress, ORGANIZATION, 100>
-<Ward McCarthy, PERSON, 8>
-<Jim Wright, PERSON, 8>
-<FDA, ORGANIZATION, 7>
-<CME, ORGANIZATION, 8>
-<Brown, PERSON, 11>
-<FCA, ORGANIZATION, 7>
-<Merrill Lynch, ORGANIZATION, 13>
-<Chrysler Corp, ORGANIZATION, 9>
-<Federal Deposit Insurance Corp, ORGANIZATION, 6>
-<Microsoft Corp, ORGANIZATION, 6>
-<Standard Oil Co, ORGANIZATION, 8>
-<Louvre, ORGANIZATION, 12>
-<Commerzbank AG, ORGANIZATION, 9>
-<Federal Communications Commission, ORGANIZATION, 8>
-<SEC, ORGANIZATION, 32>
-<Michel Camdessus, PERSON, 6>
-<GM, ORGANIZATION, 8>
-<Kiichi Miyazawa, PERSON, 24>
-<Parliament, ORGANIZATION, 10>
-<International Coffee Organization, ORGANIZATION, 20>
-<U.S. Securities and Exchange Commission, ORGANIZATION, 6>
-<Shell Oil Co, ORGANIZATION, 7>
-<Philippines, ORGANIZATION, 6>
-<Conservative Party, ORGANIZATION, 8>
-<Robert Dole, PERSON, 6>
-<Exxon Corp, ORGANIZATION, 15>
-<James Baker, PERSON, 77>
-<IBM, ORGANIZATION, 8>
-<Federal Reserve, ORGANIZATION, 45>
-<FOMC, ORGANIZATION, 7>
-<U.S. Administration, ORGANIZATION, 7>
-<David Mulford, PERSON, 7>
-<ICO, ORGANIZATION, 15>
-<Hughes, PERSON, 6>
-<L.F. Rothschild, ORGANIZATION, 7>
-<U.S. Economy, ORGANIZATION, 7>
-<World Bank, ORGANIZATION, 49>
-<Phillips, PERSON, 10>
-<CBT, ORGANIZATION, 8>
-<Conoco Inc, ORGANIZATION, 6>
-<Clayton Yeutter, PERSON, 24>
-<Satoshi Sumita, PERSON, 6>
-<Marlin Fitzwater, PERSON, 10>
-<Jacques Chirac, PERSON, 7>
-<Congressional, ORGANIZATION, 19>
-<Ministry of International Trade and Industry, ORGANIZATION, 14>
-<Sandra Kaul, PERSON, 6>
-<U.S. Supreme Court, ORGANIZATION, 7>
-<International Cocoa Organization, ORGANIZATION, 7>
-<Entre Rios, PERSON, 6>
-<Corazon Aquino, PERSON, 10>
-<Ferdinand Marcos, PERSON, 8>
-<Communist Party, ORGANIZATION, 10>
+<0, Joseph Mallord William Turner, PERSON>
+<1, James, PERSON>
+<2, Annie Besant, PERSON>
+<3, Republican Party, ORGANIZATION>
+<4, Arabia Lawrence, PERSON>
+<5, Aaron Burr, PERSON>
+<6, Peter Sutcliffe, PERSON>
+<7, Senate, ORGANIZATION>
+<8, Harold Macmillan, PERSON>
+<9, Mount Holyoke Seminary and College, ORGANIZATION>
+<10, Clarence Darrow, PERSON>
+<11, Cyrus, PERSON>
+<12, senate, ORGANIZATION>
+<13, Adam Smith, PERSON>
+<14, St. Martin, PERSON>
+<15, George Boyer Vashon, PERSON>
+<16, Supreme Court, ORGANIZATION>
+<17, Samuel Pepys, PERSON>
+<18, Cleopatra VI, ORGANIZATION>
+<19, Mary Sidney, PERSON>
+<20, Hans Christian Andersen, PERSON>
+<21, Louisa Catherine Johnson Adams, PERSON>
+<22, Henry Ford, PERSON>
+<23, Noah Webster, PERSON>
+<24, Malcolm X. Mr. Carter, PERSON>
+<25, George Clemenceau, PERSON>
+<26, Betsy Ross, PERSON>
+<27, Josiah Wedgwood, PERSON>
+<28, Protestant Reformation, ORGANIZATION>
+<29, Ralph Johnson Bunche, PERSON>
+<30, Frances Folsom Cleveland, ORGANIZATION>
+<31, Winfield Scott Hancock, PERSON>
+<32, Christopher Wren, PERSON>
+<33, Billy, PERSON>
+<34, William of Orange, ORGANIZATION>
+<35, Queen Victoria, PERSON>
+<36, John Wesley Hardin, PERSON>
+<37, Konrad Adenauer, PERSON>
+<38, Robert Walpole, PERSON>
+<39, John Mercer Langston, PERSON>
+<40, Mohandas Karanchand Gandhi, PERSON>
+<41, Marian Anderson Library, ORGANIZATION>
+<42, Maximilien Marie Isidore de Robespierre, PERSON>
+<43, Harry S Truman, PERSON>
+<44, Galileo Galilei, ORGANIZATION>
+<45, Elizabeth Blackwell, PERSON>
+<46, Julius Caesar, PERSON>
+<47, Bible, ORGANIZATION>
+<48, James II, PERSON>
+<49, Mary Stuart, PERSON>
+<50, Greg Boyington, PERSON>
+<51, David J. Peck, PERSON>
+<52, Henry V. He, PERSON>
+<53, Tories, ORGANIZATION>
+<54, George VI, PERSON>
+<55, Tiberius Claudius Nero, PERSON>
+<56, Douglas Bader, PERSON>
+<57, John Wesley Culp, PERSON>
+<58, Ellen Craft, PERSON>
+<59, George W Bush Bush, PERSON>
+<60, Almanzo Wilder, PERSON>
+<61, Mary Celeste, PERSON>
+<62, Nikola Tesla, PERSON>
+<63, Richard II Richard, PERSON>
+<64, Mother Teresa, PERSON>
+<65, Harry S. Truman, PERSON>
+<66, Tutankhamen, PERSON>
+<67, Bridget Bishop, PERSON>
+<68, George II, PERSON>
+<69, Albert DeSalvo, PERSON>
+<70, Emily Elizabeth Dickinson, PERSON>
+<71, Mary Ludwig Hays McCauley, PERSON>
+<72, Heinrich Himmler, PERSON>
+<73, Oxford University, ORGANIZATION>
+<74, Anne Sullivan Macy, PERSON>
+<75, Edward IV, PERSON>
+<76, Francis Drake, PERSON>
+<77, Prince Henry, PERSON>
+<78, Marie Stopes, PERSON>
+<79, Thomas Wolsey, PERSON>
+<80, New World, ORGANIZATION>
+<81, Susan B. Anthony, PERSON>
+<82, Elizabeth Tudor, PERSON>
+<83, Richard ` Dicky ' Barrett, PERSON>
+<84, Dolley Madison, PERSON>
+<85, Charles Darwin, PERSON>
+<86, Captain Lawrence, PERSON>
+<87, Thomas McKean, PERSON>
+<88, Richard Nixon, PERSON>
+<89, Edward III Edward, PERSON>
+<90, Hagar, PERSON>
+<91, Mrs. Wilson, PERSON>
+<92, Eugene Ormandy, PERSON>
+<93, Life of Olaudah Equiano, ORGANIZATION>
+<94, Henrietta Mary Stuart, PERSON>
+<95, Ambrose Everett Burnside, PERSON>
+<96, Millard Fillmore, PERSON>
+<97, Thomas Hobbes, PERSON>
+<98, Labour, ORGANIZATION>
+<99, William Wallace, PERSON>
+<100, Katharina, PERSON>
+<101, Medina, PERSON>
+<102, Maggie Lena Mitchell Walker, PERSON>
+<103, Mao Zedong, PERSON>
+<104, Career Redl, PERSON>
+<105, Marie Antoinette, PERSON>
+<106, Andrew Johnson, PERSON>
+<107, Inigo Jones, PERSON>
+<108, Robert Clay Allison, PERSON>
+<109, Lord Palmerston, PERSON>
+<110, Bonnie Parker, PERSON>
+<111, Stonewall Jackson, PERSON>
+<112, Saul, PERSON>
+<113, William Wilberforce, PERSON>
+<114, House of Lords, ORGANIZATION>
+<115, Franklin Pierce, PERSON>
+<116, Winston Churchill, PERSON>
+<117, Ulysses S. Grant, PERSON>
+<118, Jim Bridger, PERSON>
+<119, John Brown, PERSON>
+<120, God, PERSON>
+<121, Grace O'Malley, PERSON>
+<122, Aragon Catherine, PERSON>
+<123, Mohandas Gandhi Known, PERSON>
+<124, Isaac Newton, PERSON>
+<125, Pol Pot, PERSON>
+<126, Alexander, PERSON>
+<127, Harold II, PERSON>
+<128, Phillis Wheatley, PERSON>
+<129, Bugsy, PERSON>
+<130, William Ewart Gladstone, PERSON>
+<131, Thomas Henry Huxley, PERSON>
+<132, Geronimo, PERSON>
+<133, Albert Einstein, PERSON>
+<134, Bonnie Prince Charlie, PERSON>
+<135, Maggie Tobin Brown, PERSON>
+<136, Andrew Jackson Borden, PERSON>
+<137, Henry O. Flipper, PERSON>
+<138, Simon Girty, PERSON>
+<139, Henry VIII, PERSON>
+<140, Elizabeth Barrett Browning, PERSON>
+<141, Martin Frobisher, PERSON>
+<142, Ellen Wilson, PERSON>
+<143, Jane Grey, PERSON>
+<144, Navy Hospital Corps, ORGANIZATION>
+<145, Eliot Ness, ORGANIZATION>
+<146, Henri I. Christophe, PERSON>
+<147, Jane Seymour, PERSON>
+<148, David Lloyd George, PERSON>
+<149, Owain Glyn Dwr, PERSON>
+<150, Grover Cleveland, PERSON>
+<151, Titus Flavius Vespasianus, PERSON>
+<152, Charles Yukl, PERSON>
+<153, Blackbeard, ORGANIZATION>
+<154, Nile, ORGANIZATION>
+<155, John Locke, PERSON>
+<156, Helen, PERSON>
+<157, Continental Army, ORGANIZATION>
+<158, RAF, ORGANIZATION>
+<159, George Washington Gale Ferris, PERSON>
+<160, Royal Navy, ORGANIZATION>
+<161, King Tut, PERSON>
+<162, James Forten, PERSON>
+<163, Edward VIII, PERSON>
+<164, James Secord, PERSON>
+<165, Indian National Congress, ORGANIZATION>
+<166, Siegfried Sassoon, PERSON>
+<167, Stanley Baldwin, PERSON>
+<168, Edmund Halley Halley, PERSON>
+<169, Oliver Cromwell, PERSON>
+<170, Hercules, ORGANIZATION>
+<171, Lamar Boulevard, ORGANIZATION>
+<172, Charles Gordon, PERSON>
+<173, Caroline Norton, PERSON>
+<174, John Closterman Anne, PERSON>
+<175, Bob Ford, PERSON>
+<176, Clyde Barrow, PERSON>
+<177, Pete Maxwell, PERSON>
+<178, William Harvey, PERSON>
+<179, Harriet Ann Jacobs, PERSON>
+<180, Alexander Bucephalus, PERSON>
+<181, Venus, PERSON>
+<182, AD Claudius, ORGANIZATION>
+<183, Quanah, PERSON>
+<184, Khufu, PERSON>
+<185, George I George, PERSON>
+<186, William Dampier, PERSON>
+<187, Samuel Johnson, PERSON>
+<188, William Jennings Bryan, PERSON>
+<189, Dr. Edward Jenner, PERSON>
+<190, Dorothea Lynde Dix, PERSON>
+<191, Peter, PERSON>
+<192, Domenico Cataldo, PERSON>
+<193, Elizabeth Storrs Mead, PERSON>
+<194, Richard, PERSON>
+<195, Edward III, PERSON>
+<196, Pauline Johnson, PERSON>
+<197, ANC, ORGANIZATION>
+<198, Richard Feynman, PERSON>
+<199, Slobodan Milosevic, PERSON>
+<200, Robert Boyle, PERSON>
+<201, Octavian, PERSON>
+<202, John Adams, PERSON>
+<203, King David, PERSON>
+<204, John Dickinson, PERSON>
+<205, Muhammad, PERSON>
+<206, Al Capone, PERSON>
+<207, Ehrich Weiss, PERSON>
+<208, Florence Harding, PERSON>
+<209, Bill Pickett Invitational Rodeo, ORGANIZATION>
+<210, Charles Stewart Parnell, PERSON>
+<211, Henriette Delille, PERSON>
+<212, Edward IV, ORGANIZATION>
+<213, George Washington Carvers, ORGANIZATION>
+<214, Augustine, PERSON>
+<215, Christina Onassis, PERSON>
+<216, Gawain, PERSON>
+<217, Franklin Delano Roosevelt, PERSON>
+<218, George Eliot, PERSON>
+<219, Caroline Lavinia Scott Harrison, PERSON>
+<220, William III, PERSON>
+<221, Thomas Jefferson, PERSON>
+<222, Confessor Edward, PERSON>
+<223, Nicolaus Copernicus, ORGANIZATION>
+<224, Francis Bret Harte, PERSON>
+<225, Louis Pasteur, PERSON>
+<226, Richard Milhous Nixon, PERSON>
+<227, U.S. Army, ORGANIZATION>
+<228, Walt Elias Disney, ORGANIZATION>
+<229, Robert, PERSON>
+<230, Muhammad Ali Jinnah, PERSON>
+<231, Frances Folsom Cleveland, PERSON>
+<232, Catherine of Aragon, PERSON>
+<233, N.C. Wyeth, ORGANIZATION>
+<234, Stephanus Johannes Paul Kruger, PERSON>
+<235, Mrs. Abraham Lincoln, PERSON>
+<236, Hetty Green, PERSON>
+<237, Dr. Faustus, PERSON>
+<238, Edwin Drake, PERSON>
+<239, Harvard University, ORGANIZATION>
+<240, White House, ORGANIZATION>
+<241, Billy Mitchell, PERSON>
+<242, Queen Mary, PERSON>
+<243, Theodore Roosevelt, PERSON>
+<244, Protestant, ORGANIZATION>
+<245, Harriet Taylor, PERSON>
+<246, Lilya Litvak, PERSON>
+<247, Anne Bonny, PERSON>
+<248, United Empire Loyalists, ORGANIZATION>
+<249, Martin Luther, PERSON>
+<250, Henry, PERSON>
+<251, Congress, ORGANIZATION>
+<252, Richard Allen, PERSON>
+<253, Florence Nightingale Foundation, ORGANIZATION>
+<254, John Quincy Adams, PERSON>
+<255, Willy Brandt, PERSON>
+<256, Rudyard Kipling, PERSON>
+<257, Toussaint Charbonneau, PERSON>
+<258, Adolf Hitler, PERSON>
+<259, Jennie, PERSON>
+<260, Nikolaus August Otto, PERSON>
+<261, Napoleon Bonaparte, PERSON>
+<262, Ronald Wilson Reagan, PERSON>
+<263, AD, ORGANIZATION>
+<264, English Parliament, ORGANIZATION>
+<265, Henry Brown, PERSON>
+<266, Roman Catholic, ORGANIZATION>
+<267, Dwight David Eisenhower, PERSON>
+<268, Haydée Tamara Bunke Bilder, PERSON>
+<269, Frederick Treves, PERSON>
+<270, Tom Custer, PERSON>
+<271, Henry Morton Stanley, PERSON>
+<272, Eddie Rickenbacker, PERSON>
+<273, Warren Harding, PERSON>
+<274, Parliament, ORGANIZATION>
+<275, Fannie Lou Hamer, PERSON>
+<276, Ivan Methvin, PERSON>
+<277, John Logie Baird, PERSON>
+<278, Dr. Livingstone, PERSON>
+<279, John Wayne Gacy, PERSON>
+<280, Royal Society, ORGANIZATION>
+<281, Louis XV, PERSON>
+<282, De Valera, ORGANIZATION>
+<283, Sese Seko Mobutu, PERSON>
+<284, John I John, PERSON>
+<285, Arthur Travers Harris, PERSON>
+<286, Anne Hyde, PERSON>
+<287, James McCune Smith, PERSON>
+<288, Margaretha Geertruida Zelle-Macleod, PERSON>
+<289, Diana Spencer, PERSON>
+<290, Matilda, PERSON>
+<291, Elisha Graves Otis, PERSON>
+<292, Frederick Douglass, PERSON>
+<293, Amelia Earhart, PERSON>
+<294, Sacajawea, PERSON>
+<295, James Buchanan, PERSON>
+<296, Etta Place, PERSON>
+<297, Marcus Garvey, PERSON>
+<298, Chiang Kai-Shek, PERSON>
+<299, Ned Kelly, PERSON>
+<300, Stephen Gardiner, PERSON>
+<301, Charles Robert Darwin, PERSON>
+<302, M. Pickett, PERSON>
+<303, DePauw University, ORGANIZATION>
+<304, Shirley St. Hill Chisholm, PERSON>
+<305, George III, PERSON>
+<306, Arthur, PERSON>
+<307, James Abrams Garfield, PERSON>
+<308, Henry III, PERSON>
+<309, Robert Edward Lee, PERSON>
+<310, Richard Francis Burton, PERSON>
+<311, Thomas Edison, PERSON>
+<312, Edward ` Ned ' Kelly, PERSON>
+<313, Bette Clair McMurray Graham, PERSON>
+<314, Pinkerton Detective Agency, ORGANIZATION>
+<315, Mark Antony, PERSON>
+<316, James II James, PERSON>
+<317, Fidel Castro, PERSON>
+<318, ANC Youth League, ORGANIZATION>
+<319, Francis Harry Compton Crick, PERSON>
+<320, William I, PERSON>
+<321, Henry of Bolingbroke, PERSON>
+<322, Mahatma Gandhi, PERSON>
+<323, Aristotle, PERSON>
+<324, Phineas Taylor Barnum, PERSON>
+<325, Daisy Lee Gaston Bates, PERSON>
+<326, Margaret, PERSON>
+<327, Sarah Emma Edmonds, PERSON>
+<328, Joseph Patrick Kennedy, PERSON>
+<329, Hildegard Von Bingen, PERSON>
+<330, Butch Cassidy, PERSON>
+<331, Wyatt berry Stapp Earp, PERSON>
+<332, Life and Times of Frederick Douglass, ORGANIZATION>
+<333, John, PERSON>
+<334, Dr. Elizabeth Blackwell, PERSON>
+<335, David Livingstone, PERSON>
+<336, Henry Howard Holmes, PERSON>
+<337, John Hanning Speke &gt; Speke, PERSON>
+<338, Wystan Hugh Auden, PERSON>
+<339, Maria Mitchell, PERSON>
+<340, Aneurin Bevan, PERSON>
+<341, John Keats, PERSON>
+<342, Museveni, PERSON>
+<343, Lord Darnley, PERSON>
+<344, Winnie Mandela, PERSON>
+<345, Winston Leonard Spencer Churchill, PERSON>
+<346, Helen Miller Gould, PERSON>
+<347, Publius Helvius Pertinax, PERSON>
+<348, Sadie Tanner Mossell Alexander, PERSON>
+<349, Thabo Mbeki, PERSON>
+<350, Henry I. Although Stephen, PERSON>
+<351, Eleanor Roosevelt, PERSON>
+<352, Gaius Julius Caesar, PERSON>
+<353, Nicholas II, PERSON>
+<354, Thomas Gainsborough, PERSON>
+<355, Vincent Van Gogh, PERSON>
+<356, Albert Francis Charles Augustus Emmanuel, PERSON>
+<357, Frank W. Woolworth, PERSON>
+<358, Stephen, PERSON>
+<359, Mrs. Calvin Coolidge, PERSON>
+<360, Laura Ingersoll Secord, PERSON>
+<361, Arthur Neville Chamberlain, PERSON>
+<362, Alexander Graham Bell, PERSON>
+<363, Manfred von Richthofen, PERSON>
+<364, Harriet Tubman, PERSON>
+<365, Dr Livingstone, PERSON>
+<366, Hitler, PERSON>
+<367, Philip II, PERSON>
+<368, Martha Beall Mitchell, PERSON>
+<369, Henry Hudson, PERSON>
+<370, John Hopps, PERSON>
+<371, Thomas, PERSON>
+<372, George Washington, PERSON>
+<373, Barbara Jordan, PERSON>
+<374, Eamon de Valera, ORGANIZATION>
+<375, Erwin Rommel, PERSON>
+<376, Institute for Colored Youth, ORGANIZATION>
+<377, Victoria, PERSON>
+<378, Henry Hamilton, PERSON>
+<379, Duke, PERSON>
+<380, Douglas Haig, PERSON>
+<381, Deborah Moody, PERSON>
+<382, Adelina Maria Patti, PERSON>
+<383, Virgil, PERSON>
+<384, Richard Theodore Greener, PERSON>
+<385, Thomas Woodrow Wilson, PERSON>
+<386, Old Joseph, PERSON>
+<387, Moors, ORGANIZATION>
+<388, Cecil Rhodes, PERSON>
+<389, William, PERSON>
+<390, Macbeth, PERSON>
+<391, Edward VI, ORGANIZATION>
+<392, Michelangelo Buonarroti, PERSON>
+<393, Granville Sharp Esquire, ORGANIZATION>
+<394, Sam Houston, PERSON>
+<395, Nelson Mandela, PERSON>
+<396, B. Hayes, PERSON>
+<397, David Berkowitz, PERSON>
+<398, Jackie Cochran, PERSON>
+<399, Nazi, ORGANIZATION>
+<400, Rob Roy MacGregor, PERSON>
+<401, Aquitaine Eleanor, PERSON>
+<402, John Tanner, PERSON>
+<403, Ralph Nader, PERSON>
+<404, Thomas Cromwell Cranmer, PERSON>
+<405, William Wordsworth, PERSON>
+<406, Alfred, PERSON>
+<407, Muslim League, ORGANIZATION>
+<408, Continental Congress, ORGANIZATION>
+<409, Robert Sengstacke Abbott, PERSON>
+<410, Catherine Parr, PERSON>
+<411, Cambridge University, ORGANIZATION>
+<412, Benjamin Bannaker, PERSON>
+<413, Andrew Jackson, PERSON>
+<414, Egypt Cleopatra VII, ORGANIZATION>
+<415, Samuel Gridley Howe, PERSON>
+<416, Chester Alan Arthur, PERSON>
+<417, Patrick Henry, PERSON>
+<418, Thomas Cromwell, PERSON>
+<419, Mrs. Miriam Leslie, PERSON>
+<420, Leonardo da Vinci, PERSON>
+<421, Michael Collins, PERSON>
+<422, Sarah, PERSON>
+<423, Union Army, ORGANIZATION>
+<424, United Nations, ORGANIZATION>
+<425, Charles II Charles II, PERSON>
+<426, William Craft-both, PERSON>
+<427, Calico Jack, PERSON>
+<428, Mount Vernon Ladies ' Association, ORGANIZATION>
+<429, Charles, PERSON>
+<430, Kaiser Wilhelm II Wilhelm, PERSON>
+<431, Clark, PERSON>
+<432, Josephine Butler, PERSON>
+<433, Jerry C. Rubin, PERSON>
+<434, B.F. Skinner, PERSON>
+<435, Roald Amundsen, PERSON>
+<436, Nelson Rolihlahla Mandela, PERSON>
+<437, Duke of York, ORGANIZATION>
+<438, Neville Chamberlain, PERSON>
+<439, Cynthia Ann Parker, PERSON>
+<440, Robert Noyce Kilby, PERSON>
+<441, George Custer, PERSON>
+<442, Elizabeth Cady Stanton, PERSON>
+<443, Liberal Party, ORGANIZATION>
+<444, Marshall Larry Deger, PERSON>
+<445, Juan Ponce de Leon, PERSON>
+<446, Lucretia Rudolph, PERSON>
+<447, Mary Todd Lincoln, PERSON>
+<448, Henry II, PERSON>
+<449, Dr. Jose P. Rizal, PERSON>
+<450, Abigail Fillmore, PERSON>
+<451, John Mitchell, PERSON>
+<452, George Stephenson, PERSON>
+<453, Catherine Howard, PERSON>
+<454, Anne Boleyn, PERSON>
+<455, Mary Stephenson Cassatt, PERSON>
+<456, Babe Ruth, PERSON>
+<457, Eleanor of Aquitaine, ORGANIZATION>
+<458, Edward Gein, PERSON>
+<459, Allan Pinkerton, PERSON>
+<460, Benjamin Franklin, PERSON>
+<461, Mary Tudor, PERSON>
+<462, Horatio Herbert Kitchener, PERSON>
+<463, John Fitzgerald Kennedy, PERSON>
+<464, Napoleon, PERSON>
+<465, Johnny Torrio, PERSON>
+<466, James Cook, PERSON>
+<467, Lizzie Andrew, PERSON>
+<468, Rijn Rembrandt, PERSON>
+<469, Akhenaten, PERSON>
+<470, Janusz Korczak, PERSON>
+<471, Jack, PERSON>
+<472, Charles I. Meanwhile Cromwell, PERSON>
+<473, Milton Obote, PERSON>
+<474, Clement Attlee, PERSON>
+<475, Mata Hari, PERSON>
+<476, Eugenie Marie de Montijo, PERSON>
+<477, Jinnah, PERSON>
+<478, Wenceslaus, PERSON>
+<479, Mrs. Mary Elizabeth Jenkins Surratt, PERSON>
+<480, Timothy Leary, PERSON>
+<481, Howard University, ORGANIZATION>
+<482, Lewis Wetzel, PERSON>
+<483, Earl of Nottingham Charles Howard, ORGANIZATION>
+<484, Alexander Selkirk, PERSON>
+<485, Flavius Josephus, PERSON>
+<486, Katherine Parr, PERSON>
+<487, Bill Clinton, PERSON>
+<488, Thomas Clarkson, PERSON>
+<489, Thomas Cranmer, PERSON>
+<490, Erich Ludendorff, PERSON>
+<491, Alexander Mackenzie, PERSON>
+<492, Charles VI, PERSON>
+<493, Lucrezia Borgia, PERSON>
+<494, Lucifer, PERSON>
+<495, George, PERSON>
+<496, Louis Francis Albert Victor Nicholas Mountbatten, PERSON>
+<497, Catholic, ORGANIZATION>
+<498, Herman Webster Mudgett, PERSON>
+<499, House of Commons, ORGANIZATION>
+<500, Cecil John Rhodes, PERSON>
+<501, Charles Floyd, PERSON>
+<502, Marco Polo, PERSON>
+<503, Army, ORGANIZATION>
+<504, Lord Byron, PERSON>
+<505, Labour Party, ORGANIZATION>
+<506, Nellie Bly, PERSON>
+<507, Joseph Carey Merrick, PERSON>
+<508, Benito Amilcare Andrea Mussolini, PERSON>
+<509, Muslim Gokhale, ORGANIZATION>
+<510, Bill Simcox, PERSON>
+<511, Jean-Jacques Rousseau, PERSON>
+<512, Milton Snavely Hershey, PERSON>
+<513, Dr. Flint, PERSON>
+<514, Howard Carter, PERSON>
+<515, Fanny Jackson-Coppin, PERSON>
+<516, Mary Ann Ball Bickerdyke, PERSON>
+<517, Abraham Lincoln, PERSON>
+<518, Humphry Davy, PERSON>
+<519, Essex Devereux, ORGANIZATION>
+<520, Edwin H. John Woolman, PERSON>
+<521, Isabella, PERSON>
+<522, Mao Tse-tung, PERSON>
+<523, Georgi Konstantinovich Zhukov, PERSON>
+<524, Martha Jane Cannary, PERSON>
+<525, Andrew Jackson-99 John Quincy Adams-84 William Crawford-41 Henry Clay-37, PERSON>
+<526, Commonwealth, ORGANIZATION>
+<527, Herbert Hoover, PERSON>
+<528, George Catlett Marshall, PERSON>
+<529, William Pitt, PERSON>
+<530, Helen Keller, PERSON>
+<531, Abu Hamid Ghazali, PERSON>
+<532, Alphonse Capone, PERSON>
+<533, Jesse James, PERSON>
+<534, Nero Claudius Caesar Augustus Germanicus, PERSON>
+<535, Hirohito, ORGANIZATION>
+<536, Lucretia Coffin Mott, PERSON>
+<537, Cesare Borgia, PERSON>
+<538, Jean Piaget Society, ORGANIZATION>
+<539, Ada Byron Lovelace, PERSON>
+<540, John Wilkinson Wilkinson, PERSON>
+<541, Thomas Robert Malthus, PERSON>
+<542, Vladimir Ilich Lenin, PERSON>
+<543, Martha Wayles Skelton Jefferson, PERSON>
+<544, William II, PERSON>
+<545, Harvard, ORGANIZATION>
+<546, Charles Lindbergh, PERSON>
+<547, John F. Kennedy, PERSON>
+<548, Robert Mugabe, PERSON>
+<549, Julia Ward Howe, PERSON>
+<550, Elizabeth, PERSON>
+<551, Mary, PERSON>
+<552, Florence Nightingale, PERSON>
+<553, Betty Ford, PERSON>
+<554, Lincoln, PERSON>
+<555, King Henry VIII, PERSON>
+<556, William J. Clinton, PERSON>
+<557, House of Representatives, ORGANIZATION>
+<558, Idi Amin, PERSON>
+<559, Navy, ORGANIZATION>
+<560, Charles Richard Drew, PERSON>
+<561, Ernest Bevin, PERSON>
+<562, Mrs. Ethel Place, PERSON>
+<563, Edward VI, PERSON>
+<564, Laura Ingalls Wilder, PERSON>
+<565, Catherine, PERSON>
+<566, Garrett Augustus Morgan, PERSON>
+<567, Earle Dickson, PERSON>
+<568, Mary Queen of Scots Queen, ORGANIZATION>
+<569, Richard II, PERSON>
+<570, Ronald Reagan Reagan, PERSON>
+<571, Barnes Neville Wallis, PERSON>
+<572, Robert the Bruce, PERSON>
+<573, Alexander Hamilton, PERSON>
+<574, Lewis, PERSON>
+<575, Sonny Salvatore Bono, PERSON>
+<576, Harry Houdini, PERSON>
+<577, George II George, PERSON>
+<578, Benjamin O. Davis, PERSON>
+<579, Anne, PERSON>
+<580, Westminster Abbey, ORGANIZATION>
+<581, Salvador Dali, PERSON>
+<582, Anne Sullivan, PERSON>
+<583, Catholic Church, ORGANIZATION>
+<584, Shaka Zulu, PERSON>
+<585, David, PERSON>
+<586, William Faithorne Rupert, PERSON>
+<587, Ernest Henry Shackleton, PERSON>
+<588, Edward, PERSON>
+<589, Maria Barbella, PERSON>
+<590, Henry Morrison Flagler, PERSON>
+<591, Ranald McKenzie, PERSON>
+<592, Ferdinand de Lesseps De Lesseps, ORGANIZATION>
+<593, Mary Read, PERSON>
+<594, pope, PERSON>
+<595, Nikita Sergeyevich Khrushchev, PERSON>
+<596, Sigmund Freud Freud, PERSON>
+<597, Emma Goldman, PERSON>
+<598, George W Bush, PERSON>
+<599, Catherine Mumford Booth, PERSON>
+<600, Clara Barton, PERSON>
+<601, Jane Grey Jane, PERSON>
+<602, Helen Keller Prize, ORGANIZATION>
+<603, King James V, PERSON>
+<604, Pat Garrett, PERSON>
+<605, Pierre Elliott Trudeau, PERSON>
+<606, Sally Louisa Tompkins, PERSON>
+<607, Richard Biegenwald, PERSON>
+<608, Dr. George Washington Carver, PERSON>
+<609, James Dewey Watson, PERSON>
+<610, Martha Washington, PERSON>
+<611, Degrees D. Sc., PERSON>
+<612, Emmett Till, PERSON>
+<613, Boudicca, PERSON>
+<614, Jean Baudrillard, PERSON>
+<615, Richard III, PERSON>
+<616, Charles II, PERSON>
+<617, Robert E. Lee, PERSON>
+<618, Anna Eleanor Roosevelt, PERSON>
+<619, Jack Skelly, PERSON>
+<620, Robert Ford, ORGANIZATION>
+<621, Richard M. Nixon, PERSON>
+<622, Hiram Mead, PERSON>
+<623, Percy Bysshe Shelley, PERSON>
+<624, Vlad Dracula, PERSON>
+<625, Annie Oakley, PERSON>
+<626, Percy Lavon Julian Hall, PERSON>
+<627, Franklin D. Roosevelt, PERSON>
+<628, Joseph Stalin, PERSON>
+<629, John McCrae, PERSON>
+<630, Rasputin, PERSON>
+<631, William Rufus, PERSON>
+<632, King Henry, PERSON>
+<633, Alice Roosevelt, PERSON>
+<634, Jawaharlal Nehru, PERSON>
+<635, Pat Nixon, PERSON>
+<636, Lucretia Garfield, PERSON>
+<637, Catherine of Aragon, ORGANIZATION>
+<638, Indians, ORGANIZATION>
