@@ -1,0 +1,15 @@
+<!-- Indices written at Tue, 10 Aug 2010 18:32:06 KST -->
+
+<datastore-indexes>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="Friend" ancestor="true" source="auto">
+        <property name="friends_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="Label" ancestor="true" source="auto">
+        <property name="labels_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>

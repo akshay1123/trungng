@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>Search</servlet-name>
+		<servlet-class>edu.kaist.uilab.contagts.server.servlet.SearchServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Share</servlet-name>
+		<servlet-class>edu.kaist.uilab.contagts.server.servlet.ShareServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Entity</servlet-name>
+		<servlet-class>edu.kaist.uilab.contagts.server.servlet.ContactEntityServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Label</servlet-name>
+		<servlet-class>edu.kaist.uilab.contagts.server.servlet.LabelServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Call</servlet-name>
+		<servlet-class>edu.kaist.uilab.contagts.server.servlet.CallServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>TopQuery</servlet-name>
+		<servlet-class>edu.kaist.uilab.contagts.server.servlet.TopQueryServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Printer</servlet-name>
+		<servlet-class>edu.kaist.uilab.contagts.server.servlet.LogPrinterServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Data</servlet-name>
+		<servlet-class>edu.kaist.uilab.contagts.server.servlet.TestDataServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>Search</servlet-name>
+		<url-pattern>/search</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Share</servlet-name>
+		<url-pattern>/share</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Entity</servlet-name>
+		<url-pattern>/entity</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Label</servlet-name>
+		<url-pattern>/label</url-pattern>
+		<url-pattern>/labellog</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Call</servlet-name>
+		<url-pattern>/call</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TopQuery</servlet-name>
+		<url-pattern>/topquery</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Printer</servlet-name>
+		<url-pattern>/see</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Data</servlet-name>
+		<url-pattern>/copy</url-pattern>
+	</servlet-mapping>
+</web-app>
