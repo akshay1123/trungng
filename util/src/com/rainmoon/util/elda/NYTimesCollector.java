@@ -1,6 +1,8 @@
 package com.rainmoon.util.elda;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashSet;
@@ -20,10 +22,12 @@ import com.rainmoon.util.common.TextFiles;
 
 /**
  * Collects news from New York Times.
- * 
+ * TODO(trung): copy documents in /general to workspace/util/nytimes/general
+ *  
  * @author Trung Nguyen (trung.ngvan@gmail.com)
  */
 public class NYTimesCollector {
+
   static final String PARAM_QUERY = "query";
   static final String PARAM_FROM = "from";
   // query period: Jan 1, 1999 ~ Dec 30th, 2004
@@ -35,26 +39,42 @@ public class NYTimesCollector {
   final LinksCollection businessLinks = new LinksCollection();
   final LinksCollection technologyLinks = new LinksCollection();
   final LinksCollection generalLinks = new LinksCollection();
-  static HashSet<Integer> businessCollected;// = getCollected("nytimes/business");
-  static HashSet<Integer> techCollected;// = getCollected("nytimes/technology");
-  static HashSet<Integer> generalCollected = getCollected("nytimes/general");
+  static HashSet<String> businessCollected;// = getCollected("nytimes/business");
+  static HashSet<String> techCollected;// = getCollected("nytimes/technology");
+  static HashSet<String> generalCollected = getCollected("D:/worksapce/util/nytimes/general");
   
+  public NYTimesCollector() {
+    // get the links already collected
+    try {
+      List<String> links = TextFiles.readLines("nytimes/general.txt");
+      for (String link : links) {
+        generalLinks.add(link);
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
 
-  static HashSet<Integer> getCollected(String directory) {
-    HashSet<Integer> set = new HashSet<Integer>();
+  static HashSet<String> getCollected(String directory) {
+    HashSet<String> set = new HashSet<String>();
     final File dir = new File(directory);
-    int pos;
-    for (String f : dir.list()) {
-      pos = f.indexOf(".txt");
-      set.add(Integer.parseInt(f.substring(0, pos)));
+    try {
+      BufferedReader in;
+      for (File f : dir.listFiles()) {
+        in = new BufferedReader(new FileReader(f));
+        set.add(in.readLine());
+        in.close();
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
     }
     
     return set;
   }
   
   public static void main(String args[]) throws Exception {
-    NYTimesCollector collector = new NYTimesCollector();
-    collector.collectLinks("nytimes/query.txt");
+//    NYTimesCollector collector = new NYTimesCollector();
+//    collector.collectLinks("nytimes/query.txt");
 //    List<String> links = TextFiles.readLines("nytimes/business.txt");
 //    int block = 10000; // each thread collects 10000 articles
 //    for (int i = 0; i < 8; i++) {
@@ -132,31 +152,26 @@ public class NYTimesCollector {
     Parser parser;
     NodeList nodes;
     String link;
-    boolean abort;
     for (int i = 0; i < links.size(); i++) {
-      if (outputDir.equals("nytimes/business")) {
-        abort = businessCollected.contains(offset + i);
-      } else if (outputDir.equals("nytimes/technology")) {
-        abort = techCollected.contains(offset + i);
-      } else {
-        abort = generalCollected.contains(offset + i);
-      }
+      link = links.get(i);
+      if ((outputDir.contains("business") && businessCollected.contains(link))
+          || (outputDir.contains("technology") && techCollected.contains(link))
+          || (outputDir.contains("general") && generalCollected.contains(link)))
+        continue;
       
-      if (!abort) {
-        link = links.get(i);
+      link = links.get(i);
+      parser = new Parser(link);
+      System.out.println(link);
+      // get the element which contains main article 
+      nodes = parser.extractAllNodesThatMatch(new HasAttributeFilter("class", "columnGroup first"));
+      if (nodes.size() > 0) {
+        handleFirstDocumentType(link, outputDir + "/" + (offset + i) + ".txt", nodes.elementAt(0));
+      } else {
+        // get the content again because it was discarded by parser before
         parser = new Parser(link);
-        System.out.println(link);
-        // get the element which contains main article 
-        nodes = parser.extractAllNodesThatMatch(new HasAttributeFilter("class", "columnGroup first"));
+        nodes = parser.extractAllNodesThatMatch(new HasAttributeFilter("id", "area-main-center-w-left"));
         if (nodes.size() > 0) {
-          handleFirstDocumentType(link, outputDir + "/" + (offset + i) + ".txt", nodes.elementAt(0));
-        } else {
-          // get the content again because it was discarded by parser before
-          parser = new Parser(link);
-          nodes = parser.extractAllNodesThatMatch(new HasAttributeFilter("id", "area-main-center-w-left"));
-          if (nodes.size() > 0) {
-            handleSecondDocumentType(link, outputDir + "/" + (offset + i) + ".txt", nodes.elementAt(0));
-          }
+          handleSecondDocumentType(link, outputDir + "/" + (offset + i) + ".txt", nodes.elementAt(0));
         }
       }
     }
@@ -277,7 +292,6 @@ public class NYTimesCollector {
     try {
       NodeList linksList;
       // get 700 * 30 = 21000 links (if available)
-      // TODO(trung): change to 700 to get many links
       for (int i = 0; i < 700; i++) {
         // + 1 to ignore the first query result (which is often not an article)
         System.out.printf("\nGetting links (%d..%d)", i * 30 + 1, i * 30 + 30);
