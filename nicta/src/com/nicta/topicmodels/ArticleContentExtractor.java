@@ -1,4 +1,4 @@
-package au.com.nicta.topicmodels;
+package com.nicta.topicmodels;
 
 import java.io.IOException;
 
@@ -50,8 +50,9 @@ public class ArticleContentExtractor {
     public String getAbstract(String file) throws IOException {
         mStripper.setStartPage(1);
         mStripper.setEndPage(1);
-        String firstPage = mStripper.getText(PDDocument.load(file));
-        System.out.println(firstPage);
+        PDDocument document = PDDocument.load(file);
+        String firstPage = mStripper.getText(document);
+        document.close();
         int pos = getPosition(firstPage, INTRODUCTION);
         if (pos < 0)
             return firstPage;
@@ -92,7 +93,9 @@ public class ArticleContentExtractor {
     public String getFullText(String file) throws IOException {
         mStripper.setStartPage(1);
         mStripper.setEndPage(20);
-        String content = mStripper.getText(PDDocument.load(file));
+        PDDocument document = PDDocument.load(file);
+        String content = mStripper.getText(document);
+        document.close();
         int pos = getPosition(content, ACKNOWLEDGEMENTS);
         if (pos < 0)
             pos = getPosition(content, REFERENCES);

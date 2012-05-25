@@ -1,4 +1,4 @@
-package au.com.nicta.topicmodels;
+package com.nicta.topicmodels;
 
 import java.io.File;
 import java.io.IOException;

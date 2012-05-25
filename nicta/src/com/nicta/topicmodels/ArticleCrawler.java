@@ -1,4 +1,4 @@
-package au.com.nicta.topicmodels;
+package com.nicta.topicmodels;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
